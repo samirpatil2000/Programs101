@@ -44,7 +44,6 @@ int main(){
         if (value<arr[i]){
             for (int j = length_of_array-1; j>=i; j--){
                  arr[j+1]=arr[j]; 
-                           
             }
             arr[i]=value;
             break;
@@ -58,7 +57,5 @@ int main(){
         printf("\narr[%d]=%d",i,arr[i]);
     }
     printf("\n");
-
-
 
 }

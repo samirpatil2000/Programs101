@@ -26,13 +26,13 @@ int main(){
     }
 
     int length_of_arr1=0,length_of_arr2=0,index=0; 
-    while (length_of_arr1 <N1 && length_of_arr2<N2 )
+    while ( length_of_arr1 < N1 && length_of_arr2 < N2 )
     {
-        if(arr1[length_of_arr1]>arr2[length_of_arr2]){
+        if(arr1[length_of_arr1] > arr2[length_of_arr2]){
             array[index]=arr2[length_of_arr2];
             length_of_arr2++; index++;
         }
-        else if (arr1[length_of_arr1]<arr2[length_of_arr2])
+        else if (arr1[length_of_arr1] < arr2[length_of_arr2])
         {
             array[index]=arr1[length_of_arr1];
             length_of_arr1++; index++;
@@ -52,13 +52,29 @@ int main(){
             array[index]=arr1[i];
             index++;
         }
+        /*
+        while(length_of_arr1<N1){
+            array[index]=arr1[length_of_arr1];
+            length_of_arr1++;
+            index++;
+        }
+        */
     }
     else{
         for(int i=length_of_arr2;i<N2;i++){
             array[index]=arr2[i];
             index++;
         }
+        /*
+        while(length_of_arr2<N2){
+            array[index]=arr2[length_of_arr2];
+            length_of_arr2++;
+            index++;
+        }
+        */
     }
+
+    
     
 
     

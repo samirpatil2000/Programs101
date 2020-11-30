@@ -4,6 +4,11 @@ int main(){
     int num , *ptr;
     num=10;
     ptr=&num;
-    printf("the ptr is %d\n",ptr);
-    printf("the *ptr is %d\n",*ptr);
+    
+    printf("\n  *ptr  = %d\n",*ptr);
+    printf("   num  = %d\n",num); 
+    printf("   ptr  = %p\n",ptr);
+    printf("   &num = %p\n",&num);
+
+
 }
