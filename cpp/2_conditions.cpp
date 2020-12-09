@@ -6,8 +6,9 @@ int main(){
 
     int a,b,c;
     cout<<"Enter the value of a ,b \n:";
-    cin >> a;8
+    cin >> a;
     cin >> b;
     c=(a>b) ? a:b;
-    cout<<"  "<<c <<"is  greater ";
+    cout<<"  "<<c <<"is  greater "<<endl;
+
 }

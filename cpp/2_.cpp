@@ -6,10 +6,13 @@ int main()
 {
     char c;
     int counter=0;
+    int number=0;
    cout << "Hello World" << endl; 
    do{
        counter=counter+1;
-       cout<<" this is you"<< counter <<"Enter the number \n"<< endl;
+       cout<<" counter "<< counter <<"\n Previous number "<< number <<endl;
+       cin>>number;
+       cout<<"To continue press c"<<"\n";
        cin>>c;
    }while(c=='c');
    return 0;

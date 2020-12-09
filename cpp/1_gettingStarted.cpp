@@ -7,6 +7,6 @@ int main(){
      string name;
      cout<<"Enter your name\n:";
      cin>> name ;
-     cout<<"Hello " <<name <<"\n";
+     cout<<"Hello " <<name <<end;
     return 0;
 }

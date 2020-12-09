@@ -12,9 +12,30 @@ long factorials(int n){
     }
 }
 
+
+// is prime or not
+
+bool isPrime(int n){
+    if (n%2==0){
+        return false;
+    }else{
+        for (int i=3;i<n;i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+    }
+    return true;
+    
+}
+
 int main(){
     int num;
     cout << "Enter the number \n:";
     cin >> num;
-    cout << factorials(num)<<"\n";
+    // cout << factorials(num)<<"\n";
+    string prime=(isPrime(num)==1)? "Prime":"Not Prime";
+    cout<<num<<" is "<<prime<<endl;
 }
+
+
