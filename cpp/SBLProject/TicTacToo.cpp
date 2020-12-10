@@ -213,11 +213,11 @@ int main(){
             if(turn ==0 || turn%2==0){
                 userName=userName_1;
                 // even user 0,2,4,
-                takeChoice(Board,0,userName,turn); 
+                takeChoice(Board,O,userName,turn); 
             }else{
                 userName=userName_2;
                 // even user 1,3,5,
-                takeChoice(Board,10,userName,turn);
+                takeChoice(Board,X,userName,turn);
             }
             turn++;
         }
