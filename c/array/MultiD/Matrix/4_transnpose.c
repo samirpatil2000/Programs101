@@ -1,6 +1,5 @@
 #include<stdio.h>
-
-
+#define N 3
 void readingMatrix(int arr[N][N]){
     int number=1;
     for (int i=0;i<N;i++){
@@ -21,16 +20,32 @@ void printingMatrix(int arr[N][N]){
     printf("\n");
 }
 
-int main(){
-    int arr[2][2]={20,32,21,3};
-
-    printf("Printing Array : \n");
-
-    for (int i=0;i<2;i++){
-        printf("\n");
-        for (int j=0;j<2;j++){
-            printf("%d\t",arr[i][j]);
+// take a transpose and reverse each row
+void tranposeMatrix(int arr[N][N]){
+    for (int i=0;i<N;i++){
+        for (int j=0;j<i;j++){
+            int temp=arr[i][j];
+            arr[i][j]=arr[j][i];
+            arr[j][i]=temp;
         }
     }
-    printf("\n");
+}
+
+
+
+int main(){
+    int arr[N][N]={0};
+    readingMatrix(arr);
+    printingMatrix(arr);
+
+    tranposeMatrix(arr);
+    
+
+    
+
+    printingMatrix(arr);
+
+    
+    
+
 }
