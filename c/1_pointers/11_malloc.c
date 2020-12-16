@@ -5,7 +5,7 @@
 int main(){
     int n;
     printf("Enter the count : ");
-    scanf("%d\n",&n);
+    scanf("%d",&n);
 
     int *ptr = (int *)malloc(n*sizeof(n));
 
@@ -18,7 +18,8 @@ int main(){
         scanf("%d",ptr+i);
     }
     for(int i=0;i<n;i++){
-        printf("%d",*(ptr+i));
+        printf("\t%d",*(ptr+i));
     }
+    printf("\n");
 
 }

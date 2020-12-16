@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 struct Student
 {
@@ -17,7 +18,12 @@ int main(){
     scanf("%d",&n);
 
 
+
+
     for(int i=0;i<n;i++){
+
+        ptr[i]=(struct Student *)malloc(sizeof(struct Student));
+
 
         printf("\nEnter the name : ");
         scanf("%s",ptr[i]->name);
@@ -30,8 +36,7 @@ int main(){
 
     for(int i=0;i<n;i++){
 
-        printf("\nEnter the name : %s",ptr[i]->name);
-        printf("\nEnter the age : %d\n",ptr[i]->age);
+        printf("The Name and Age : %s   %d\n",ptr[i]->name,ptr[i]->age);
 
     }
 

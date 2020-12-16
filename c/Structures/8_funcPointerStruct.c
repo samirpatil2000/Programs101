@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 
 struct Student 
@@ -16,7 +17,12 @@ void display(struct Student *ptrStudent){
 
 int main(){
     struct Student *ptr_student,student;
-    ptr_student=&student;
+
+
+    // ptr_student=&student; // or u can do 
+    ptr_student=(struct Student *)malloc(sizeof(struct Student));
+
+
     printf("\nEnter Name : ");
     scanf("%s",ptr_student->name);
     printf("\nEnter Age : ");

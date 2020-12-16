@@ -44,7 +44,7 @@ void placeAtCorner(int arr[N][N]){
 
 
 void machineTurn(int arr[N][N]){
-    
+
 
     if( (arr[0][0]==X && arr[2][2]==X) || 
             (arr[0][2]==X && arr[2][0]==X) ){
