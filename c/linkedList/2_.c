@@ -28,7 +28,6 @@ struct node* addDataAtStart(struct node *head,int age,int num){
     ptr->num=num;
     ptr->link=head;
     head=ptr;
-
     return head;
     
 }

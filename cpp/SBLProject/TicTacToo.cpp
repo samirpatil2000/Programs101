@@ -104,7 +104,7 @@ void takeChoice(int arr[N][N],int userNumber,string userName,int turn){
     cout<<"Enter number every to place "<<userNumber<<" : ";
     cin>>choice;
 
-    switch(choice){
+    switch(choice){O
         case 1: 
             row=0; column=0; 
             break;
