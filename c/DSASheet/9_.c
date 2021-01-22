@@ -13,12 +13,16 @@ void printArray(int arr[],int n){
     printf("\n");
 }
 int main(){
-    int arr[]={0, 2, 1, 2, 0};
-    int n=5,low=0,mid=0,high=n-1;
+    // int arr[]={0, 2, 1, 2, 0};
+    int arr[]={0, 2, 1, 2,1,2};
+    int n=6,low=0,mid=0,high=n-1;
     printArray(arr,n);
 
     while (mid<=high)
     {
+        if (arr[high] == 2 ){
+            high--;
+        }
         if(arr[mid]==1){
             mid++;
         }else
