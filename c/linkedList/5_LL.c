@@ -235,6 +235,30 @@ struct node *deleteList(struct node *start){
     return start;
 }
 
+void swap(struct node *ptr,struct node *cptr){
+    int temp=ptr->data;
+    ptr->data=cptr->data;
+    cptr->data=temp;
+}
+
+struct node *sortLinkedList(struct node *start){
+    struct node *ptr,*cptr;
+    ptr=start;
+    if(start !=NULL){
+        while(ptr !=NULL){
+            cptr=ptr->link;
+            while( cptr !=NULL){
+                if(cptr->data < ptr->data){
+                    swap(ptr,cptr);
+                }
+                cptr=cptr->link;
+            }
+            ptr=ptr->link;
+        }
+    }
+    return start;
+}
+
 
 int main(){
     struct node *start =NULL;
@@ -254,7 +278,8 @@ int main(){
         printf("\n 8 : Delete given node ");
         printf("\n 9 : Delete node from after the given node ");
         printf("\n 10 : Delete entire Linked List ");
-        printf("\n 11 : Exit ");
+        printf("\n 11 : Sort the linked list ");
+        printf("\n 12 : Exit ");
 
         printf("\n Enter your option : ");
         scanf("%d",&option);
@@ -295,9 +320,12 @@ int main(){
         case 10:
             start=deleteList(start);
             break;
+        case 11:
+            start=sortLinkedList(start);
+            break;
         default:
             break;
         }
-    } while (option != 11);
+    } while (option != 12);
     
 }
