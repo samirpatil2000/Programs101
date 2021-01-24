@@ -2,6 +2,7 @@
     "files.associations": {
         "iostream": "cpp",
         "string_view": "c",
-        "regex": "c"
+        "regex": "c",
+        "charconv": "c"
     }
 }

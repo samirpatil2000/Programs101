@@ -188,8 +188,19 @@ struct node *delete_after(struct node *start){
         preptr=ptr;
         ptr=ptr->next;
     }
-    
+    preptr->next=ptr->next;
+    ptr->next->prev=preptr;
+    free(ptr);
 
+    return start;
+}
+
+struct node *delete_entire_ll(struct node *start){
+
+    while(start !=NULL){
+            start=delete_beg(start);
+    }
+    return start;
 }
 int main(){
     struct node *start =NULL;
@@ -245,12 +256,12 @@ int main(){
             case 8:
                 start=delete_node(start);
                 break;
-            // case 9:
-            //     start=delete_after(start);
-            //     break;
-            // case 10:
-            //     start=deleteList(start);
-            //     break;
+            case 9:
+                start=delete_after(start);
+                break;
+            case 10:
+                start=delete_entire_ll(start);
+                break;
             // case 11:
             //     start=sortLinkedList(start);
             //     break;
