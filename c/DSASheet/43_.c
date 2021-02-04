@@ -26,16 +26,18 @@ int linearSearch(int matrix[N][M],int target){
     int found=0,target_row;
     int last_colomn=M-1;
     for(int i=0;i<N;i++){
-        if(matrix[i][last_colomn] >= target_row){
+        if(matrix[i][last_colomn] >= target){
             target_row=i;
             break;
         }
     }
     for(int j=0;j<M;j++){
         if(matrix[target_row][j]==target){
+            printf("Element found at arr[%d][%d]",target_row,j);
             return found=1;
         }
     }
+    return 0;
 }
 
 
@@ -99,7 +101,7 @@ int main(){
     printf("Enter element to be search : ");
     scanf("%d",&target);
 
-    int isFound=bruteForce(matrix,target);
+    int isFound=linearSearch(matrix,target);
 
     if(isFound==1){
         printf("%d is present \n",target);
@@ -112,11 +114,5 @@ int main(){
     printf("%d is present %d \n",target,usingBinarySearch(matrix,l,r,target));
 
 
-
-
-
-
-
-    
 
 }

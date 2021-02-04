@@ -4,5 +4,6 @@
         "string_view": "c",
         "regex": "c",
         "charconv": "c"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

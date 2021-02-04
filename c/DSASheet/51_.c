@@ -1,5 +1,8 @@
 #include<stdio.h>
 #define N 3
+
+
+
 void readingMatrix(int arr[N][N]){
     int number=1;
     for (int i=0;i<N;i++){
@@ -11,7 +14,6 @@ void readingMatrix(int arr[N][N]){
     
 }
 void printingMatrix(int arr[N][N]){
-    
     for (int i=0;i<N;i++){
         printf("\n");
         for (int j=0;j<N;j++){
@@ -56,13 +58,5 @@ int main(){
     printingMatrix(arr);
     // rotateMatrix(arr);
     tranposeMatrix(arr);
-    
-
-    
-
     printingMatrix(arr);
-
-    
-    
-
 }

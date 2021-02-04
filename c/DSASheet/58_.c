@@ -14,7 +14,6 @@ void hashing(char str[],int len){
             hash[str[i]]=1;
             // result=+str[i];
         }
-        
     }
     
 }
