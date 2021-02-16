@@ -7,6 +7,13 @@ struct node{
     struct node *right;
 };
 
+int max(int a,int b){
+    if(a>b){
+        return a;
+    }
+    return b;
+}
+
 struct node *createTree(struct node *tree){
     tree=NULL;
     return tree;
@@ -114,6 +121,53 @@ struct node *deleteElement(struct node *tree,int val){
     return tree;
 }
 
+int height(struct node *tree){
+    if (tree==NULL){
+        return 0;
+    }else{
+        return max(height(tree->left),height(tree->right))+1;
+    }
+}
+
+
+int totalNodes(struct node *tree){
+    if(tree==NULL){
+        return 0;
+    }else{
+        return totalNodes(tree->left)+totalNodes(tree->right)+1;
+    }
+}
+
+int totalInternalNodes(struct node *tree){
+    if(tree==NULL){
+        return 0;
+    }else if(tree->left==NULL && tree->right==NULL){
+        return 0;
+    }else{
+        return totalInternalNodes(tree->left)+totalInternalNodes(tree->right)+1;
+    }
+}
+
+int totalExternalNodes(struct node *tree){
+    if(tree==NULL){
+        return 0;
+    }else if( tree->left == NULL && tree->right == NULL ){
+        return 1;
+    }else{
+        return totalInternalNodes(tree->left)+totalInternalNodes(tree->right);
+    }
+}
+
+struct node *MirrorImage(struct node *tree){
+    if(tree != NULL){
+        MirrorImage(tree->left);
+        MirrorImage(tree->right);
+        struct node *temp=tree->left;
+        tree->left=tree->right;
+        tree->right=temp;
+    }
+}
+
 
 int main(){
     int option;
@@ -130,6 +184,7 @@ int main(){
         printf("\n 4 : Find Smallest element");
         printf("\n 5 : Find Largest element");
         printf("\n 6 : Delete element");
+        printf("\n 7 : The heigth of binary tree");
         printf("\n 8 : Count Total number of elements");
         printf("\n 9 : Count Total number of internal nodes");
         printf("\n 10 : Count Total number of external nodes");
@@ -172,21 +227,21 @@ int main(){
                 scanf("%d",&num);
                 tree=deleteElement(tree,num);
                 break;
-            // case 7:
-            //     tree=delete_end(tree);
-            //     break;
-            // case 8:
-            //     tree=delete_node(tree);
-            //     break;
-            // case 9:
-            //     tree=delete_after(tree);
-            //     break;
-            // case 10:
-            //     tree=deleteList(tree);
-            //     break;
-            // case 11:
-            //     tree=sortLinkedList(tree);
-            //     break;
+            case 7:
+                printf("The heigth of binary tree is : %d\n",height(tree));
+                break;
+            case 8:
+                printf("Count Total number of nodes :%d\n",totalNodes(tree));
+                break;
+            case 9:
+                printf("Count Total number of Internal nodes :%d\n",totalInternalNodes(tree));
+                break;
+            case 10:
+                printf("Count Total number of External nodes :%d\n",totalInternalNodes(tree));
+                break;
+            case 11:
+                tree=MirrorImage(tree);
+                break;
             default:
                 break;
         }
