@@ -33,17 +33,20 @@ int main(){
     int j=0,i=0;
     int count=0;
     while(1){
-        i=0;
-        while(i<len1 && arr2[j]>=arr1[i]){
-            i++;
+        while(i<len1){
+            if(arr2[j]>=arr1[i]){
+                i++;
+                printf("i==%d\n",i);
+            }else{
+                swap(arr1[i],arr2[j]);
+                insertionSort(arr2,len2);
+                i=0;
+            }
         }
+        printf("i==%d\n",i);
         if(i==len1){
             break;
         }
-        int temp=arr1[i];
-        arr1[i]=arr2[j];
-        arr2[j]=temp;
-        insertionSort(arr2,len2);
         count++;
         if(count<10000){
             printf("Counter break \n");

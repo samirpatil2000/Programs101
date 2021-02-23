@@ -17,7 +17,6 @@ int main(){
             j--;
         }
         arr[j+1]=temp;
-
     }
 
     printf("\nPrinting the array after sorting");
@@ -25,7 +24,4 @@ int main(){
     for(int i=0;i<n;i++){
         printf("arr[%d]= %d\n",i,arr[i]);
     }
-
-
-
 }
