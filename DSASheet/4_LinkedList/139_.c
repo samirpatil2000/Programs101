@@ -64,22 +64,20 @@ struct node *reverseLL(struct node *head){
     return head;
 }
 
-struct node *usingRecursion(struct node *head){
-    struct node *current;
-    if(head==NULL){
-        return;
-    }
-    if(head->link==NULL){
-        return head;
-    }
-    current=usingRecursion(head->link);
-    head->link->link==head;
-    head->link=NULL;
+// struct node *usingRecursion(struct node *head){
+//     struct node *current;
+//     if(head==NULL){
+//         return;
+//     }
+//     if(head->link==NULL){
+//         return head;
+//     }
+//     current=usingRecursion(head->link);
+//     head->link->link==head;
+//     head->link=NULL;
 
-    return current;
-
-
-}
+//     return current;
+// }
 
 int main(){
     struct node *head=NULL;

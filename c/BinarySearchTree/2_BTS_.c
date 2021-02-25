@@ -184,7 +184,7 @@ int main(){
         printf("\n 4 : Find Smallest element");
         printf("\n 5 : Find Largest element");
         printf("\n 6 : Delete element");
-        printf("\n 7 : The heigth of binary tree");
+        printf("\n 7 : The height of binary tree");
         printf("\n 8 : Count Total number of elements");
         printf("\n 9 : Count Total number of internal nodes");
         printf("\n 10 : Count Total number of external nodes");
@@ -228,7 +228,7 @@ int main(){
                 tree=deleteElement(tree,num);
                 break;
             case 7:
-                printf("The heigth of binary tree is : %d\n",height(tree));
+                printf("The height of binary tree is : %d\n",height(tree));
                 break;
             case 8:
                 printf("Count Total number of nodes :%d\n",totalNodes(tree));

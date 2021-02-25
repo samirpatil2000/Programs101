@@ -9,10 +9,10 @@ def getkeyPadCombination(str):
     rem=str[1:]
     m_list=[]
     recu_result=getkeyPadCombination(rem)
-    print(recu_result)
+    # print(recu_result)
     for i in code_arr[int(ch)]:
         for j in recu_result:
             m_list.append(i+j)        
     return m_list
 
-print(getkeyPadCombination("547"))
+print(getkeyPadCombination("24"))
