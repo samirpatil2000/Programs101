@@ -51,6 +51,14 @@ void addDataAtEnd(struct node *head,int age,int num){
 }
 
 
+struct node *addNode(struct node ){
+    struct node *current=malloc(sizeof(struct node));
+    current->age=20;
+    current->num=25;
+    current->link=NULL;
+}
+
+
 
 int main(){
 
