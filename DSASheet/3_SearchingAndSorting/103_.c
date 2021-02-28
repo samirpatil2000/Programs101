@@ -2,7 +2,7 @@
 
 
 
-int findLargetElement(int arr[],int left,int right,int target){
+int findTargetElement(int arr[],int left,int right,int target){
     int mid=(left+right)/2;
 
     if(arr[mid]==target){
@@ -48,5 +48,5 @@ int main(){
     int target=4;
 
     printf("The pivot element is %d\n",findPivotElement(arr,0,len));
-    printf("The element is at index %d\n",findLargetElement(arr,0,len,target));
+    printf("The element is at index %d\n",findTargetElement(arr,0,len,target));
 }

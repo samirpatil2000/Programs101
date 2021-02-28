@@ -1,5 +1,9 @@
+
+count=0
 def printPermutation(str,output_str):
     if(len(str)==0):
+        print("Sam....")
+        print("    ...")
         print(output_str)
         return
     
@@ -8,7 +12,8 @@ def printPermutation(str,output_str):
         rem=str[0:i]+str[i+1:]
         printPermutation(rem,output_str+ch)
     
-printPermutation("ABCD","")
+printPermutation("ABC","")
 
+# print(count)
 # str="ABCD"
 # print(str[0:2]+str[2+1:])
