@@ -29,11 +29,28 @@ int path(int m,int n){
     }
     return path(n,m-1)+path(n-1,m);
 }
+int find(int n,int m){
+    if(n==1 || m==1){
+        return 1;
+    }
+    return find(n,m-1)+find(n-1,m);
+}
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int t,row,col;
+    cin>>t;
+    while(t-->0){
+        cin>>row;
+        cin>>col;
+        cout<<find(row,col)<<"\n";
+    }
+    return 0;
+}
 
 int main(){
     int b=3;
-    printf("%d\n",power(3,10000));
-    printf("%ld\n",fastPower(3,10000));
+    // printf("%d\n",power(3,10000));
+    // printf("%ld\n",fastPower(3,10000));
     
-    printf("Number of path %d\n",path(40,10));
+    printf("Number of path %d\n",path(10,100));
 }

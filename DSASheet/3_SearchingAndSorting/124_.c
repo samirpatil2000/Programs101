@@ -1,33 +1,41 @@
 #include<stdio.h>
 
-void swap(int a,int b){
-    int temp=a;
-    a=b;
-    b=temp;
-}
+ 
+void printArray(int arr[]) 
+{ 
+	for (int i = 0; i < 6; i++) 
+		printf("%d\t",arr[i]);
+	printf("\n");
+} 
 
-
-
-int partian(int arr[],int left,int right){
-    printf("#parti\n");
-    int mid=left+right;
+int partition(int arr[],int lb,int ub){
+    int pivot=arr[lb];
+    int left=lb;
+    int right=ub;
     while(left<right){
-        while(arr[left]<=arr[mid]){
+        while(arr[left]<=pivot){
             left++;
         }
-        while(arr[right]>arr[mid]){
+        while(arr[right]>pivot){
             right--;
         }
-        swap(arr[left],arr[right]);
+        if(left<right){
+            int temp=arr[right];
+            arr[right]=arr[left];
+            arr[left]=temp;
+        }
     }
-    swap(arr[right],arr[mid]);
+    int temp=arr[right];
+    arr[right]=arr[lb];
+    arr[lb]=temp;
     printf("right %d\n",right);
+    printArray(arr);
     return right;
 }
 
 int findPivotElement(int arr[],int left,int right,int k){
-    printf("#findpivot\n");
-    int mid=partian(arr,left,right);
+    // printf("#findpivot\n");
+    int mid=partition(arr,left,right);
     printf("Mid %d\n",mid);
     if(mid==k){
         return arr[mid];
@@ -40,9 +48,22 @@ int findPivotElement(int arr[],int left,int right,int k){
     }
     if(left>right){return -1;}
 }
+
+ 
+
+
+
 int main(){ 
-    int arr[]={10, 3, 8,6, 2};   // i
-    int len=sizeof(arr)/sizeof(arr[0]);
-    printf("#\n");
-    printf("The %d\n",findPivotElement(arr,0,len-1,2));
+	int arr[] = {10, 7, 8, 9, 1, 5}; 
+	int n = sizeof(arr) / sizeof(arr[0]); 
+    printf("the \n");
+	// quickSort(arr, 0, n - 1); 
+
+	// printArray(arr, n); 
+    // printf("The partian\n");
+    // partition(arr,0,n-1);
+    int m=2;
+    printf("The %dth smallest element is %d\n",m,findPivotElement(arr,0,n-1,m-1));
+
+	return 0; 
 }
