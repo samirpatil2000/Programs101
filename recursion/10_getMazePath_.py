@@ -1,7 +1,7 @@
 
 
 def getMazePaths(row,col,dr,dc):
-    if(row==dr-1 and col==dc-1):
+    if(row==dr and col==dc):
         return " "
     p1=[]
     p2=[]
@@ -17,4 +17,4 @@ def getMazePaths(row,col,dr,dc):
         paths.append("v"+i)
     return paths
 
-print(getMazePaths(0,0,10,10))
+print(getMazePaths(0,0,3,5))

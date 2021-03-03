@@ -2,8 +2,8 @@
 count=0
 def printPermutation(str,output_str):
     if(len(str)==0):
-        print("Sam....")
-        print("    ...")
+        # print("Sam....")
+        # print("    ...")
         print(output_str)
         return
     

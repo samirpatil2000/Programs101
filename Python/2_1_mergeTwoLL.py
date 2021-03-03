@@ -17,6 +17,7 @@ class LinkedList:
         new_node=newNode(data)
         if(temp == None):
             temp=new_node
+            return
         while(temp.next):
             temp=temp.next
         temp.next=new_node
