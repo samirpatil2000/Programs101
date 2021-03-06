@@ -4,66 +4,51 @@
 
 // I really don't know why hte hell is htis is not working
 
-void swap(int* a, int* b) 
-{ 
-    int t = *a; 
-    *a = *b; 
-    *b = t; 
-} 
 
-int partian(int arr[],int lb,int ub){
-    int pivot=arr[0];
-    int start=lb,end=ub;
-
-    while(start<end){
-
-        while(arr[start]<=pivot){
-            start++;
+int partition(int arr[],int lb,int ub){
+    int pivot=arr[lb];
+    int left=lb;
+    int right=ub;
+    while(left<right){
+        while(arr[left]<=pivot){
+            left++;
         }
-        while(arr[end]>pivot){
-            end--;
+        while(arr[right]>pivot){
+            right--;
         }
-        swap(&arr[start],&arr[end]);
-        // int temp=arr[start];
-        // arr[start]=arr[end];
-        // arr[end]=temp;
+        if(left<right){
+            int temp=arr[right];
+            arr[right]=arr[left];
+            arr[left]=temp;
+        }
     }
-    swap(&arr[0],&arr[end]);
-    // arr[0]=arr[end];
-    // arr[end]=pivot;
-
-    return end;
+    int temp=arr[right];
+    arr[right]=arr[lb];
+    arr[lb]=temp;
+    printf("right %d\n",right);
+    printArray(arr);
+    return right;
 }
 
-int quickSort(int arr,int lb,int ub){
+int quickSort(int arr[],int lb,int ub){
     if(lb<ub){
-        int loc=partian(arr,lb,ub);
+        int loc=partition(arr,lb,ub);
         quickSort(arr,lb,loc-1);
         quickSort(arr,loc+1,ub);
     }
 }
 
 
+void printArray(int arr[],int len){
+    for(int i=0;i<len;i++){
+        printf("%d\t",arr[i]);
+    }
+    printf("\n");
+}
 
 int main(){
-    int n=10,min,temp;
-    int arr[10]={78,54,59,87,84,98,34,58,53,99};
-    int lb=0,up=n-1;
-
-    printf("\nPrinting the array before sorting");
-    printf("\n");
-    for(int i=0;i<n;i++){
-        printf("arr[%d]= %d\n",i,arr[i]);
-    }
-    quickSort(arr,lb,up);
-    
-
-    printf("\nPrinting the array after sorting");
-    printf("\n");
-    for(int i=0;i<n;i++){
-        printf("arr[%d]= %d\n",i,arr[i]);
-    }
-
-
-
+    int arr[]={78,54,59,87,84,98,34,58,53,99};
+    int len=sizeof(arr)/sizeof(arr[0]);
+    quickSort(arr,0,len);
+    printArray(arr,len);
 }
