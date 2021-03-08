@@ -7,6 +7,8 @@ n = stdin.readline()
 # array input similar method
 arr = [int(x) for x in stdin.readline().split()]
 
+arr=[[ None for m in range(k)] for k in range(5)]
+
 
 def get_ints(): 
     return map(int, sys.stdin.readline().strip().split()) 

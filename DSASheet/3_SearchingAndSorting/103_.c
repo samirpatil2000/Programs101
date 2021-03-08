@@ -33,7 +33,8 @@ int findLargetElement(int arr[],int left,int right,int target){
 
 int findPivotElement(int arr[],int left,int right){
     int mid=(left+right)/2;
-
+    printf("%d\n",mid);
+    if(left>=right){return -1;}
     if(arr[mid]>arr[mid+1]){
         return arr[mid];
     }else{
@@ -43,15 +44,15 @@ int findPivotElement(int arr[],int left,int right){
             return findPivotElement(arr,left,mid);
         }
     }
-    if(left>=right){return -1;}
+    
 }
 
 int main(){
-    int arr[]={1,2};
+    int arr[]={3,2};
 
 
     int len=sizeof(arr)/sizeof(arr[0]);
     int target=2;
-    // printf("The pivot element is %d\n",findPivotElement(arr,0,len));
-    printf("The element is at index %d\n",findLargetElement(arr,0,len-1,target));
+    printf("The pivot element is %d\n",findPivotElement(arr,0,len-1));
+    // printf("The element is at index %d\n",findLargetElement(arr,0,len-1,target));
 }
