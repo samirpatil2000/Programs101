@@ -57,12 +57,12 @@ print(bool_arr)
 
 # print(graph.get_nbr(0))
 def Test(graph,src,dest):
-    if(src==dest):
-        return True
+    # if(src==dest):
+    #     return True
     for i in range(graph.get_nbr(src)):
         temp=graph.get_node(src)
         while(temp):
-            print(temp.src,temp.dest , end=",")
+            print(temp.src, end=",")
             temp=temp.next
         print()
 # Test(graph_,2,3)
@@ -85,4 +85,4 @@ def printAllPaths(graph,src,dest,visited,psf):
 printAllPaths(graph_,0,6,bool_arr,str(0)+"")
 
 
-        
+print(Test(graph_,0,6))

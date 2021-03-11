@@ -1,3 +1,6 @@
+import sys
+from sys import stdin, stdout
+
 class Node:
     def __init__(self,src,nbr,wt):
         self.src=src
@@ -39,9 +42,30 @@ class Graph:
     def get_node(self,i):
         return self.graph[i]
 
-v=6
-graph_=Graph(v)
 
+
+
+# THIS is for input 
+"""
+n = int(stdin.readline())
+graph_=Graph(n)
+
+i=5
+while(i>0):
+    
+    arr = [x for x in stdin.readline().split()]
+    v1,v2=int(arr[0]),int(arr[1])
+    graph_.add_edge(v1,v2,10)
+    i-=1
+# 6
+# 0 1
+# 2 3
+# 4 5
+# 5 6
+# 4 6
+"""   
+v=6
+graph_=Graph(v)   
 graph_.add_edge(0,1,10)
 graph_.add_edge(2,3,10)
 graph_.add_edge(4,5,10)
@@ -51,26 +75,35 @@ graph_.print_graph()
 
 
 
-
-
-def getConnectedComp(graph,src,visited,compo_list):
+visited=[False for i in range(v+1)]
+def perfectFriends(graph,vertices,visited):
+    trees=[]
+    for i in range(vertices):
+        if(visited[i]==False):
+            compo_list=[]
+            drawTreeComp(graph,i,visited,compo_list)
+            trees.append(compo_list)
+    return trees
+    
+    
+def drawTreeComp(graph,src,visited,compo_list):
     visited[src]=True
     compo_list.append(src)
     temp=graph.get_node(src)
     while(temp):
         if(visited[temp.nbr]==False):
-            getConnectedComp(graph,temp.nbr,visited,compo_list)   
+            drawTreeComp(graph,temp.nbr,visited,compo_list)
         temp=temp.next
-    return
-    
 
-    
-visited=[False for _ in range(v+1)]
-tree_s=[]  
-for i in range(v+1):
-    if(visited[i]==False):
-        compo_list=[]
-        getConnectedComp(graph_,i,visited,compo_list)
-        # print(compo_list)
-        tree_s.append(compo_list)
-print(tree_s)
+
+x=perfectFriends(graph_,v,visited)
+
+print(x)
+total=0
+for i in range(len(x)):
+    for j in range(i+1,len(x)):
+        total+=(len(x[i])*len(x[j]))
+
+print(total)
+
+

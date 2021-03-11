@@ -42,35 +42,44 @@ class Graph:
 v=6
 graph_=Graph(v)
 
+# graph_.add_edge(0,1,10)
+# graph_.add_edge(2,3,10)
+# graph_.add_edge(4,5,10)
+# graph_.add_edge(5,6,10)
+# graph_.add_edge(4,6,10)
+graph_.add_edge(0,3,10)
 graph_.add_edge(0,1,10)
+graph_.add_edge(1,2,10)
 graph_.add_edge(2,3,10)
+graph_.add_edge(3,4,10)
+graph_.add_edge(4,6,10)
 graph_.add_edge(4,5,10)
 graph_.add_edge(5,6,10)
-graph_.add_edge(4,6,10)
 graph_.print_graph()
 
 
+visited=[False for i in range(v+1)]
 
-
-
-def getConnectedComp(graph,src,visited,compo_list):
+def getConnectComp(graph,src,visited,compo_list):
     visited[src]=True
     compo_list.append(src)
     temp=graph.get_node(src)
     while(temp):
         if(visited[temp.nbr]==False):
-            getConnectedComp(graph,temp.nbr,visited,compo_list)   
+            getConnectComp(graph,temp.nbr,visited,compo_list)
         temp=temp.next
     return
-    
 
-    
-visited=[False for _ in range(v+1)]
 tree_s=[]  
 for i in range(v+1):
     if(visited[i]==False):
         compo_list=[]
-        getConnectedComp(graph_,i,visited,compo_list)
+        getConnectComp(graph_,i,visited,compo_list)
         # print(compo_list)
         tree_s.append(compo_list)
 print(tree_s)
+     
+if(len(tree_s)==1):
+    print("Graph is connected")
+else:
+    print("Graph is not connected")

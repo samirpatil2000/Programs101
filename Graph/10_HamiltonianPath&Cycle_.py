@@ -1,3 +1,5 @@
+
+
 class Node:
     def __init__(self,src,nbr,wt):
         self.src=src
@@ -39,38 +41,44 @@ class Graph:
     def get_node(self,i):
         return self.graph[i]
 
-v=6
-graph_=Graph(v)
 
+
+
+# THIS is for input 
+
+v=6
+graph_=Graph(v)   
+graph_.add_edge(0,3,10)
 graph_.add_edge(0,1,10)
+graph_.add_edge(1,2,10)
 graph_.add_edge(2,3,10)
+graph_.add_edge(3,4,10)
+graph_.add_edge(4,6,10)
+graph_.add_edge(2,5,10)
 graph_.add_edge(4,5,10)
 graph_.add_edge(5,6,10)
-graph_.add_edge(4,6,10)
 graph_.print_graph()
 
 
 
-
-
-def getConnectedComp(graph,src,visited,compo_list):
-    visited[src]=True
-    compo_list.append(src)
+bool_arr=[False for _ in range(v+1)]
+def printHamiltonianPathsANDCycles(graph,src,output_str,visited_arr,count,orgsrc):
+    if(count==graph.vertices):
+        temp_=graph.get_node(src)
+        while(temp_):
+            if(orgsrc==temp_.nbr):
+                print("Cycle : ",output_str)
+                return
+            temp_=temp_.next   
+        print("Path : ",output_str)
+        return
+    visited_arr[src]=True
     temp=graph.get_node(src)
     while(temp):
-        if(visited[temp.nbr]==False):
-            getConnectedComp(graph,temp.nbr,visited,compo_list)   
+        if visited_arr[temp.nbr]==False:
+            printHamiltonianPathsANDCycles(graph,temp.nbr,output_str+str(temp.nbr),visited_arr,count+1,orgsrc)
         temp=temp.next
+    visited_arr[src]=False
     return
-    
-
-    
-visited=[False for _ in range(v+1)]
-tree_s=[]  
-for i in range(v+1):
-    if(visited[i]==False):
-        compo_list=[]
-        getConnectedComp(graph_,i,visited,compo_list)
-        # print(compo_list)
-        tree_s.append(compo_list)
-print(tree_s)
+        
+printHamiltonianPathsANDCycles(graph_,0,"0",bool_arr,0,0)
