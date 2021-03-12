@@ -58,30 +58,62 @@ def printAllSubstrings(s):
         return list
 def l(str,n):
     # count=1
+    s_list=[]
+    for i in str:
+        s_list.append(i)
     min=999
     max=-999
     for i in range(n):
-        count=1
-        for j in range(i+1,n):
-            if(str[i]==str[j]):
-                count+=1
+        if(s_list[i] !="$"):
+            count=1
+            for j in range(i+1,n):
+                if(s_list[j] != "$"):
+                    if(s_list[i]==s_list[j]):
+                        count+=1
+                        s_list[j]="$"
+                    # l_=[count,str[i]]
+                    # list_.append(l_)
+                    # print(str)
+                    # print(max,min)
+            s_list[i]="$"   
             if(count<min):
                 min=count
             if(count>max):
                 max=count
-            # print(max,min)
     return max-min
+
+def getsubString(str_):
+    if(len(str_)==0):
+        return []
+    ch=str_[0]
+    rem=str_[1:]
+    list_=getsubString(rem)
+    list_.append(ch)
+    list_.append(rem)
+    list_.append(ch+rem)
+    return list_
+
+
+print(getsubString("aabcbaa"))
+
 def beuty(str):
     list=printAllSubstrings(str)
     print(list)
+    print(len(list))
     count=0
     for i in list:
-        if(len(i)>2):
-            if l(i,len(i))> 0:
+        if(len(i)>1):
+            if l(i,len(i)) > 0:
+                print(i,"=",l(i,len(i)))
                 count+=1
     return count
 
-print(beuty("aabcbaa"))
+s="aabcbaa"
+print(beuty(s))
+
+
+
+# print(l(s,len(s)))
 
 
 
