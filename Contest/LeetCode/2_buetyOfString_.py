@@ -94,7 +94,19 @@ def getsubString(str_):
     return list_
 
 
-print(getsubString("aabcbaa"))
+# print(getsubString("aabcbaa"))
+
+def l_(string_):
+    unq_char=list(dict.fromkeys(string_))
+    max_=-99999999999999
+    min_=100000000000000
+    for i in unq_char:
+        curr_count=string_.count(i)
+        if(curr_count>max_):
+            max_=curr_count
+        if(curr_count<min_):
+            min_=curr_count
+    return max_- min_
 
 def beuty(str):
     list=printAllSubstrings(str)
@@ -102,15 +114,26 @@ def beuty(str):
     print(len(list))
     count=0
     for i in list:
-        if(len(i)>1):
-            if l(i,len(i)) > 0:
-                print(i,"=",l(i,len(i)))
-                count+=1
+        if(len(i)>2):
+            ans=l(i,len(i))
+            if ans > 0:
+                # print(i,"=",l(i,len(i)))
+                count+=ans
     return count
+
+def buety_(s):
+    ans=0
+    for i in range(len(s)-1):
+        for j in range(i+1,len(s)):
+            # print(l_(s[i:j]),s[i:j])
+            ans=ans+l_(s[i:j+1])
+    return ans
 
 s="aabcbaa"
 print(beuty(s))
-
+print(buety_(s))
+# a=list(dict.fromkeys(s))
+# print(a)
 
 
 # print(l(s,len(s)))

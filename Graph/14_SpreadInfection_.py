@@ -51,59 +51,45 @@ class Graph:
 
 v=6
 graph_=Graph(v)   
-# graph_.add_edge(0,3,10)
-# graph_.add_edge(0,1,10)
-# graph_.add_edge(1,2,10)
-# graph_.add_edge(2,3,10)
-# graph_.add_edge(3,4,10)
-# graph_.add_edge(4,6,10)
-# graph_.add_edge(2,5,10)
-# graph_.add_edge(4,5,10)
-# graph_.add_edge(5,6,10)
+graph_.add_edge(0,3,10)
 graph_.add_edge(0,1,10)
+graph_.add_edge(1,2,10)
 graph_.add_edge(2,3,10)
+graph_.add_edge(3,4,10)
+graph_.add_edge(4,6,10)
+graph_.add_edge(2,5,10)
 graph_.add_edge(4,5,10)
 graph_.add_edge(5,6,10)
-graph_.add_edge(4,6,10)
 graph_.print_graph()
 
 
 
 
-        
-def isCycle(graph,src,visited):
+
+def bfSearch(graph,src,visited,max_time):
     queue=[]
-    queue.append([src,str(src)+""])
-    
+    count_=0
+    queue.append([src,0])
     while(len(queue)>0):
-        # Remove *Mark W *Add
-        arr=queue.pop(0)
-        if(visited[arr[0]]==True):
-            # we found the cycle
-            return True
-        visited[arr[0]]=True
-        edge=graph.get_node(arr[0])
+        #r m* w *a
         
+        rem_=queue.pop(0)
+        if(max_time<=rem_[1]):
+            break
+        if(visited[rem_[0]]==True):
+            continue
+        visited[rem_[0]]=True
+        count_+=1
+        edge=graph.get_node(rem_[0])
         while(edge):
             if(visited[edge.nbr]==False):
-                queue.append([edge.nbr,arr[1]+str(edge.nbr)])
+                queue.append([edge.nbr,rem_[1]+1])
             edge=edge.next
-    return False
+        return count_
+            
+            
 
 
 visited=[False for _ in range(v+1)]
-def CycleChecker(graph,v,visited):
-    for i in range(v+1):
-        if(visited[i]==False):
-            cycle=isCycle(graph,i,visited)
-            if(cycle):
-                return True
-    return False
 
-print(CycleChecker(graph_,v,visited))
-
-
-        
-
-            
-        
+print(bfSearch(graph_,1,visited,3))
