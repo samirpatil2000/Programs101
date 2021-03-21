@@ -1,5 +1,5 @@
 s="aabcbaa"
-a=list(dict.fromkeys(s))
-print(a[0])
-co=s.count(a[0])
-print(co)
+a=dict.fromkeys(s)
+print(a)
+# co=s.count(a[0])
+# print(co)
