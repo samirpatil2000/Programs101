@@ -25,3 +25,13 @@ Arr = get_ints()
 def get_string(): return sys.stdin.readline().strip()
  
 string = get_string()
+
+
+def getMatrix():
+    R,C=get_ints()
+    mat=[[None for _ in range(C)] for i in range(R)]
+    for i in range(R): 
+        arr = [int(x) for x in stdin.readline().split()]
+        for k in range(len(arr)):
+            mat[i][k]=arr[k]
+    print(mat)
