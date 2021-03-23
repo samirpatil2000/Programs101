@@ -10,8 +10,9 @@ class LinkedList:
     def printLinkedList(self):
         temp=self.head
         while(temp!=None):
-            print(str(temp.data)+"->")
+            print(str(temp.data)+"->",end="")
             temp=temp.next
+        print("\n")
     def addNodeToLast(self,data):
         temp=self.head
         new_node=newNode(data)
@@ -56,17 +57,17 @@ def mergeTwoLinkedList(la,lb):
             head1=head1.next
         tail=tail.next
     if(head1 !=None):
-        while(head1 != None):
+        # while(head1 != None):
             # newLL.addNodeToLast(head1.data)
-            tail.next=head1
-            head1=head1.next
-            tail=tail.next
+        tail.next=head1
+        # head1=head1.next
+        # tail=tail.next
     if(head2 !=None):
-        while(head2 != None):
+        # while(head2 != None):
             # newLL.addNodeToLast(head2.data)
-            tail.next=head2
-            head2=head2.next
-            tail=tail.next
+        tail.next=head2
+        # head2=head2.next
+        # tail=tail.next
         
     return newLL.next
         
