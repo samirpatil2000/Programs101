@@ -73,8 +73,8 @@ print(dict_)
 #         template_name="zerver/reset.html",
 #         form_class=ZulipPasswordResetForm,
 #         success_url="/accounts/password/reset/done/",
-#         initial={
-#             "email":request.user.email
-#         }
+        # initial={
+        #     "email":request.user.email
+        # }
 #     )
 #     return view_func(request)
