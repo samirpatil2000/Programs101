@@ -11,7 +11,7 @@ class LinkedList:
 
     def printLinkedList(self):
         temp = self.head
-        while (temp.next):
+        while (temp and temp.next):
             print(str(temp.data) + "->",end="")
             temp = temp.next
         print(str(temp.data))
@@ -43,6 +43,26 @@ def reverseLL(head):
     
     
 
+def reverseDoublyLL(head):
+    ptr1=head
+    ptr2=ptr1.next
+    
+    while(ptr2):
+        if(ptr1==head):
+            ptr1.next=None
+            ptr1.prev=ptr2
+        else:
+            ptr2.prev=ptr2.next
+            ptr2.next=ptr1
+            ptr1=ptr2
+            ptr2=ptr2.prev
+    head=ptr1
+    return head
+
+            
+            
+    
+
 
 linkedListA = LinkedList()
 linkedListA.addNodeToLast(3)
@@ -56,7 +76,7 @@ linkedListA.addNodeToLast(11)
 print("A")
 linkedListA.printLinkedList()
 lea=LinkedList()
-lea.head=reverseLL(linkedListA.head)
+lea.head=reverseDoublyLL(linkedListA.head)
 print("Reverse LL")
 lea.printLinkedList()
 
