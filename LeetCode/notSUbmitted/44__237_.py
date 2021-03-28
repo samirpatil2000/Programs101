@@ -43,13 +43,13 @@ def printLinkedList(head):
     print("\n")
 
 
-def deleteDuplicates_2(head):
+def deleteNode(head):
     preptr=newNode(-1)
     preptr.next=head
     ptr=head
     res=preptr
     while(ptr and ptr.next):
-        if(ptr.val!=ptr.next.val):
+        if(ptr.val!=val):
             preptr=ptr
             ptr=ptr.next
         else:
@@ -66,7 +66,7 @@ for i in head[1:]:
     linkedListA.addNodeToLinkedList(i)
 linkedListA.printLinkedList()
 
-x=deleteDuplicates_2(linkedListA.head)
-printLinkedList(x)
+# x=deleteDuplicates_2(linkedListA.head)
+# printLinkedList(x)
     
         

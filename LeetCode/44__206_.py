@@ -43,30 +43,48 @@ def printLinkedList(head):
     print("\n")
 
 
-def deleteDuplicates_2(head):
-    preptr=newNode(-1)
-    preptr.next=head
-    ptr=head
-    res=preptr
-    while(ptr and ptr.next):
-        if(ptr.val!=ptr.next.val):
-            preptr=ptr
-            ptr=ptr.next
-        else:
-            while(ptr and ptr.next and ptr.val==ptr.next.val):
-                ptr=ptr.next
-            preptr.next=ptr
-    return res.next
+def reverseList(head):
+    
+    preptr=head
+    ptr=head.next
+    new_node=None
+    while(ptr):
+        # printLinkedList(head)
+        preptr.next=new_node
+        new_node=preptr
+        preptr=ptr
+        ptr=ptr.next
+    preptr.next=new_node
+    new_node=preptr
+    head=new_node
+    return head
+
+def reverseList_2(head):
+    
+    ptr=head.next
+    new_node=None
+    while(head and head.next):
+        # printLinkedList(head)
+        head.next=new_node
+        new_node=head
+        head=ptr
+        ptr=ptr.next
+    head=new_node
+    return head
+
+
+
+
 
 
 linkedListA=LinkedList()
-head = [1,1,2,2]
+head = [1,2,3]
 linkedListA.head=newNode(head[0])
 for i in head[1:]:
     linkedListA.addNodeToLinkedList(i)
 linkedListA.printLinkedList()
 
-x=deleteDuplicates_2(linkedListA.head)
+x=reverseList_2(linkedListA.head)
 printLinkedList(x)
     
         
