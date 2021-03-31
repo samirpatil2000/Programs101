@@ -78,8 +78,22 @@ linkedListB=LinkedList()
 linkedListA.head=newNode(1)
 linkedListB.head=newNode(1)
 
-creationOfLinkedList(linkedListA.head)
-creationOfLinkedList(linkedListB.head)
+
+
+linkedListA=LinkedList()
+list_1 = [2,4,6,8]
+linkedListA.head=newNode(list_1[0])
+for i in list_1[1:]:
+    linkedListA.addNodeToLast(i)
+linkedListA.printLinkedList()
+
+linkedListB=LinkedList()
+list_2 = [3,5,6,7,8,9]
+linkedListB.head=newNode(list_2[0])
+for i in list_2[1:]:
+    linkedListB.addNodeToLast(i)
+linkedListB.printLinkedList()
+
 print("A")
 linkedListA.printLinkedList()
 print("B")
