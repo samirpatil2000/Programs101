@@ -13,7 +13,7 @@ def slidingWindow(arr,k):
     
     return MAX
 
-arr = [1, 4, 2, 10, 2, 3, 1, 0, 20]
+arr = [1, 4, 2, 10, 2, 3, 1, 0, 20,23,43,211]
 k = 3
 print(slidingWindow(arr,k))
 

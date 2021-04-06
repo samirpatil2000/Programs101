@@ -42,6 +42,9 @@ def mergeSort(arr,left,right):
 		mergeSort(arr, mid+1, right) 
 		merge(arr, left, mid, right) 
 
+arr=[3,1,235,5,56,32,33,21,1]
+mergeSort(arr,0,len(arr)-1)
+print(arr)
 
 
 

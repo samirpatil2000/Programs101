@@ -3,7 +3,12 @@
 
 
 // I really don't know why hte hell is htis is not working
-
+void printArray(int arr[],int len){
+    for(int i=0;i<len;i++){
+        printf("%d\t",arr[i]);
+    }
+    printf("\n");
+}
 
 int partition(int arr[],int lb,int ub){
     int pivot=arr[lb];
@@ -26,7 +31,7 @@ int partition(int arr[],int lb,int ub){
     arr[right]=arr[lb];
     arr[lb]=temp;
     printf("right %d\n",right);
-    printArray(arr);
+    // printArray(arr);
     return right;
 }
 
@@ -39,12 +44,7 @@ int quickSort(int arr[],int lb,int ub){
 }
 
 
-void printArray(int arr[],int len){
-    for(int i=0;i<len;i++){
-        printf("%d\t",arr[i]);
-    }
-    printf("\n");
-}
+
 
 int main(){
     int arr[]={78,54,59,87,84,98,34,58,53,99};

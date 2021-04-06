@@ -12,10 +12,12 @@ arr=[[ None for m in range(k)] for k in range(5)]
 
 def get_ints(): 
     return map(int, sys.stdin.readline().strip().split()) 
+
+
 a,b,c,d = get_ints()
 
 
-
+# list=[i.replace("'","") for i in list]
 def get_ints(): 
     return list(map(int, sys.stdin.readline().strip().split()))
  

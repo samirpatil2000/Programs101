@@ -12,6 +12,7 @@ def maxProfiteBrute(list_):
 
 
 def maxProfite(list_):
+    #solution by samir patil
     min_=999999
     max_profite=0
     for i in range(len(list_)):
