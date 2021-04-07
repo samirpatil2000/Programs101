@@ -6,8 +6,8 @@ s="aabcbaa"
 sa={char:(s.count(char)) for char in s}
 print(sa)
 
-# print(ord("a"),ord("A"))
-# print(chr(97))
+print(ord("a"),ord("A"))
+print(chr(97))
 
 
 def dicto():
@@ -18,4 +18,4 @@ def dicto():
     print(dict_)
     return
 
-dicto()
+# dicto()

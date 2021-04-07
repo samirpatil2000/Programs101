@@ -16,9 +16,6 @@ def largestSubArray(arr,k):
         j+=1  
     return max_
 
-
-
-
 arr=[4,1,5,2,1,1,1,1,1,0,2,3,4,1,1,1,1,0,0,0,1]
 k=5
 print(largestSubArray(arr,k))
