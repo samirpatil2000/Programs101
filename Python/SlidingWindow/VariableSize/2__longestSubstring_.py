@@ -43,6 +43,6 @@ def anotherApproach(string_):
     return max_
 
 str_="pwwkeq"
-# print(longestSubString(str_))
-print(anotherApproach(str_))
+print(longestSubString(str_))
+# print(anotherApproach(str_))
         
