@@ -19,3 +19,12 @@ def dicto():
     return
 
 # dicto()
+
+def pangram():
+    word_dict={chr(i):0 for i in range(65,91)}
+    
+    word_dict.update({chr(i):0 for i in range(97,123)})
+    print(word_dict)
+    
+    
+pangram()

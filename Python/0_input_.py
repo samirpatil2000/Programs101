@@ -37,3 +37,4 @@ def getMatrix():
         for k in range(len(arr)):
             mat[i][k]=arr[k]
     print(mat)
+    
