@@ -10,7 +10,6 @@ def longestSubString(string_):
         # print("k = ",k ,string_[j], string_[k])
         while(k>0 and string_[j] != list_[k]):
             k-=1
-        
         if(k>=0 and string_[j]==list_[k]):
             print(list_ ,k,j)
             list_=list_[k+1:]

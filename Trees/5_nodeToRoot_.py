@@ -63,6 +63,22 @@ def nodeToRoot_2(root,val):
     return False,[]
 
 
+def inOrder(root):
+    if(root==None):
+        return
+    inOrder(root.left)
+    print(root.data, end=" ")
+    inOrder(root.right)
+    
+def preOrder(root):
+    if(root==None):
+        return
+    print(root.data,end=" ")
+    inOrder(root.left)
+    
+    inOrder(root.right)
+
+
 root = newNode(50)
 root.left=newNode(25)
 root.right=newNode(75)
@@ -70,10 +86,14 @@ root.right.right=newNode(57)
 root.right.left=newNode(62)
 root.right.left.right=newNode(70)
 root.left.right=newNode(37)
-root.left.right.left=newNode(37)
+root.left.right.left=newNode(36)
 root.left.left=newNode(12)
 display(root)
+inOrder(root)
+print()
+preOrder(root)
 
+print()
 w=nodeToRoot_2(root,70)
 print(w)
 
