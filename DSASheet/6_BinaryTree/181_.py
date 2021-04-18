@@ -26,7 +26,16 @@ def height(root):
     return max(height(root.left),height(root.right))+1
     
         
-            
+def diameter(root):
+    if root==None:
+        return -1,0
+    l_height,l_diameter=diameter(root.left)  
+    r_height,r_diameter=diameter(root.right)
+    print(l_height,r_height,root.data)
+    return max(l_height,r_height)+1,max(l_height+r_height+2,max(l_diameter,r_diameter))
+
+
+    
     
         
 
@@ -35,14 +44,17 @@ def height(root):
 root = newNode(50)
 root.left=newNode(25)
 root.right=newNode(75)
-root.right.right=newNode(87)
-root.right.left=newNode(62)
-root.right.left.right=newNode(70)
-root.right.left.left=newNode(60)
-root.left.right=newNode(37)
-root.left.right.left=newNode(30)
-root.left.right.right=newNode(40)
-# root.left.right.right.right=newNode(40)
-root.left.left=newNode(12)
+# root.right.right=newNode(87)
+# root.right.left=newNode(62)
+# root.right.left.right=newNode(70)
+# root.right.left.left=newNode(60)
+# root.left.right=newNode(37)
+# root.left.right.left=newNode(30)
+# root.left.right.right=newNode(40)
+# # root.left.right.right.right=newNode(40)
+# root.left.left=newNode(12)
 display(root)
 print(height(root))
+
+
+print(diameter(root))

@@ -16,6 +16,9 @@ string_="anc"
 for i in word_dict.values():
     print(i)
     
+for key,values in word_dict.items():
+    print(key,values)
+    
 key_value={8: [0], 1: [1], 2: [2, 3], 3: [4]}
 for i in sorted (key_value) :
     print ((i, key_value[i]), end =" ")

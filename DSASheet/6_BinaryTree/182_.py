@@ -24,9 +24,30 @@ def height(root):
     if root==None:
         return -1
     return max(height(root.left),height(root.right))+1
+
+
+def inOrder(root):
+    if root==None:
+        return
+    inOrder(root.left)
+    print(root.data,end=" ")
+    inOrder(root.right)
     
-        
-            
+def Mirror(root):
+    if root==None or (root.left==None and root.right==None):
+        return
+    r_x=root.right
+    root.right=root.left
+    root.left=r_x
+    # if(root.left):
+    Mirror(root.left)
+    # if(root.right):
+    Mirror(root.right)
+    
+    
+
+
+    
     
         
 
@@ -42,7 +63,18 @@ root.right.left.left=newNode(60)
 root.left.right=newNode(37)
 root.left.right.left=newNode(30)
 root.left.right.right=newNode(40)
-# root.left.right.right.right=newNode(40)
 root.left.left=newNode(12)
+
+
+# root = newNode(5)
+# root.left = newNode(3)
+# root.right = newNode(6)
+# root.left.left = newNode(2)
+# root.left.right = newNode(4)
 display(root)
-print(height(root))
+
+inOrder(root)
+print()
+Mirror(root)
+inOrder(root)
+print()

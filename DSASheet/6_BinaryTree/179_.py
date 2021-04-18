@@ -20,10 +20,24 @@ def display(head):
     display(head.left)
 
 
-def height(root):
-    if root==None:
-        return -1
-    return max(height(root.left),height(root.right))+1
+def reverselevelOrderTravarsal(root):
+    qu=[]
+    qu.append(root)
+    list_=[]
+    while(len(qu)>0):
+        for _ in range(len(qu)):
+            temp=qu.pop(0)
+            if(temp.right):
+                qu.append(temp.right)
+            if(temp.left):
+                qu.append(temp.left)
+            
+            # print(temp.data,end=" ")
+            list_.append(temp.data)
+        # print('\n')
+    return list_
+
+
     
         
             
@@ -42,7 +56,8 @@ root.right.left.left=newNode(60)
 root.left.right=newNode(37)
 root.left.right.left=newNode(30)
 root.left.right.right=newNode(40)
-# root.left.right.right.right=newNode(40)
 root.left.left=newNode(12)
 display(root)
-print(height(root))
+x=reverselevelOrderTravarsal(root)
+x.reverse()
+print(x)
