@@ -13,10 +13,19 @@ def analgram(s):
     for key,value in dict_2.items():
         # print(key)
         if key in dict_1:
-            if value!=dict_1[key]:
-                count+=abs(dict_1[key]-value)
-        else:
-            count+=value
+            # dict_1[key]=
+            if dict_1[key]==dict_2[key]:
+                dict_1[key]=0
+                dict_2[key]=0
+            elif dict_1[key]<dict_2[key]:
+                dict_2[key]=dict_2[key]-dict_1[key]
+                dict_1[key]=0
+            else:
+                dict_1[key]=dict_1[key]-dict_2[key]
+                dict_2[key]=0
+                
+    for val in dict_2.values():
+        count+=val
     return count
 
 s="fdhlvosfpafhalll"

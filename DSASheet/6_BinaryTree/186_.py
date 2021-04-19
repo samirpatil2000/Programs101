@@ -20,23 +20,31 @@ def display(head):
     display(head.left)
 
 
-def levelOrderTravarsal(root):
-    qu=[]
-    qu.append(root)
-    list_=[]
-    while(len(qu)>0):
-        print("X")
-        for _ in range(len(qu)):
-            temp=qu.pop(0)
-            if(temp.left):
-                qu.append(temp.left)
-            if(temp.right):
-                qu.append(temp.right)
-            print(temp.data,end=" ")
-        print('\n')
+def leftView(root):
+    queue=[root]
+    left_view=[]
+    while(len(queue)):
+        left_view.append(queue[0].data)
+        for _ in range(len(queue)):
+            temp=queue.pop(0)
+            if temp.left:
+                queue.append(temp.left)
+            if temp.right:
+                queue.append(temp.right)
+    return left_view
+        
+    
+            
+            
     
         
             
+    
+    
+    
+
+
+    
     
         
 
@@ -53,5 +61,15 @@ root.left.right=newNode(37)
 root.left.right.left=newNode(30)
 root.left.right.right=newNode(40)
 root.left.left=newNode(12)
+
+
+# root = newNode(5)
+# root.left = newNode(3)
+# root.right = newNode(6)
+# root.right.left=newNode(7)
+# root.left.left = newNode(2)
+# root.left.left.left = newNode(1)
+# root.left.right = newNode(4)
 display(root)
-levelOrderTravarsal(root)
+
+print(leftView(root))

@@ -43,22 +43,52 @@ def postOrder(root):
     
 def postOrderIterative(root):
     st=[]
+    out=[]
     curr=root
     while(len(st)>0 or curr):
         if(curr):
             st.append(curr)
             # if(curr.left):
-            curr=curr.left
+            out.append(curr.data)
+            curr=curr.right
                 
         else:
-            # print(curr.data,end=" ")
             curr=st.pop()
             curr=curr.left
-            
+    out.reverse()
+    print("\n",out)
+    
+    
+def postOrderIterative_2(root):
+    st=[root]
+    out=[]
+    while(len(st))>0:
+        node=st.pop()
+        out.append(node.data)
+        if(node.left):
+            st.append(node.left)
+        if(node.right):
+            st.append(node.right)
+    out.reverse()
+    print(out)
             
             
     
+
+#using queue
+# def postOrderIterative_3(root):
+#     qu=[root]
+#     out=[]
+#     while(len(qu))>0:
+#         node=qu.pop(0)
+#         out.append(node.data)
+#         if(node.right):
+#             qu.append(node.right)
+#         if(node.left):
+#             qu.append(node.left)
         
+#     out.reverse()
+#     print(out)    
             
     
     
@@ -94,6 +124,8 @@ display(root)
 inOrder(root)
 print()
 postOrder(root)
-print()
+# print()
 postOrderIterative(root)
+postOrderIterative_2(root)
+postOrderIterative_3(root)
 print()
