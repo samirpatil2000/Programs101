@@ -20,24 +20,30 @@ def display(head):
     display(head.left)
     
 
-def bottomViewUsingBSF(root,dict_):
-    queue=[[root,0]]
+def zigzagtraversal(root):
+    queue=[root]
+    count=0
     while(len(queue)>0):
         for _ in range(len(queue)):
-            temp=queue.pop(0)
-            curr,col=temp[0],temp[1]
-            if not col in dict_:
-                dict_[col]=[]
-            dict_[col].append(curr.data)
-            if curr.left:
-                queue.append([curr.left,col-1])
-            if curr.right:
-                queue.append([curr.right,col+1])
+            curr=queue.pop(0)
+            print(curr.data,end=" ")
+            if count==0 or count%2==0:
+                if curr.right:
+                    queue.append(curr.right)
+                if curr.left:
+                    queue.append(curr.left)
+            else:
+                if curr.left:
+                    queue.append(curr.left)
+                if curr.right:
+                    queue.append(curr.right)
                 
+        print("\n")
+        count+=1
+        
                 
-    for key in sorted(dict_):
-        print(dict_[key][len(dict_[key])-1],end=" ")
-    print()
+    print()       
+
     
     
             
@@ -62,5 +68,4 @@ root.left.right.left=newNode(36)
 root.left.left=newNode(12)
 display(root)
 
-dict_=dict()
-bottomViewUsingBSF(root,dict_)
+zigzagtraversal(root)

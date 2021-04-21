@@ -82,5 +82,20 @@ def hasPath(graph,src,dest,visited):
         temp=temp.next
     return False
 
-print(hasPath(graph_,0,6,bool_arr))
-        
+
+def hasPathPrintPath(graph,src,dest,visited,out):
+    if(src==dest):
+        print(out)
+        return True
+    visited[src]=True
+    temp=graph.get_node(src)
+    while(temp):
+        print(temp.nbr)
+        if(visited[temp.nbr]==False):
+            nbrHasPath=hasPathPrintPath(graph,temp.nbr,dest,visited,out+str(temp.nbr))
+            if(nbrHasPath):
+                return True
+        temp=temp.next
+    return False
+# print(hasPath(graph_,0,6,bool_arr))
+print(hasPathPrintPath(graph_,0,6,bool_arr,"0"))

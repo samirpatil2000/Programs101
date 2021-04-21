@@ -24,7 +24,7 @@ def topViewUsingBSF(root,dict_):
     queue=[[root,0]]
     while(len(queue)>0):
         for _ in range(len(queue)):
-            temp=queue.pop()
+            temp=queue.pop(0)
             curr,col=temp[0],temp[1]
             if not col in dict_:
                 dict_[col]=[]
@@ -64,3 +64,4 @@ display(root)
 
 dict_=dict()
 topViewUsingBSF(root,dict_)
+print(dict_)

@@ -81,3 +81,4 @@ while(len(queue)>0):
             queue.append([edge.nbr,arr[1]+str(edge.nbr)])
         edge=edge.next
     
+    

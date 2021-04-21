@@ -53,7 +53,7 @@ graph_.print_graph()
 
 
 bool_arr=[False for i in range(v+1)]
-print(bool_arr)
+# print(bool_arr)
 
 # print(graph.get_nbr(0))
 def Test(graph,src,dest):
@@ -85,4 +85,4 @@ def printAllPaths(graph,src,dest,visited,psf):
 printAllPaths(graph_,0,6,bool_arr,str(0)+"")
 
 
-print(Test(graph_,0,6))
+# print(Test(graph_,0,6))

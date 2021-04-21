@@ -42,44 +42,46 @@ class Graph:
 v=6
 graph_=Graph(v)
 
-# graph_.add_edge(0,1,10)
-# graph_.add_edge(2,3,10)
-# graph_.add_edge(4,5,10)
-# graph_.add_edge(5,6,10)
-# graph_.add_edge(4,6,10)
-graph_.add_edge(0,3,10)
+
+#for not connect
 graph_.add_edge(0,1,10)
-graph_.add_edge(1,2,10)
 graph_.add_edge(2,3,10)
-graph_.add_edge(3,4,10)
-graph_.add_edge(4,6,10)
 graph_.add_edge(4,5,10)
 graph_.add_edge(5,6,10)
+graph_.add_edge(4,6,10)
+
+
+#for connect
+# graph_.add_edge(0,3,10)
+# graph_.add_edge(0,1,10)
+# graph_.add_edge(1,2,10)
+# graph_.add_edge(2,3,10)
+# graph_.add_edge(3,4,10)
+# graph_.add_edge(4,6,10)
+# graph_.add_edge(4,5,10)
+# graph_.add_edge(5,6,10)
 graph_.print_graph()
 
 
 visited=[False for i in range(v+1)]
 
-def getConnectComp(graph,src,visited,compo_list):
+def getConnectComp(graph,src,visited):
     visited[src]=True
-    compo_list.append(src)
     temp=graph.get_node(src)
     while(temp):
         if(visited[temp.nbr]==False):
-            getConnectComp(graph,temp.nbr,visited,compo_list)
+            getConnectComp(graph,temp.nbr,visited)
         temp=temp.next
     return
 
-tree_s=[]  
+count=0
 for i in range(v+1):
     if(visited[i]==False):
-        compo_list=[]
-        getConnectComp(graph_,i,visited,compo_list)
-        # print(compo_list)
-        tree_s.append(compo_list)
-print(tree_s)
+        count+=1
+        getConnectComp(graph_,i,visited)
+        print(count) 
      
-if(len(tree_s)==1):
+if(count==1):
     print("Graph is connected")
 else:
     print("Graph is not connected")
