@@ -35,8 +35,12 @@ def levelOrder(root):
         print("\n")
     return
 
-    
-    
+def inorder(root):
+    if root==None:
+        return
+    inorder(root.left)
+    print(root.data,end=" ")
+    inorder(root.right)  
 
 root = newNode(50)
 root.left=newNode(25)
@@ -49,3 +53,5 @@ root.left.right.left=newNode(37)
 root.left.left=newNode(12)
 display(root)
 levelOrder(root)
+inorder(root)
+

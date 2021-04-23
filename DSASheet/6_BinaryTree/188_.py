@@ -40,6 +40,14 @@ def topViewUsingBSF(root,dict_):
     print()
     
     
+def inorder(root):
+    if root==None:
+        return
+    inorder(root.left)
+    print(root.data,end=" ")
+    inorder(root.right) 
+    
+    
             
             
             
@@ -60,8 +68,11 @@ root.right.left.right=newNode(70)
 root.left.right=newNode(37)
 root.left.right.left=newNode(36)
 root.left.left=newNode(12)
-display(root)
+# display(root)
 
-dict_=dict()
-topViewUsingBSF(root,dict_)
-print(dict_)
+# dict_=dict()
+# topViewUsingBSF(root,dict_)
+# print(dict_)
+
+inorder(root)
+print()

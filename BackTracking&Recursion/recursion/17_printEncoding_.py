@@ -20,4 +20,4 @@ def printEncoding(input_str,output_str):
 # str="Samir"
 # print(str[1:])
 
-printEncoding("12","")
+printEncoding("231011","")
