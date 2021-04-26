@@ -40,4 +40,5 @@ graph.add_edge(4,6,10)
 graph.add_edge(4,5,10)
 graph.add_edge(5,6,10)
 graph.print_graph()
+print(graph.graph)
 
