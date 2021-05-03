@@ -1,6 +1,4 @@
-# https://leetcode.com/problems/minimum-absolute-difference-in-bst/
-
-import sys
+# https://leetcode.com/problems/symmetric-tree/
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -17,36 +15,36 @@ def inOrder(root):
     inOrder(root.right)
 
 
-root = TreeNode(236)
-
-# root.left=TreeNode(104)
-# # root.left.left=TreeNode(701)
-# root.left.right=TreeNode(227)
-# # root.left.right.left=TreeNode(20)
-
-# root.right=TreeNode(701)
-# # root.right.right=TreeNode(10)
-# root.right.left=TreeNode(911)
 
 
 
-class Solution:
-    def getMinimumDifference(self, root: TreeNode) -> int:
-        res = sys.maxsize
-        list_ = []
-
-        def helper(root,out_so_far):
-            if root and root.left==None and root.right==None:
-                list_.append(out_so_far)
-                return
-            if root.left: 
-                helper(root.left,out_so_far+"->"+str(root.left.val))
-            if root.right: 
-                helper(root.right,out_so_far+"->"+str(root.right.val))
-        helper(root,str(root.val))
-
-        return list_
-sol=Solution()
-print(sol.getMinimumDifference(root))
 
 
+def isSymmetric(root):
+    queue=[root]
+    
+    while(len(queue)>0):
+        level_order_list=[]
+        for _ in range(len(queue)):
+            temp=queue.pop(0)
+            
+            if temp.left:
+                queue.append(temp.left)
+                level_order_list.append(temp.left.val)
+            else:
+                level_order_list.append(200)
+                
+            if temp.right:
+                queue.append(temp.right)
+                level_order_list.append(temp.right.val)
+            else:
+                level_order_list.append(200)
+                
+        i=0
+        j=len(level_order_list)-1
+        while(i<j):
+            if level_order_list[i]!=level_order_list[j]:
+                return False
+            i+=1
+            j-=1
+    return True

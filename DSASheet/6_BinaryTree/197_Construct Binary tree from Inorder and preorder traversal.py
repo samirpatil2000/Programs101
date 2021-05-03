@@ -7,11 +7,6 @@ change(x)
 print(x)
 """
 
-# https://practice.geeksforgeeks.org/problems/construct-tree-1/1
-
-
-# Convert Binary tree into Sum tree
-# https://practice.geeksforgeeks.org/problems/transform-to-sum-tree/1
 
 
 

@@ -27,4 +27,20 @@ def pangram():
     print(word_dict)
     
     
-pangram()
+# pangram()
+print(ord("A"),)
+
+
+def createSlug(title):
+    slug_=""
+    for i in title:
+        if i!=" ":
+            if ord(i)>=97:
+                slug_+=i
+            else:
+                slug_+=chr(ord(i)+32)
+        else:
+            slug_+="-"
+    return slug_
+
+print(createSlug("The hii theri S"))
