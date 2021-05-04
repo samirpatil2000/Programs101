@@ -44,22 +44,22 @@ graph_=Graph(v)
 
 
 #for not connect
-graph_.add_edge(0,1,10)
-graph_.add_edge(2,3,10)
-graph_.add_edge(4,5,10)
-graph_.add_edge(5,6,10)
-graph_.add_edge(4,6,10)
+# graph_.add_edge(0,1,10)
+# graph_.add_edge(2,3,10)
+# graph_.add_edge(4,5,10)
+# graph_.add_edge(5,6,10)
+# graph_.add_edge(4,6,10)
 
 
 #for connect
-# graph_.add_edge(0,3,10)
-# graph_.add_edge(0,1,10)
-# graph_.add_edge(1,2,10)
-# graph_.add_edge(2,3,10)
-# graph_.add_edge(3,4,10)
-# graph_.add_edge(4,6,10)
-# graph_.add_edge(4,5,10)
-# graph_.add_edge(5,6,10)
+graph_.add_edge(0,3,10)
+graph_.add_edge(0,1,10)
+graph_.add_edge(1,2,10)
+graph_.add_edge(2,3,10)
+graph_.add_edge(3,4,10)
+graph_.add_edge(4,6,10)
+graph_.add_edge(4,5,10)
+graph_.add_edge(5,6,10)
 graph_.print_graph()
 
 
