@@ -29,6 +29,7 @@ class Solution:
                 nodes.append(root)
             returnNodeWithRep(root.left,val)
             returnNodeWithRep(root.right,val)
+            
         def isEqualFunction(rootA,rootB):
             if rootA==None and rootB==None:
                 return True
