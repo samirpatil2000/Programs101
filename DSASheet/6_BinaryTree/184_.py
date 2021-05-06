@@ -55,7 +55,12 @@ def preOrderIterative(root):
     
 
 
-    
+def inOrder(root):
+    if root==None:
+        return
+    inOrder(root.left)
+    print(root.data,end=" ")
+    inOrder(root.right)
     
         
 
@@ -74,15 +79,15 @@ root.left.right.right=newNode(40)
 root.left.left=newNode(12)
 
 
-root = newNode(5)
-root.left = newNode(3)
-root.right = newNode(6)
-root.left.left = newNode(2)
-root.left.left.right = newNode(1)
-root.left.right = newNode(4)
-display(root)
+# root = newNode(5)
+# root.left = newNode(3)
+# root.right = newNode(6)
+# root.left.left = newNode(2)
+# root.left.left.right = newNode(1)
+# root.left.right = newNode(4)
+# display(root)
 
-preOrder(root)
+inOrder(root)
 print()
 preOrderIterative(root)
 print()

@@ -39,11 +39,11 @@ def inOrderIterative(root):
     while(len(st)>0 or curr):
         if(curr):
             st.append(curr)
-            curr=curr.left
+            curr=curr.right
         else:
             curr=st.pop()
             print(curr.data,end=" ")
-            curr=curr.right
+            curr=curr.left
     
         
             

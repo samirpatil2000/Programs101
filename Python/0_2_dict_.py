@@ -28,3 +28,7 @@ dictionary = dict()
 dictionary[1] = dict()
 dictionary[1][1] = 3
 print(dictionary[1][1])
+
+
+arr=[2,3,4,5]
+print(arr.index(max(arr)))

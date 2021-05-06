@@ -82,7 +82,7 @@ def preOrder(root):
 root = newNode(50)
 root.left=newNode(25)
 root.right=newNode(75)
-root.right.right=newNode(57)
+root.right.right=newNode(87)
 root.right.left=newNode(62)
 root.right.left.right=newNode(70)
 root.left.right=newNode(37)
