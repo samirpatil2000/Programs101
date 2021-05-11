@@ -58,35 +58,7 @@ def clonedGraph(graph,visited,src_node_val,list_):
 
 g = Graph(4)
 
-g.printGraph(1)
-visited={}
-
-# list_=[]
-# clonedGraph(g.graph,visited,1,list_)
-# print(list_)
-
-class Solution:
-    def cloneGraph(self, graph,node: 'Node') -> 'Node':
-        visited={}
-        first_node=[None]
-        def clonedGraph(graph,src_node):
-            print("test :1:",src_node.val)
-            visited[src_node.val]=1
-            cloned=Node(src_node.val)
-            for i in src_node.neighbors:
-                if i not in visited:
-                    clonedGraph(graph,graph.graph[i])    
-                cloned.neighbors.append(i)
-            if first_node[0]!=None:
-                first_node[0]=cloned
-        clonedGraph(graph,node)
-        return first_node[0]
-    
-sol=Solution()
-print(g.return_first_node().val)
-sol.cloneGraph(g,g.return_first_node())
-    
-    
+g.printGraph(1)    
 
 
 
@@ -100,42 +72,21 @@ class Node:
         
 """
 class Solution:
-    
     def cloneGraph(self, node: 'Node') -> 'Node':
+        if node==None:
+            return None
+        if node and len(node.neighbors)==0:
+            return Node(node.val)
+        visited={}
         
-        # if there no node
-        if not node:
-            return node
-
-        visited = {}
+        def dsf(node,visited):
+            visited[node]=Node(node.val)
+            
+            for n in node.neighbors:
+                if n not in visited:
+                    dfs(n,visited)
+                visited[node].neighbors.append(visited[n])
         
-        # store the first node class address reference 
-        # with new clone node address
-        visited[node] = Node(node.val)
-        
-        self.dfs(node, visited)
-        # print(visited)
-        # print(visited[node.neighbors[0]].val)
-        
+        dsf(node,visited)
         return visited[node]
-        
-    
-    def dfs(self, node, visited):
-        
-        # traverse to the old node's neighnors node class address 
-        for neighbor in node.neighbors:
-            
-            # if old node neighbors node class address not in the map key
-            if neighbor not in visited:
-                
-                # here we store the old node class address as a key with reference
-                # clone node class address value 
-                visited[neighbor] = Node(neighbor.val)
-                
-                # going next edge
-                self.dfs(neighbor, visited)
-            
-            # here we store the clone node class address with it's
-            # new clone neighbor's class address 
-            visited[node].neighbors.append(visited[neighbor])
      

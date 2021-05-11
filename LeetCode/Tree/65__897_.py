@@ -40,8 +40,8 @@ root.right.left=newNode(62)
 root.left.right=newNode(37)
 # root.left.right.left=newNode(36)
 root.left.left=newNode(12)
-display(root)
-inOrder(root)
+# display(root)
+# inOrder(root)
 print()
 
 
@@ -51,6 +51,7 @@ def makeAlist(root,list_):
     if(root.left):
         makeAlist(root.left,list_)
     list_.append(root.data)
+    print(list_)
     if(root.right):
         makeAlist(root.right,list_)    
         
@@ -74,7 +75,7 @@ def makeRightTiltTree(root):
     
 
 
-# x=makeRightTiltTree(root)
+x=makeRightTiltTree(root)
 # display(x)
 
 
@@ -96,9 +97,9 @@ def optimiseApproach(root):
     return temp
 
 y=optimiseApproach(root)
-display(y)
-print("Ts ")
-display(root)
+# display(y)
+# print("Ts ")
+# display(root)
     
     
     

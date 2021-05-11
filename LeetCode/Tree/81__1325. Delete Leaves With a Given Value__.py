@@ -17,7 +17,6 @@ class Solution:
                 return None
             
             nodeANDParentNode(root.left,root)
-            nodeANDParentNode(root.right,root)
             if root.val==target and root.left==None and root.right==None:
                 if parent_root:
                     if parent_root.left==root:
@@ -26,6 +25,8 @@ class Solution:
                         parent_root.right=None
                 else: 
                     return 
+            nodeANDParentNode(root.right,root)
+            
         nodeANDParentNode(root,None)
         if root.val==target and root.left==None and root.right==None:
             return None
