@@ -53,3 +53,6 @@ root.right.right=TreeNode(7)
 sol=Solution()
 to_delete = [3,5]
 print(sol.delNodes(root,to_delete))
+
+# [0,3,1,null,null,null,2]
+# [0,3,1,2]
