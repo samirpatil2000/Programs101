@@ -21,7 +21,6 @@ class Solution:
             else:
                 return r_max_depth,r_cm_a
             
-        
         return dfs(root,0)[1]
     
 def inOrder(root):
