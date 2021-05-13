@@ -28,7 +28,7 @@ def pangram():
     
     
 # pangram()
-print(ord("A"),)
+print(ord("A"),ord("a"))
 
 
 def createSlug(title):

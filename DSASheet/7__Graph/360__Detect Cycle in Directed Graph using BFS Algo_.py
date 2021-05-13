@@ -17,28 +17,33 @@ class Graph:
         for i in self.graph.keys():
             print(i,"->",self.graph[i])
                        
-    def detectCycle_BFS(self,visited,src,in_curr):
+    def detectCycle_BFS_TopologicalSort(self,visited,src):
         queue=[src]
+        count_=0
         while(len(queue)>0):
             temp=queue.pop(0)
-            if visited[temp]==True and in_curr[temp]==True:
+            if visited[temp]==True:
                 return True
             visited[temp]=True
-            in_curr[temp]=True
+            count_+=1
             for i in self.graph[temp]:
                 if visited[i]==False:
                     queue.append(i)
-            in_curr[temp]=False
-                
+                    
+        print(count_)
+        if count_==self.vertices:
+            print("Their is no cycle")
+            return False
+        return True
                     
             
-    def detectCycle(self,visited,in_curr):
+    def detectCycle(self,visited):
         print([i for i in self.graph.keys()])
         for i in self.graph.keys():
         
             # print("chas",i)
             if visited[i]==False:
-                if self.detectCycle_BFS(visited,i,in_curr):
+                if self.detectCycle_BFS_TopologicalSort(visited,i):
                     return True
                 
         return False    
@@ -52,9 +57,8 @@ g.add_edge(2,0)
 g.add_edge(2,3)
 g.printGraph()
 visited=[False for _ in range(g.vertices)]
-in_curr=[False for _ in range(g.vertices)]
 
 # print(visited,in_curr)/
-print(g.detectCycle(visited,in_curr))
+print(g.detectCycle(visited))
         
         
