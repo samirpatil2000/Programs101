@@ -1,4 +1,4 @@
-# https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1
+# https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-directed-graph/1
 from collections import defaultdict
 
 class Graph:

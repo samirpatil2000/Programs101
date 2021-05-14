@@ -14,18 +14,19 @@ class Graph:
         for i in self.graph.keys():
             print(i,"->",self.graph[i])
                        
-    def detectCycle_DFS(self,visited,src):
-        if visited[src]==True:
-            return True
+    def detectCycle_DFS(self,visited,src,parent):
         visited[src]=True
         for i in self.graph[src]:
             if visited[i]==False:
-                if self.detectCycle_DFS(visited,src):
+                if self.detectCycle_DFS(visited,i,src):
                     return True
+            elif i!=parent:
+                print(i,parent,src)
+                return True
         return False 
     def detectCycle(self,visited):
         for i in self.graph.keys():
-            if self.detectCycle_DFS(visited,i):
+            if self.detectCycle_DFS(visited,i,None):
                 return True
         return False    
 
