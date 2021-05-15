@@ -16,5 +16,5 @@ def howSum(arr,target,memo={}):
     return None
 
 target,arr=7,[5,2,3,7]
-# target,arr=300,[3,1]
+target,arr=300,[3,1]
 print(howSum(arr,target))

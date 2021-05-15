@@ -1,4 +1,5 @@
 from collections import defaultdict
+import collections
 from typing import Counter
 
 class Graph:
@@ -16,49 +17,68 @@ class Graph:
     def printGraph(self):
         for i in self.graph.keys():
             print(i,"->",self.graph[i])
-                       
-    def detectCycle_BFS_TopologicalSort(self,visited,src):
-        queue=[src]
+            
+    def topologicalSort_DFS(self):
+        visited=[False for _ in range(len(self.graph.keys()))]
+        st=[]
+        def dfs(src):
+            visited[src]=True
+            for i in self.graph[src]:
+                if visited[i]==False:
+                    dfs(i)
+            st.append(src)
+        for i in self.graph.keys():
+            if visited[i]==False:
+                dfs(i)
+        st.reverse()
+        return st
+    def topoBFS(self,numCourses):
+        indegree={}
+        visited={}
+        for i in range(numCourses):
+            indegree[i]=0
+            visited[i]=False
+        for i in range(numCourses):
+            for j in self.graph[i]:
+                indegree[j]+=1
+        queue=[]
         count_=0
-        while(len(queue)>0):
+        for i in range(numCourses):
+            if indegree[i]==0:
+                queue.append(i)
+        while queue:
             temp=queue.pop(0)
-            if visited[temp]==True:
-                return True
             visited[temp]=True
             count_+=1
-            for i in self.graph[temp]:
-                if visited[i]==False:
-                    queue.append(i)
-                    
-        print(count_)
-        if count_==self.vertices:
-            print("Their is no cycle")
-            return False
-        return True
-                    
-            
-    def detectCycle(self,visited):
-        print([i for i in self.graph.keys()])
-        for i in self.graph.keys():
-        
-            # print("chas",i)
-            if visited[i]==False:
-                if self.detectCycle_BFS_TopologicalSort(visited,i):
-                    return True
-                
-        return False    
+            for e in self.graph[temp]:
+                if visited[e]==False:
+                    indegree[e]-=1
+                    if indegree[e]==0:
+                        queue.append(e)
+        if count_==numCourses:
+            return True
+        return False
+ 
 
 
 g=Graph(3)
-g.add_edge(0,1)
-g.add_edge(1,2)
-g.add_edge(0,2)
-g.add_edge(2,0)
-g.add_edge(2,3)
-g.printGraph()
+# g.add_edge(0,1)
+# g.add_edge(1,2)
+# g.add_edge(0,2)
+# g.add_edge(2,0)
+# g.add_edge(2,3)
+
+
+g.add_edge(1,0)
+
+g.add_edge(3,0)
+
+g.add_edge(3,2)
+g.add_edge(2,1)
+# g.printGraph()
 visited=[False for _ in range(g.vertices)]
 
 # print(visited,in_curr)/
-print(g.detectCycle(visited))
+print("Topo DFS ",g.topologicalSort_DFS())
         
         
