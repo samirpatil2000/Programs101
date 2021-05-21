@@ -30,17 +30,7 @@ def pangram():
 # pangram()
 print(ord("A"),ord("a"))
 
+print(" ".join([str(3),str(2),str(32),str(32)]))
 
-def createSlug(title):
-    slug_=""
-    for i in title:
-        if i!=" ":
-            if ord(i)>=97:
-                slug_+=i
-            else:
-                slug_+=chr(ord(i)+32)
-        else:
-            slug_+="-"
-    return slug_
 
-print(createSlug("The hii theri S"))
+

@@ -1,5 +1,8 @@
 
 
+import collections
+
+
 word="aaabscsdsd"
 word_dict={char:(word.count(char)) for char in word}
 
@@ -32,3 +35,10 @@ print(dictionary[1][1])
 
 arr=[2,3,4,5]
 print(arr.index(max(arr)))
+
+def multi_dict(K, type):
+    if K == 1:
+        return collections.defaultdict(type)
+    else:
+        return collections.defaultdict(lambda: multi_dict(K-1, type))
+y=multi_dict(2,list)
