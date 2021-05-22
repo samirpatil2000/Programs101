@@ -38,3 +38,7 @@ def getMatrix():
             mat[i][k]=arr[k]
     print(mat)
     
+x=['6','2']
+
+# for i in range(len(x)):
+# x=

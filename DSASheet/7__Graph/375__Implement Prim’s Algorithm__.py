@@ -1,4 +1,5 @@
 from collections import defaultdict
+import collections
 
 
 class Node():
@@ -36,24 +37,22 @@ class Graph():
         return item
             
 
-    def Dijkstra(self,src):
-        list_=[]
-        queue=[[src,str(src)+"",0]]
+    def miniumSpanningTrees(self,src):
         visited=set()
-        
+        queue=[]
+        queue.append([src,str(-1),0])
         while queue:
+            
             temp=self.pop(queue,visited)
             if temp[0] in visited:
                 continue
+            print(temp)
             visited.add(temp[0])
-            # print(temp)
-            list_.append([temp[0],temp[2]])
-            for node in self.graph[temp[0]]:
-                if node.src not in visited:
-                    queue.append([ node.src,temp[1]+ str(node.src), temp[2]+node.wt ])
-            
-        
-        return list_
+            for i in self.graph[temp[0]]:
+                if i not in visited:
+                    queue.append([i.src,temp[0],i.wt])
+                    
+             
 v=8
 connections=[
     # [0,3,40],
@@ -84,7 +83,5 @@ connections=[
 ]
 g=Graph(v,connections)
 # g.printGraph()
-x=g.Dijkstra(0)
-x.sort(key=lambda x:x[0])
-print(x)
+g.miniumSpanningTrees(0)
             

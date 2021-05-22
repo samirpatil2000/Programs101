@@ -37,4 +37,24 @@ def goldMine(mat):
     
     return max_
 
+
+def goldMineMemo(mat,row,col,memo={}):
+    x=str(row)+"-"+str(col)
+    if x in memo:return memo[x]
+    if row<0 or col<0 or row>=len(mat) or col>=len(mat[0]):return 0
+
+    
+    from_topRight=goldMineMemo(mat,row-1,col+1)
+    from_bottomRight=goldMineMemo(mat,row+1,col+1)
+    from_Right=goldMineMemo(mat,row,col+1)
+    # print(row,col)
+    
+    memo[x]=max(from_topRight,from_bottomRight,from_Right)+mat[row][col]
+    
+    return memo[x]
+
+    
+    
+
 print(goldMine(mat))
+print(goldMineMemo(mat,0,0))
