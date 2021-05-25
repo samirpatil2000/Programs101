@@ -9,6 +9,7 @@ def coinChangeCombi(coin_arr,target_num):
     
     print(dp)
     
-arr=[2,3,5,6]
-coinChangeCombi(arr,10)
+
     
+arr=[2,3,5]
+coinChangeCombi(arr,7)

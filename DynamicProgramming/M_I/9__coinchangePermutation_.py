@@ -9,8 +9,31 @@ def coinChangePermutation(coins,target):
                 
     
     print(dp)
-    
+
+class Solution():
+    def coinChangeMemo(self,arr,target_sum):
+        count_=[0]
+        def coinMemo(arr,tar):
+            if tar==0:
+                count_[0]+=1
+                return
+            if tar<0:return
+            print(tar)
+            for num in arr:
+                coinMemo(arr,tar-num)
+            return
+        coinMemo(arr,target_sum)
+        print(count_)
+        
+count_=[0]
     
 coins=[2,3,5,6]  
 coinChangePermutation(coins,10)
-    
+
+
+
+        
+            
+
+sol=Solution()
+sol.coinChangeMemo(coins,10)
