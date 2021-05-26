@@ -1,4 +1,5 @@
 import collections
+from typing import List
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -49,34 +50,25 @@ class Solution:
         return root
 
     def pathSum(self, root: TreeNode, targetSum: int) -> int:
+        if root==[]:
+            return 0
         count_=[0]
         
-        def dfs(root,tar=targetSum):
+        def dfs(root,list_:List[int]):
             if root==None:return
-            if tar==0:
-                count_[0]+=1
+            count_[0]+=list_.count(targetSum)
             if root.left:
-                print(root.left.val,tar-root.left.val)
-                if tar-root.left.val<0:
-                    dfs(root.left)
-                else:
-                    dfs(root.left,tar-root.left.val)
+                dfs(root.left,[x+root.left.val for x in list_]+[root.left.val])
             if root.right:
-
-                print(root.right.val,tar-root.right.val)
-                if tar-root.right.val<0:
-                    dfs(root.right)
-                else:
-                    dfs(root.right,tar-root.right.val)
-            return
-        dfs(root)
+                dfs(root.right,[x+root.right.val for x in list_]+[root.right.val])
+        dfs(root,[root.val])
         return count_[0]
     
     
 
 sol=Solution()
-data=[5,4,8,11,'*',13,4,7,2,'*','*',5,1]
-targetSum = 22
+data = [10,5,-3,3,2,'*',11,3,-2,'*',1]
+targetSum = 8
 root=sol.deserialize(data)
 # sol.inOrder(root)
 print(sol.pathSum(root,targetSum))

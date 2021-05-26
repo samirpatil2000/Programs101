@@ -18,7 +18,7 @@ class Solution():
                 count_[0]+=1
                 return
             if tar<0:return
-            print(tar)
+            # print(tar)
             for num in arr:
                 coinMemo(arr,tar-num)
             return
@@ -27,8 +27,9 @@ class Solution():
         
 count_=[0]
     
-coins=[2,3,5,6]  
-coinChangePermutation(coins,10)
+target,arr=10,[2,3,5,6]  
+target,arr=7,[5,2,3]
+coinChangePermutation(arr,target)
 
 
 
@@ -36,4 +37,4 @@ coinChangePermutation(coins,10)
             
 
 sol=Solution()
-sol.coinChangeMemo(coins,10)
+sol.coinChangeMemo(arr,target)

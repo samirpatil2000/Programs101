@@ -18,9 +18,9 @@ class Graph:
             print(i,"->",self.graph[i])
                        
     def detectCycle_DFS(self,visited,src,in_curr):
-        if visited[src]==True and in_curr[src]==True:
-            print(src)
-            return True
+        # if visited[src]==True and in_curr[src]==True:
+        #     print(src)
+        #     return True
         visited[src]=True
         in_curr[src]=True
         for i in self.graph[src]:
@@ -34,7 +34,7 @@ class Graph:
         return False 
     def detectCycle(self,visited,in_curr):
         for i in self.graph.keys():
-            print("chas",i)
+            print("chaos",i)
             if visited[i]==False:
                 if self.detectCycle_DFS(visited,i,in_curr):
                     return True
