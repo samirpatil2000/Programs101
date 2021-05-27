@@ -20,7 +20,6 @@ int main(){
     int array_2[2][2]={(1,1),(2,2)};
 
 // FOR printing this array 
-
     for (n=0 ; n < 2 ; n++ ){
         for (m=0 ; m < 2 ; m++){
             cout << array_2[n][m];
