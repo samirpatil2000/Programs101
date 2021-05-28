@@ -30,16 +30,22 @@
 
 
 
-string= input ("Enter the string: ")
-newlist = list(string)
-print(newlist)
-dict_={'Lower':0,'Upper':0}
-for i in newlist:
-    if i!=" ":
-        if i.islower():
-            dict_['Lower']+=1
-        else:
-            dict_['Upper']+=1
+# string= input ("Enter the string: ")
+# newlist = list(string)
+# print(newlist)
+# dict_={'Lower':0,'Upper':0}
+# for i in newlist:
+#     if i!=" ":
+#         if i.islower():
+#             dict_['Lower']+=1
+#         else:
+#             dict_['Upper']+=1
     
-print("Number of lower letters are: ",dict_['Lower'])
-print("Number of upper letters are: ",dict_['Upper'])
+# print("Number of lower letters are: ",dict_['Lower'])
+# print("Number of upper letters are: ",dict_['Upper'])
+
+def fun(a):
+    a+=1
+a=2
+fun(a)
+print(a)
