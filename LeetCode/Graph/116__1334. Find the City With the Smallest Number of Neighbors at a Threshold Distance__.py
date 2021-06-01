@@ -1,4 +1,6 @@
 from typing import List
+import queue as Q
+import heapq
 
 class Node():
     def __init__(self,dest,wt):
@@ -20,10 +22,15 @@ class Solution():
     def bfs(self,graph,src,distanceThreshold):
         count_=0
         visited=set()
-        q=[[src,0]]
+        # q=Q.PriorityQueue()
+        
+        q=[[0,src]]
+        heapq.heapify(q)
+        
         # visited.add(src)
         while q:
-            temp,tar_sum=self.pop(q,visited)
+            # temp,tar_sum=self.pop(q,visited)
+            tar_sum,temp=heapq.heappop(q)
             if temp in visited:
                 continue
             if tar_sum>distanceThreshold:
@@ -34,7 +41,8 @@ class Solution():
                 count_+=1
             for edge,wt in graph[temp]:
                 if edge not in visited:
-                    q.append([edge,tar_sum+wt])
+                    # q.append([edge,tar_sum+wt])
+                    heapq.heappush(q,[tar_sum+wt,edge])
         return count_
     def printGraph(self,graph):
         for temp in range(len(graph)):

@@ -19,7 +19,7 @@ def countBinaryStringsWithoutArray(n):
         dp1=dp1+x
     return dp0+dp1
 
-n=10
+n=5
 print(countBinaryStrings(n))
 print(countBinaryStringsWithoutArray(n))
     

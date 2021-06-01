@@ -43,7 +43,6 @@ def preOrderIterative(root):
             curr=curr.left
         else:
             curr=st.pop()
-            # print(curr.data,end=" ")
             curr=curr.right
             
             
@@ -62,7 +61,11 @@ def inOrder(root):
     print(root.data,end=" ")
     inOrder(root.right)
     
-        
+
+def swap(root):
+    x=root.left
+    root.left=root.right
+    root.right=x
 
         
 
@@ -79,6 +82,8 @@ root.left.right.right=newNode(40)
 root.left.left=newNode(12)
 
 
+
+
 # root = newNode(5)
 # root.left = newNode(3)
 # root.right = newNode(6)
@@ -87,6 +92,11 @@ root.left.left=newNode(12)
 # root.left.right = newNode(4)
 # display(root)
 
+inOrder(root)
+print()
+preOrderIterative(root)
+print()
+swap(root) 
 inOrder(root)
 print()
 preOrderIterative(root)
