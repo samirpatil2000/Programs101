@@ -3,7 +3,10 @@
         "iostream": "cpp",
         "string_view": "c",
         "regex": "c",
-        "charconv": "c"
+        "charconv": "c",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "code-runner.executorMap": {

@@ -25,6 +25,7 @@ class PriorityQueue:
         except IndexError: 
             print() 
             exit() 
+    
 
 my_queue=PriorityQueue()
 my_queue.insert(["SM",20])
