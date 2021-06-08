@@ -42,3 +42,14 @@ def multi_dict(K, type):
     else:
         return collections.defaultdict(lambda: multi_dict(K-1, type))
 y=multi_dict(2,list)
+
+
+#order dict
+
+dict_=collections.OrderedDict()
+dict_[2]=None
+dict_[0]=None
+dict_[-1]=None
+
+dict_[1]=None
+print(dict_)
