@@ -53,3 +53,7 @@ dict_[-1]=None
 
 dict_[1]=None
 print(dict_)
+
+sa={}
+sa[(3,4)]="sa"
+print(sa)
