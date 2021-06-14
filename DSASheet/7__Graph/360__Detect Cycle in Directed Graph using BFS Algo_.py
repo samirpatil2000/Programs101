@@ -80,5 +80,5 @@ visited=[False for _ in range(g.vertices)]
 
 # print(visited,in_curr)/
 print("Topo DFS ",g.topologicalSort_DFS())
-        
+print(g.topoBFS())
         
