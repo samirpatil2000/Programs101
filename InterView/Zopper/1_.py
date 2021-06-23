@@ -29,16 +29,20 @@ def findOccurence(arr:List[int])->List[int]:
     return arr 
                 
 def findOccurence_2(arr:List[int])->List[int]:
+    result=[]
     for i in range(len(arr)):
+        if arr[i]<0:
+            result.append(i)
         arr[abs(arr[i])]=-arr[abs(arr[i])]
     print(arr)
+    return result
     
 
 
         
     return arr
-arr=[2, 3, 3, 2, 1]
+arr=[2,2,3,3,3,1]
 # print(findOccurence(arr))
-findOccurence_2(arr)
-        
+print(findOccurence_2(arr)
+)        
     
