@@ -17,8 +17,7 @@ class Solution:
             else:
                 parent[pa_b]=pa_a
                 
-        for u,v in edges:
-            union(u,v)
+        for u,v in edges:union(u,v)
         return redundant
     
     
