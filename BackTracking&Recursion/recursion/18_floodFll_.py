@@ -56,4 +56,4 @@ def LShapedPlot(mat,R,C,row,col,row_count,col_count,output_str):
     LShapedPlot(mat,R,C,row,col+1,row_count,col_count+1,output_str+"c")
     mat[row][col]=temp
     
-LShapedPlot(mat,len(mat),len(mat[0]),0,0,0,0,"r")
+# LShapedPlot(mat,len(mat),len(mat[0]),0,0,0,0,"r")

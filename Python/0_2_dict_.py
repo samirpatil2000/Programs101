@@ -91,6 +91,19 @@ class Dictionary():
             sort_orders = sorted(zip(orders.values(),orders.keys()), reverse=True)
             print(sort_orders)
         fun(arr)
+    def hirearcy(self):
+        
+        hdb_manager_map = {
+            "234":
+                {"state_id": ["S1"],
+                 "city_id": ["C1"],
+                 "exclude_city": []
+                 }
+        }
+        user_id="234"
+        print(hdb_manager_map.get(user_id,{}).get("city_id",[]))
+        print(hdb_manager_map.get(user_id,{}).get("state_id",{}))
+        
         
 orders = {
 	2: 54,
@@ -105,7 +118,8 @@ sol=Dictionary()
 # sol.printItemsValuesKeys()
 # sol.muiltiDict()
 # sol.multiDictUsingRecursion()
-sol.sortingAccKeyValue()
+# sol.sortingAccKeyValue()
+sol.hirearcy()
 
             
 
