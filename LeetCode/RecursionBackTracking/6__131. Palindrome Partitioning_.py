@@ -9,13 +9,13 @@ class Solution:
             if not s:
                 list_.append(out_)
                 return
-            for i in range(1,len(s)):
-                print(s[:i],s[:i][::-1])
+            for i in range(1,len(s)+1):
+                # print(s[:i],s[:i][::-1])
                 if s[:i]==s[:i][::-1]:
                     dfs(s[i:],out_+[s[:i]])
         dfs(s)
         return list_
     
 sol=Solution()
-s="aab"
+s="efe"
 print(sol.partition(s))

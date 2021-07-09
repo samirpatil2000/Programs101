@@ -24,7 +24,7 @@ class Codec:
             else:
                 str_+="*"
                 str_+=","
-        return str_[:-1]
+        return str_
     
                 
             
@@ -63,7 +63,6 @@ class Codec:
                 if (right_node := tree.popleft()) != '*':
                     node.right = TreeNode(int(right_node))
                     queue.append(node.right)
-                
         return root
     
 def inOrder(root):
@@ -91,6 +90,8 @@ inOrder(root)
 print()
 sol=Codec()
 print(x:=sol.serialize(root))
-x=[1,2,3,4,'*',2,4,'*','*',4]
-inOrder(sol.deserialize(x))
+# x=[1,2,3,4,'*',2,4,'*','*',4]
+x=[1,2,'*',4,5,6]
+root=sol.deserialize(x)
+print(sol.serialize(root))
 print()

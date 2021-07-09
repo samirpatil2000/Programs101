@@ -68,7 +68,7 @@ inOrder(root_2)
 print()
 x=mergeBothTheTrees(root_1,root_2)
 inOrder(x)
-
+print()
 
 
 

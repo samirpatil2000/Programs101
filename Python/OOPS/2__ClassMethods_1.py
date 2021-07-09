@@ -28,7 +28,7 @@ print(e2.raise_amt)
 Employee.set_amt(1.05)
 """   OR  """
 
-e1.set_amt(1.05)
+# e1.set_amt(1.05)
         
 print(Employee.raise_amt)
 print(e1.raise_amt)

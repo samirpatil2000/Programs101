@@ -41,7 +41,6 @@ class Solution:
         dict_={}
         for i,e in enumerate(inorder):
             dict_[e]=i
-        
         def dfs(left,right):
             nonlocal preorder_index
             if left>right:

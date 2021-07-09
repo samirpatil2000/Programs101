@@ -44,8 +44,18 @@ def Mirror(root):
     # if(root.right):
     Mirror(root.right)
     
+def mirro(root): 
+    if root==None or (root.left==None and root.right==None):
+            return
+    # r_x=root.right
+    # root.right=root.left
+    # root.left=r_x
+    # if(root.left):
+    temp=root.right
+    root.right=mirro(root.left)
     
-
+    root.left=mirro(temp)
+    return root
 
     
     
@@ -71,10 +81,11 @@ root.left.left=newNode(12)
 # root.right = newNode(6)
 # root.left.left = newNode(2)
 # root.left.right = newNode(4)
-display(root)
+# display(root)
 
 inOrder(root)
 print()
-Mirror(root)
-inOrder(root)
+# Mirror(root)
+x=mirro(root)
+inOrder(x)
 print()
