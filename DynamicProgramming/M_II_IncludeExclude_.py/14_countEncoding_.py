@@ -32,4 +32,4 @@ def countEncoding(string_):
     return dp
                 
 
-print(countEncoding('21123'))
+print(countEncoding('226'))
