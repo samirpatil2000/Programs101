@@ -68,6 +68,7 @@ class Solution:
         tail=p.next
         
         for _ in range(right-left):
+            print(p.next.val,tail.next.val)
             temp=p.next
             p.next=tail.next
             tail.next=tail.next.next
@@ -80,10 +81,10 @@ class Solution:
             
         
 sol=Solution()
-arr = [3,5]
+arr = [1,2,3,4,5,6,7,8,9]
 head=sol.makeLL(arr)
 # sol.printLL(head)
 left = 1
-right = 2
+right = 5
 x=sol.reverseBetween(head,left,right)
 sol.printLL(x)
