@@ -5,11 +5,14 @@ def isSafePlace(chess,row,col,N):
     for i in range(N):
         if(chess[row][i]==1):
             return False
-    k=0 
-    while(k<N):
-        if(chess[k][k]==1):
+    
+    new_row=row
+    new_col=col
+    while new_row<N and new_col < N:
+        if chess[new_row][new_col]=='Q':
             return False
-        k+=1
+        new_row+=1
+        new_col+=1
     i=N
     j=0
     while(i>=0 and j<N):

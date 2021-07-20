@@ -14,6 +14,25 @@ class Solution:
                 rec(arr[:i]+arr[i+1:],list_+[arr[i]])
         rec(nums)
         return result
+    def anotherMethod(self,nums):
+        res=[]
+        
+        def dfs(index,arr):
+            if index == len(arr):
+                res.append(arr)
+                return
+            for i in range(index,len(nums)):
+                arr[index],arr[i]=arr[i],arr[index]
+                print(index,arr)
+                dfs(index+1,arr)
+                
+                arr[index],arr[i]=arr[i],arr[index]
+                print(index,arr)
+        dfs(0,nums)
+        
+        return res
 sol=Solution()
-nums=[1]
+nums=[1,2]
+# nums=[1]
 print(sol.permute(nums))
+print(sol.anotherMethod(nums))
