@@ -89,8 +89,8 @@ class Solution:
             merge(arr, left, mid, right)
             
     
-    def quickSort(self,arr:List[int])->List[int]:
-        def partition(arr,left,right)->int:
+    # def quickSort(self,arr:List[int])->List[int]:
+    #     def partition(arr,left,right)->int:
             
             
         
@@ -118,6 +118,28 @@ class Solution:
             heapify(arr,i,0)
             print(arr)                
     
+    def shellSort(self,arr:List[int])->List[int]:
+        n=len(arr)
+        gap=n/2
+        while gap>0:
+            left=0
+            right=gap
+            
+            while right<n:
+                if arr[left]>arr[right]:
+                    arr[left],arr[right]=arr[right],arr[left]
+                left+=1
+                right+=1
+                
+                extrem_left=left
+                while extrem_left-gap>=0:
+                    if arr[extrem_left-gap]>arr[extrem_left]:
+                        arr[extrem_left-gap],arr[extrem_left]=arr[extrem_left],arr[extrem_left-gap]
+                    extrem_left-=1                                
+                    
+                    
+                    
+        
             
                         
                     

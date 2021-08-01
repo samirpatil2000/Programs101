@@ -1,5 +1,35 @@
 import requests, json
 import urllib.parse
+payload={
+          "add_ons": [],
+          "insurer_logo": "https://general.futuregenerali.in/img/logo.png",
+          "additional_cover": {},
+          "registration_date": "01/01/2018",
+          "idv": 0,
+          "manufacturing_year": "2018",
+          "product_type": None,
+          "registration_no": "DL-01-AC-1234",
+          "businessid": 5,
+          "make": "9106",
+          "previous_policy_claim": "N",
+          "previous_policy_end_date": "29/07/2021",
+          "previous_insurer": "Bajaj Allianz General Insurance",
+          "insurance_name": "TATA AIG Motor Insurance",
+          "is_vehicle_new": 0,
+          "model": "25287",
+          "previous_policy_start_date": "30/07/2020",
+          "rto": "DL01",
+          "previous_policy_type": "CO",
+          "unique_identifier": "dfea4d8312c5ad541984146b69b2fa1e",
+          "ncb": "20",
+          "request_id": "4455843ac099a96d569d53e90f8c1edb",
+          "variant": "30336",
+          "loan": 0,
+          "policy_type": "CO",
+          "category": 4,
+          "insurer_code": "TIG4W",
+          "owner_type": "Individual"
+        }
 request_data = {
       "functionality": "validatequote",
       "supporttag": "genvalidatequote",
@@ -277,9 +307,124 @@ request_data = {
         }
       }
 }
-request_data = json.dumps(request_data)
-# request_data=urllib.parse.encode(request_data)
-url = "https://pipuat.tataaiginsurance.in/tagichubms/ws/v1/ws/tran1/quotation"
-payload = """QDATA={}&SRC=TP&T=2D9D1BC5A837E7A2741C6121317E9EE6CE1D32145CBCF7084FA4493ECDA2C2804969A5473610BC2AB4FC034359C11D55F99F8AEC736D84F0EFD531DFE24FFC74F0923F1288A83121B8045A8AAA4D9F920B4D737E3A1134B824E23B1F0561D97AEA647554A31570720BDB6E4CE3D8813A1138ABF16F2A23A8E6BAB012DD07B768019A5B583351F6D36C1F6F26B5C8D474D2F701E664A96F73806EE3A5235DEFFD76CF4106F7F074A55258D75B1DDEFD38&productid=3121""".format(request_data)
-response = requests.request("POST", url, headers={'Content-Type': 'application/x-www-form-urlencoded'}, data=payload)
-print(response.text)
+# request_data = json.dumps(request_data)
+# # request_data=urllib.parse.encode(request_data)
+# url = "https://pipuat.tataaiginsurance.in/tagichubms/ws/v1/ws/tran1/quotation"
+# payload = """QDATA={}&SRC=TP&T=2D9D1BC5A837E7A2741C6121317E9EE6CE1D32145CBCF7084FA4493ECDA2C2804969A5473610BC2AB4FC034359C11D55F99F8AEC736D84F0EFD531DFE24FFC74F0923F1288A83121B8045A8AAA4D9F920B4D737E3A1134B824E23B1F0561D97AEA647554A31570720BDB6E4CE3D8813A1138ABF16F2A23A8E6BAB012DD07B768019A5B583351F6D36C1F6F26B5C8D474D2F701E664A96F73806EE3A5235DEFFD76CF4106F7F074A55258D75B1DDEFD38&productid=3121""".format(request_data)
+# response = requests.request("POST", url, headers={'Content-Type': 'application/x-www-form-urlencoded'}, data=payload)
+# print(response.text)\
+# from datetime import date, timedelta
+# today=date.today()
+# # print(int(payload.get('registration_date')[-4:])-today.year)
+
+# registration_no=payload.get("registration_no") # DL-01-ABC-1234
+# if registration_no:
+#     reg_no=registration_no[0:2]+registration_no[2:4] #DL01
+    
+
+#     # print (registration_no[0:2])
+#     # print (registration_no[3:5])
+#     # print (registration_no[6:8])
+#     # state_code=registration_no[6:8]
+#     # if registration_no[8]!='-':
+#     #       state_code+=registration_no[8]
+#     # print(state_code)
+#     # print (registration_no[-4:])
+    
+#     	# print(roles[2],999)
+# 	# print(roles[3],999)
+# 	# u_roles = []  	
+# 	# obj = Account.objects.get(user=request.user, is_active=True)
+# 	# print(obj)
+# 	# u_roles = obj.user_role.all()
+#   # u_roles=[i.get_id_display() for i in u_roles]
+# 	# print(u_roles,5555)
+  
+# from datetime import datetime
+
+# date_=payload.get('previous_policy_end_date').replace("/","-")
+# date_=date_[-4:]+"-"+date_[-7:-5]+"-"+date_[-10:-8]
+
+# date_string = date_
+# print(date_string)
+# # date_string = "2012-12-12 10:10:10"
+# x=datetime.fromisoformat(date_string)+timedelta(days=365)
+# print (str(x.date()).replace("-",""))
+
+
+ADDONS_AND_COVERS={
+    "ea": {
+        "code": "C4",
+        "opted": "Y",
+        "SI": "9999"
+    },
+    "CNG/LPG kitcheckbox":{
+        "code": "C29",
+        "opted": "N",
+    },
+    "nea":{
+        "code": "C4",
+        "opted": "Y",
+        "SI": "9999"
+    },
+    "ri":{
+        "code": "C38",
+        "opted": "Y"
+    },
+    "rsa":{
+        "code": "C47",
+        "opted":"Y"
+    },
+    "cc":{
+        "code": "C37",
+        "opted": "Y"
+    },
+    "pod":{
+        "code":"C3",
+        "opted": "Y",
+        "tenure": "1"
+    },
+    "LLPD":{
+        "code": "C18",
+        "opted": "Y",
+        "persons": "3",
+    },
+}
+
+add_ons={
+  "add_ons": [
+        "dca",
+        "ep",
+        "cc",
+        "rsa",
+        "kr",
+        "zp",
+        "np",
+        "ri",
+        "lpb"
+    ],
+  "additional_cover": {
+        "ea": 1000,
+        "LLPD": 0,
+        "pod": 0,
+        "nea": 1000,
+        "Fuel_od": 100,
+        "CNG/LPG kitcheckbox": 0
+  },
+}
+
+# for i in add_ons['additional_cover']:
+#   if ADDONS_AND_COVERS.get(i):
+#     i_add_on_code = ADDONS_AND_COVERS.get(i).get('code')
+#     print(ADDONS_AND_COVERS.get(i))
+#     for field in ADDONS_AND_COVERS.get(i):
+#       if field != "code" and field != "opted":
+#             print(field,add_ons['additional_cover'][i])
+#       elif field == "opted":
+#             print('Y')
+name="HONDA|AMAZE|ERA +|814CC"
+            
+make_name,model_name,variant_name,CC=name.split("|")
+make=name.split("|")
+# print(make_name,model_name,variant_name,CC)
+print(make)

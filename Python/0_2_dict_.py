@@ -102,7 +102,19 @@ class Dictionary():
         }
         user_id="234"
         print(hdb_manager_map.get(user_id,{}).get("city_id",[]))
+        print(hdb_manager_map.get(user_id).get("city_id"))
         print(hdb_manager_map.get(user_id,{}).get("state_id",{}))
+        
+    def addToDict(self):
+        dict_1={
+            'a':2
+        }
+        dict_2={
+            'b':3
+        }
+        for i in dict_1:
+            print(i)
+        
         
         
 orders = {
@@ -119,7 +131,8 @@ sol=Dictionary()
 # sol.muiltiDict()
 # sol.multiDictUsingRecursion()
 # sol.sortingAccKeyValue()
-sol.hirearcy()
+# sol.hirearcy()
 
             
 
+sol.addToDict()
