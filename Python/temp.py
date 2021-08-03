@@ -313,7 +313,7 @@ request_data = {
 # payload = """QDATA={}&SRC=TP&T=2D9D1BC5A837E7A2741C6121317E9EE6CE1D32145CBCF7084FA4493ECDA2C2804969A5473610BC2AB4FC034359C11D55F99F8AEC736D84F0EFD531DFE24FFC74F0923F1288A83121B8045A8AAA4D9F920B4D737E3A1134B824E23B1F0561D97AEA647554A31570720BDB6E4CE3D8813A1138ABF16F2A23A8E6BAB012DD07B768019A5B583351F6D36C1F6F26B5C8D474D2F701E664A96F73806EE3A5235DEFFD76CF4106F7F074A55258D75B1DDEFD38&productid=3121""".format(request_data)
 # response = requests.request("POST", url, headers={'Content-Type': 'application/x-www-form-urlencoded'}, data=payload)
 # print(response.text)\
-# from datetime import date, timedelta
+
 # today=date.today()
 # # print(int(payload.get('registration_date')[-4:])-today.year)
 
@@ -339,17 +339,17 @@ request_data = {
 # 	# u_roles = obj.user_role.all()
 #   # u_roles=[i.get_id_display() for i in u_roles]
 # 	# print(u_roles,5555)
-  
-# from datetime import datetime
+from datetime import date, timedelta
+from datetime import datetime
 
-# date_=payload.get('previous_policy_end_date').replace("/","-")
-# date_=date_[-4:]+"-"+date_[-7:-5]+"-"+date_[-10:-8]
+date_=payload.get('previous_policy_end_date')
+date_=date_[-4:]+"-"+date_[-7:-5]+"-"+date_[-10:-8]
 
-# date_string = date_
-# print(date_string)
-# # date_string = "2012-12-12 10:10:10"
-# x=datetime.fromisoformat(date_string)+timedelta(days=365)
-# print (str(x.date()).replace("-",""))
+date_string = date_
+print(date_string)
+# date_string = "2012-12-12 10:10:10"
+x=datetime.fromisoformat(date_string)+timedelta(days=1)
+print (str(x.date()).replace("-",""))
 
 
 ADDONS_AND_COVERS={
@@ -422,9 +422,20 @@ add_ons={
 #             print(field,add_ons['additional_cover'][i])
 #       elif field == "opted":
 #             print('Y')
-name="HONDA|AMAZE|ERA +|814CC"
+# name="HONDA|AMAZE|ERA +|814CC"
             
-make_name,model_name,variant_name,CC=name.split("|")
-make=name.split("|")
-# print(make_name,model_name,variant_name,CC)
-print(make)
+# make_name,model_name,variant_name,CC=name.split("|")
+# # make=name.split("|")
+# print(make_name,model_name,variant_name,CC[:-2])
+# # print(make)
+
+def strip_date(date_: str, isoFormat=False) -> str:
+  if isoFormat:
+    return date_[-4:] + "-" + date_[-7:-5] + "-" + date_[-10:-8]
+  return date_[-4:] + date_[-7:-5] + date_[-10:-8]
+
+date_ = payload.get('previous_policy_end_date')
+print(date_,"#")
+date_ = date_[-4:] + "-" + date_[-7:-5] + "-" + date_[-10:-8]
+x=datetime.fromisoformat(date_)+timedelta(days=1)
+print(str(x.date()).replace("-",""))

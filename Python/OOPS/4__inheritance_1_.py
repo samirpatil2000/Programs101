@@ -22,8 +22,8 @@ class Employee:
 class Developer(Employee):
     raise_amt_value=20
     
-    def __init__(self, name, amt,prog_lang) -> None:
-        super().__init__(name, amt)
+    def __init__(self, name,prog_lang) -> None:
+        super().__init__(name,amt=None)
         self.prog_lang=prog_lang
 
 
@@ -56,11 +56,11 @@ class Manager(Employee):
 
 emp=Employee("Samir1",324)
 emp2=Employee("Samir2",324)
-dev=Developer("Sami2r",324,prog_lang="Python")
+dev=Developer("Sami2r",prog_lang="Python")
     
 # print(emp.amt,emp.raise_amt(),emp.amt)
 
-# print(dev.email,dev.prog_lang)
+print(dev.email,dev.prog_lang,dev.amt)
 """
 m1=Manager("SamirM",342,[emp])
 print(m1.email)
