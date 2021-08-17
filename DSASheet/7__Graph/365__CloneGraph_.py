@@ -79,7 +79,7 @@ class Solution:
             return Node(node.val)
         visited={}
         
-        def dsf(node,visited):
+        def dfs(node,visited):
             visited[node]=Node(node.val)
             
             for n in node.neighbors:
@@ -87,6 +87,6 @@ class Solution:
                     dfs(n,visited)
                 visited[node].neighbors.append(visited[n])
         
-        dsf(node,visited)
+        dfs(node,visited)
         return visited[node]
      

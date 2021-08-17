@@ -60,7 +60,7 @@ dev=Developer("Sami2r",prog_lang="Python")
     
 # print(emp.amt,emp.raise_amt(),emp.amt)
 
-print(dev.email,dev.prog_lang,dev.amt)
+# print(dev.email,dev.prog_lang,dev.amt)
 """
 m1=Manager("SamirM",342,[emp])
 print(m1.email)
@@ -72,9 +72,19 @@ m1.printEmployees()"""
 
 
 
-print(isinstance(2,int))
-print(isinstance(emp,Employee))
-print(isinstance(emp,Developer)) # this returns false 
+# print(isinstance(2,int))
+# print(isinstance(emp,Employee))
+# print(isinstance(emp,Developer)) # this returns false 
 
-print(issubclass(Developer,Employee))
-print(issubclass(Manager,Employee)) # this Returns True
+# print(issubclass(Developer,Employee))
+# print(issubclass(Manager,Employee)) # this Returns True
+
+class A(Employee):
+    def __init__(self, name, amt,request) -> None:
+        super().__init__(name, amt)
+        self.name=name+"@"
+        self.re=request
+    
+
+obj=A("Samir",23,request="Hello")
+print(obj.name,obj.amt,obj.re)
