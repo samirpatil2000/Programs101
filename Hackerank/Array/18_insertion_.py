@@ -10,10 +10,8 @@ def runningTime(arr):
             arr[j+1]=arr[j]
             j-=1
         arr[j+1]=temp
-    print(count_)
-    print(arr)
     return count_
 
 
-arr=[2,1,3,1,2]
-runningTime(arr)
+arr=[1,-1,-1]
+print(runningTime(arr))
