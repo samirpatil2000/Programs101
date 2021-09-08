@@ -29,8 +29,10 @@ def pangram():
     
 # pangram()
 print(ord("A"),ord("a"))
+print(chr(97+25))
+print(0%25)
 
-print(" ".join([str(3),str(2),str(32),str(32)]))
+# print(" ".join([str(3),str(2),str(32),str(32)]))
 
 
 
