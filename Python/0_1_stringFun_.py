@@ -28,9 +28,10 @@ def pangram():
     
     
 # pangram()
-print(ord("A"),ord("a"))
+print(ord("A"),ord("Z"),chr(90),ord("z"))
 print(chr(97+25))
 print(0%25)
+print(chr(93).isalpha())
 
 # print(" ".join([str(3),str(2),str(32),str(32)]))
 
