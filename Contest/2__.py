@@ -50,11 +50,11 @@ def fun(n:int):
             x-=1
     return count_
 
-t=int(input())
-while t:
-    t-=1
-    n=int(input())
-    print(fun(n))
+# t=int(input())
+# while t:
+#     t-=1
+#     n=int(input())
+#     print(fun(n))
         
     
 """
@@ -63,3 +63,31 @@ while t:
 1
 9
 """
+
+# n=input()
+# k=int(input())
+
+# def fun(n,k):
+#     if len(n)==k:
+#         print("True ",len(n))
+#     else:
+#         print("False ",len(n))
+# fun(n,k)
+
+s=input()
+
+def fun(s):
+    n=len(s)
+    i=0
+    res=0
+    while i<n:
+        count=1
+        while i+1<n and s[i]==s[i+1]:
+            i+=1
+            count+=1  
+        if count%2==0:
+            res+=count
+        i+=1
+    return res
+
+print(fun(s))
