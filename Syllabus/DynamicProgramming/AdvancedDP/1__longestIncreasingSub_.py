@@ -1,3 +1,4 @@
+import bisect
 class Solution:
     def longestIncresingSubSequence(self,arr):
         result=[]
@@ -18,27 +19,6 @@ class Solution:
         rec(arr,0,[])
         return result
 
-    # def longestIncresingSubSequenceMemo_(self,arr):
-        
-    #     def rec(arr,index,prev_,memo={}):
-    #         if index>=len(arr):
-    #             return
-    #         # if index==len(arr)-1:
-    #         #     return [[]]
-            
-    #         # result=[]
-    #         # x=rec(arr,index+1,prev_,memo)
-           
-            
-    #         # if prev_>=arr[index]:
-    #         #     if x: 
-    #         #         result.append(x.append(arr[index]))                
-                
-                
-    #         #     result.append(y.append(arr[index]))
-            
-    #     # rec(arr,0,[])
-    #     return 
     def longestIncresingSubSequenceTabulation(self,arr):
         dp=[0]*(len(arr))
         dp[0]=1
@@ -50,12 +30,34 @@ class Solution:
             dp[i]=max_+1
         return dp
             
+    
+    def longestIncresingSubSequence_NlogN(self,arr):
+        dp=[2**32]*(len(arr)+1)
+        dp[0]=0
+        
+        print(bisect.bisect(arr,10))
+        
+        
+        # for ele in arr:
+        #     indx=bisect.bisect(arr,ele)
+        #     dp[indx]=ele
+        #     print(dp,indx,ele)
+    
+            
+            
+        
+        
         
     
 sol=Solution()
 arr=[10,22,9,33,21,50]
-print(sol.longestIncresingSubSequence(arr))
-print(sol.longestIncresingSubSequenceTabulation(arr))
+arr=[10,9,2,5,3,7,101,18]
+
+x=[10, 2**32, 2**32, 2**32, 2**32, 2**32, 2**32, 2**32, 2**32]
+print(bisect.bisect(x,9))
+
+# print(sol.longestIncresingSubSequence(arr))
+# print(sol.longestIncresingSubSequenceTabulation(arr))
             
             
-        
+print(sol.longestIncresingSubSequence_NlogN(arr))

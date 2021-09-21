@@ -5,9 +5,9 @@ class Solution:
         else:
             ans=s
             for i in range(1,len(s)):
-                print(s[i:]+s[:i],ans)
+                print(s[i:]+s[:i],ans,i)
                 ans=min(s[i:]+s[:i],ans)
-                print(ans)
+                print(ans,i)
                 
         return ans
     
