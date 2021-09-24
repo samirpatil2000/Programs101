@@ -28,22 +28,29 @@ class Solution:
                 if arr[i]>arr[j]:
                     max_=max(max_,dp[j])
             dp[i]=max_+1
-        return dp
+        return dp[-1]
             
     
     def longestIncresingSubSequence_NlogN(self,arr):
         dp=[2**32]*(len(arr)+1)
-        dp[0]=0
+        dp[0]=-2**32
         
-        print(bisect.bisect(arr,10))
+        # print(dp)
+        # print(bisect.bisect(dp,10))
         
         
-        # for ele in arr:
-        #     indx=bisect.bisect(arr,ele)
-        #     dp[indx]=ele
-        #     print(dp,indx,ele)
-    
+        for ele in arr:
+            indx=bisect.bisect(dp,ele)
+            if dp[indx-1]!=ele:
+                dp[indx]=ele
             
+        for i in range(len(dp)-1,-1,-1):
+            if dp[i]!=2**32:
+                return i
+        return 0
+            
+            
+        
             
         
         
@@ -51,13 +58,11 @@ class Solution:
     
 sol=Solution()
 arr=[10,22,9,33,21,50]
-arr=[10,9,2,5,3,7,101,18]
-
-x=[10, 2**32, 2**32, 2**32, 2**32, 2**32, 2**32, 2**32, 2**32]
-print(bisect.bisect(x,9))
+# arr=[10,9,2,5,3,7,101,18]
+arr=[7,7,7,7,7,7,7]
 
 # print(sol.longestIncresingSubSequence(arr))
-# print(sol.longestIncresingSubSequenceTabulation(arr))
+print(sol.longestIncresingSubSequenceTabulation(arr))
             
             
 print(sol.longestIncresingSubSequence_NlogN(arr))

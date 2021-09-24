@@ -14,6 +14,7 @@ def numberOfPaths(mat):
                     count[i][j] = count[i+1][j] + count[i][j+1]
             else:
                 count[i][j]=0
+        print(count)
     return count[0][0]%mod
 
 
@@ -21,7 +22,20 @@ def numberOfPaths(mat):
 
 mat=[[1,1,0,1],
      [1,1,1,1]]
-mat=[[1,1,1,1],[1,1,1,1],[1,1,1,1]]
-mat=[[1,1],[0,1]]
-mat=[1]
+
+# mat=[[1,1,1,1],
+#      [1,1,1,1],
+#      [1,1,1,1]]
+
+[[2, 1, 0, 1], 
+ [1, 1, 1, 1]]
+# [[10, 6,  3, 1], 
+#  [4 ,3, 1+1, 1], 
+#  [1 , 1, 1, 1]]
+
+
+# mat=[[1,1],[0,1]]
+# mat=[1]
 print(numberOfPaths(mat))
+
+

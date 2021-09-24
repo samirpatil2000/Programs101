@@ -30,8 +30,14 @@ def pangram():
 # pangram()
 print(ord("A"),ord("Z"),chr(90),ord("z"))
 print(chr(97+25))
-print(0%25)
+print(0%25,"0%25")
 print(chr(93).isalpha())
+
+x,y=set("unn"),set("ny")
+print(x.union(y))
+print(x)
+
+
 
 # print(" ".join([str(3),str(2),str(32),str(32)]))
 
