@@ -21,24 +21,31 @@ while M:
     graph[v].append(u)
 
 
-def dfs(src,visited=set()):
-    if src in visited:return 2**32
-    visited.add(src)
-    if src==N:
-        return C
-    print(src,visited)
-    min_=0
-    for e in graph[src]:
-        min_=min(min_,dfs(e,visited))
-    
-    if not min_:
-        return 2**32   
-    return min_+1+C
-
-print(dfs(1))
-
+class Solution:
+    def totalTime(self):
+        min_=2**32
+        def dfs(src,visited=set(),osf=0):
+            if src==N:
+                min_=min(min_,osf)
+                return
+            print(src,visited)
+            for e in graph[src]:
+                if e in visited:
+                    continue
+                visited.add(e)
+                dfs(src,visited,osf+1+C)
+        return dfs(0) 
 
 
-
+"""
+5 5 3 5
+1 2
+1 3
+2 4
+1 4
+2 5
+"""
+sol=Solution()
+print(sol.totalTime())
 
 
