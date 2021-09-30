@@ -308,15 +308,183 @@ quotation_payload={
 }
 data_dict = xmltodict.parse(data)
 
-data_in_json=json.dumps(data_dict, indent=1)
 
-print(data_in_json)
+# data_dict={'Root': {'Uid': 251024242366, 'VendorCode': 'webagg', 'VendorUserId': 'IINSURE', 'WinNo': '', 'ApplicationNo': '', 'PolicyHeader': {'PolicyStartDate': '15/10/2021', 'PolicyEndDate': '14/10/2023', 'AgentCode': 60001464, 'BranchCode': 10, 'MajorClass': 'HTO', 'ContractType': 'HTO', 'METHOD': 'ENQ', 'PolicyIssueType': 'I', 'PolicyNo': '', 'ClientID': '', 'ReceiptNo': ''}, 'POS_MISP': {'Type': '', 'PanNo': ''}, 'Client': {'ClientType': '', 'CreationType': '', 'Salutation': '', 'FirstName': '', 'LastName': '', 'DOB': '', 'Gender': '', 'MaritalStatus': '', 'Occupation': '', 'PANNo': '', 'GSTIN': '', 'AadharNo': '', 'CKYCNo': '', 'EIANo': '', 'Address1': {'AddrLine1': '', 'AddrLine2': '', 'AddrLine3': '', 'Landmark': '', 'Pincode': 0, 'City': '', 'State': '', 'Country': '', 'AddressType': '', 'HomeTelNo': '', 'OfficeTelNo': '', 'FAXNO': '', 'MobileNo': '', 'EmailAddr': ''}, 'Address2': {'AddrLine1': '', 'AddrLine2': '', 'AddrLine3': '', 'Landmark': '', 'Pincode': 0, 'City': '', 'State': '', 'Country': '', 'AddressType': '', 'HomeTelNo': '', 'OfficeTelNo': '', 'FAXNO': '', 'MobileNo': '', 'EmailAddr': ''}, 'VIPFlag': '', 'VIPCategory': ''}, 'Receipt': {'UniqueTranKey': '', 'CheckType': '', 'BSBCode': '', 'TransactionDate': '', 'ReceiptType': 'IVR', 'Amount': '', 'TCSAmount': '', 'TranRefNo': '', 'TranRefNoDate': ''}, 'Risk': {'PolicyType': 'HTF', 'Duration': 1, 'Installments': 'FULL', 'PaymentType': 'IVR', 'IsFgEmployee': 'N', 'BranchReferenceID': '', 'FGBankBranchStaffID': '', 'BankStaffID': '', 'BankCustomerID': '', 'BancaChannel': '', 'PartnerRefNo': '', 'PayorID': '', 'PayerName': '', 'BeneficiaryDetails': {'Member': [{'MemberId': 1, 'InsuredName': '', 'InsuredDob': '10/10/2000', 'InsuredGender': 'M', 'InsuredOccpn': '', 'CoverType': 'VITAL', 'SumInsured': 500000, 'DeductibleDiscount': '', 'Relation': 'SELF', 'NomineeName': '', 'NomineeRelation': '', 'AnualIncome': '', 'Height': '', 'Weight': '', 'NomineeAge': '', 'AppointeeName': '', 'AptRelWithominee': '', 'MedicalLoading': 0, 'PreExstDisease': 'N', 'DiseaseMedicalHistoryList': {'DiseaseMedicalHistory': {'PreExistingDiseaseCode': '', 'MedicalHistoryDetail': ''}}}, {'MemberId': 2, 'InsuredName': '', 'InsuredDob': '06/06/1999', 'InsuredGender': 'F', 'InsuredOccpn': '', 'CoverType': 'VITAL', 'SumInsured': 500000, 'DeductibleDiscount': '', 'Relation': 'SPOU', 'NomineeName': '', 'NomineeRelation': '', 'AnualIncome': '', 'Height': '', 'Weight': '', 'NomineeAge': '', 'AppointeeName': '', 'AptRelWithominee': '', 'MedicalLoading': 0, 'PreExstDisease': 'N', 'DiseaseMedicalHistoryList': {'DiseaseMedicalHistory': {'PreExistingDiseaseCode': '', 'MedicalHistoryDetail': ''}}}]}}}}
+# data_in_json=json.dumps(data_dict, indent=1)
+
+# print(data_in_json)
 
 
-from json2xml import json2xml
-from json2xml.utils import readfromurl, readfromstring, readfromjson
+# from json2xml import json2xml
+# from json2xml.utils import readfromurl, readfromstring, readfromjson
 
-data = readfromstring(
-    str(data_in_json)
-)
-print(json2xml.Json2xml(data, item_wrap=False).to_xml())
+
+
+# data = readfromstring(
+#     str(data_in_json)
+# )
+# print(json2xml.Json2xml(data, item_wrap=False).to_xml())
+tree="""
+<all>
+        <Root type="dict">
+                <Uid type="int">251024242366</Uid>
+                <VendorCode type="str">webagg</VendorCode>
+                <VendorUserId type="str">IINSURE</VendorUserId>
+                <WinNo type="str"/>
+                <ApplicationNo type="str"/>
+                <PolicyHeader type="dict">
+                        <PolicyStartDate type="str">15/10/2021</PolicyStartDate>
+                        <PolicyEndDate type="str">14/10/2023</PolicyEndDate>
+                        <AgentCode type="int">60001464</AgentCode>
+                        <BranchCode type="int">10</BranchCode>
+                        <MajorClass type="str">HTO</MajorClass>
+                        <ContractType type="str">HTO</ContractType>
+                        <METHOD type="str">ENQ</METHOD>
+                        <PolicyIssueType type="str">I</PolicyIssueType>
+                        <PolicyNo type="str"/>
+                        <ClientID type="str"/>
+                        <ReceiptNo type="str"/>
+                </PolicyHeader>
+                <POS_MISP type="dict">
+                        <Type type="str"/>
+                        <PanNo type="str"/>
+                </POS_MISP>
+                <Client type="dict">
+                        <ClientType type="str"/>
+                        <CreationType type="str"/>
+                        <Salutation type="str"/>
+                        <FirstName type="str"/>
+                        <LastName type="str"/>
+                        <DOB type="str"/>
+                        <Gender type="str"/>
+                        <MaritalStatus type="str"/>
+                        <Occupation type="str"/>
+                        <PANNo type="str"/>
+                        <GSTIN type="str"/>
+                        <AadharNo type="str"/>
+                        <CKYCNo type="str"/>
+                        <EIANo type="str"/>
+                        <Address1 type="dict">
+                                <AddrLine1 type="str"/>
+                                <AddrLine2 type="str"/>
+                                <AddrLine3 type="str"/>
+                                <Landmark type="str"/>
+                                <Pincode type="int">0</Pincode>
+                                <City type="str"/>
+                                <State type="str"/>
+                                <Country type="str"/>
+                                <AddressType type="str"/>
+                                <HomeTelNo type="str"/>
+                                <OfficeTelNo type="str"/>
+                                <FAXNO type="str"/>
+                                <MobileNo type="str"/>
+                                <EmailAddr type="str"/>
+                        </Address1>
+                        <Address2 type="dict">
+                                <AddrLine1 type="str"/>
+                                <AddrLine2 type="str"/>
+                                <AddrLine3 type="str"/>
+                                <Landmark type="str"/>
+                                <Pincode type="int">0</Pincode>
+                                <City type="str"/>
+                                <State type="str"/>
+                                <Country type="str"/>
+                                <AddressType type="str"/>
+                                <HomeTelNo type="str"/>
+                                <OfficeTelNo type="str"/>
+                                <FAXNO type="str"/>
+                                <MobileNo type="str"/>
+                                <EmailAddr type="str"/>
+                        </Address2>
+                        <VIPFlag type="str"/>
+                        <VIPCategory type="str"/>
+                </Client>
+                <Receipt type="dict">
+                        <UniqueTranKey type="str"/>
+                        <CheckType type="str"/>
+                        <BSBCode type="str"/>
+                        <TransactionDate type="str"/>
+                        <ReceiptType type="str">IVR</ReceiptType>
+                        <Amount type="str"/>
+                        <TCSAmount type="str"/>
+                        <TranRefNo type="str"/>
+                        <TranRefNoDate type="str"/>
+                </Receipt>
+                <Risk type="dict">
+                        <PolicyType type="str">HTF</PolicyType>
+                        <Duration type="int">1</Duration>
+                        <Installments type="str">FULL</Installments>
+                        <PaymentType type="str">IVR</PaymentType>
+                        <IsFgEmployee type="str">N</IsFgEmployee>
+                        <BranchReferenceID type="str"/>
+                        <FGBankBranchStaffID type="str"/>
+                        <BankStaffID type="str"/>
+                        <BankCustomerID type="str"/>
+                        <BancaChannel type="str"/>
+                        <PartnerRefNo type="str"/>
+                        <PayorID type="str"/>
+                        <PayerName type="str"/>
+                        <BeneficiaryDetails type="dict">
+                                <Member type="list">
+                                        <MemberId type="int">1</MemberId>
+                                        <InsuredName type="str"/>
+                                        <InsuredDob type="str">10/10/2000</InsuredDob>
+                                        <InsuredGender type="str">M</InsuredGender>
+                                        <InsuredOccpn type="str"/>
+                                        <CoverType type="str">VITAL</CoverType>
+                                        <SumInsured type="int">500000</SumInsured>
+                                        <DeductibleDiscount type="str"/>
+                                        <Relation type="str">SELF</Relation>
+                                        <NomineeName type="str"/>
+                                        <NomineeRelation type="str"/>
+                                        <AnualIncome type="str"/>
+                                        <Height type="str"/>
+                                        <Weight type="str"/>
+                                        <NomineeAge type="str"/>
+                                        <AppointeeName type="str"/>
+                                        <AptRelWithominee type="str"/>
+                                        <MedicalLoading type="int">0</MedicalLoading>
+                                        <PreExstDisease type="str">N</PreExstDisease>
+                                        <DiseaseMedicalHistoryList type="dict">
+                                                <DiseaseMedicalHistory type="dict">
+                                                        <PreExistingDiseaseCode type="str"/>
+                                                        <MedicalHistoryDetail type="str"/>
+                                                </DiseaseMedicalHistory>
+                                        </DiseaseMedicalHistoryList>
+                                        <MemberId type="int">2</MemberId>
+                                        <InsuredName type="str"/>
+                                        <InsuredDob type="str">06/06/1999</InsuredDob>
+                                        <InsuredGender type="str">F</InsuredGender>
+                                        <InsuredOccpn type="str"/>
+                                        <CoverType type="str">VITAL</CoverType>
+                                        <SumInsured type="int">500000</SumInsured>
+                                        <DeductibleDiscount type="str"/>
+                                        <Relation type="str">SPOU</Relation>
+                                        <NomineeName type="str"/>
+                                        <NomineeRelation type="str"/>
+                                        <AnualIncome type="str"/>
+                                        <Height type="str"/>
+                                        <Weight type="str"/>
+                                        <NomineeAge type="str"/>
+                                        <AppointeeName type="str"/>
+                                        <AptRelWithominee type="str"/>
+                                        <MedicalLoading type="int">0</MedicalLoading>
+                                        <PreExstDisease type="str">N</PreExstDisease>
+                                        <DiseaseMedicalHistoryList type="dict">
+                                                <DiseaseMedicalHistory type="dict">
+                                                        <PreExistingDiseaseCode type="str"/>
+                                                        <MedicalHistoryDetail type="str"/>
+                                                </DiseaseMedicalHistory>
+                                        </DiseaseMedicalHistoryList>
+                                </Member>
+                        </BeneficiaryDetails>
+                </Risk>
+        </Root>
+</all>"""
+import xml.etree.ElementTree as ET
+
+dict_={}
+for obj in ET.fromstring(tree).iter():
+    dict_[obj.tag] = obj.text
+
+print(dict_)
