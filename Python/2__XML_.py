@@ -306,7 +306,7 @@ quotation_payload={
       ]
    }
 }
-data_dict = xmltodict.parse(data)
+# data_dict = xmltodict.parse(data)
 
 
 # data_dict={'Root': {'Uid': 251024242366, 'VendorCode': 'webagg', 'VendorUserId': 'IINSURE', 'WinNo': '', 'ApplicationNo': '', 'PolicyHeader': {'PolicyStartDate': '15/10/2021', 'PolicyEndDate': '14/10/2023', 'AgentCode': 60001464, 'BranchCode': 10, 'MajorClass': 'HTO', 'ContractType': 'HTO', 'METHOD': 'ENQ', 'PolicyIssueType': 'I', 'PolicyNo': '', 'ClientID': '', 'ReceiptNo': ''}, 'POS_MISP': {'Type': '', 'PanNo': ''}, 'Client': {'ClientType': '', 'CreationType': '', 'Salutation': '', 'FirstName': '', 'LastName': '', 'DOB': '', 'Gender': '', 'MaritalStatus': '', 'Occupation': '', 'PANNo': '', 'GSTIN': '', 'AadharNo': '', 'CKYCNo': '', 'EIANo': '', 'Address1': {'AddrLine1': '', 'AddrLine2': '', 'AddrLine3': '', 'Landmark': '', 'Pincode': 0, 'City': '', 'State': '', 'Country': '', 'AddressType': '', 'HomeTelNo': '', 'OfficeTelNo': '', 'FAXNO': '', 'MobileNo': '', 'EmailAddr': ''}, 'Address2': {'AddrLine1': '', 'AddrLine2': '', 'AddrLine3': '', 'Landmark': '', 'Pincode': 0, 'City': '', 'State': '', 'Country': '', 'AddressType': '', 'HomeTelNo': '', 'OfficeTelNo': '', 'FAXNO': '', 'MobileNo': '', 'EmailAddr': ''}, 'VIPFlag': '', 'VIPCategory': ''}, 'Receipt': {'UniqueTranKey': '', 'CheckType': '', 'BSBCode': '', 'TransactionDate': '', 'ReceiptType': 'IVR', 'Amount': '', 'TCSAmount': '', 'TranRefNo': '', 'TranRefNoDate': ''}, 'Risk': {'PolicyType': 'HTF', 'Duration': 1, 'Installments': 'FULL', 'PaymentType': 'IVR', 'IsFgEmployee': 'N', 'BranchReferenceID': '', 'FGBankBranchStaffID': '', 'BankStaffID': '', 'BankCustomerID': '', 'BancaChannel': '', 'PartnerRefNo': '', 'PayorID': '', 'PayerName': '', 'BeneficiaryDetails': {'Member': [{'MemberId': 1, 'InsuredName': '', 'InsuredDob': '10/10/2000', 'InsuredGender': 'M', 'InsuredOccpn': '', 'CoverType': 'VITAL', 'SumInsured': 500000, 'DeductibleDiscount': '', 'Relation': 'SELF', 'NomineeName': '', 'NomineeRelation': '', 'AnualIncome': '', 'Height': '', 'Weight': '', 'NomineeAge': '', 'AppointeeName': '', 'AptRelWithominee': '', 'MedicalLoading': 0, 'PreExstDisease': 'N', 'DiseaseMedicalHistoryList': {'DiseaseMedicalHistory': {'PreExistingDiseaseCode': '', 'MedicalHistoryDetail': ''}}}, {'MemberId': 2, 'InsuredName': '', 'InsuredDob': '06/06/1999', 'InsuredGender': 'F', 'InsuredOccpn': '', 'CoverType': 'VITAL', 'SumInsured': 500000, 'DeductibleDiscount': '', 'Relation': 'SPOU', 'NomineeName': '', 'NomineeRelation': '', 'AnualIncome': '', 'Height': '', 'Weight': '', 'NomineeAge': '', 'AppointeeName': '', 'AptRelWithominee': '', 'MedicalLoading': 0, 'PreExstDisease': 'N', 'DiseaseMedicalHistoryList': {'DiseaseMedicalHistory': {'PreExistingDiseaseCode': '', 'MedicalHistoryDetail': ''}}}]}}}}
@@ -315,15 +315,15 @@ data_dict = xmltodict.parse(data)
 # print(data_in_json)
 
 
-# from json2xml import json2xml
-# from json2xml.utils import readfromurl, readfromstring, readfromjson
+from json2xml import json2xml
+from json2xml.utils import readfromurl, readfromstring, readfromjson
 
-
+# quotation_payload=json.dumps(quotation_payload)
 
 # data = readfromstring(
-#     str(data_in_json)
+#     str(quotation_payload)
 # )
-# print(json2xml.Json2xml(data, item_wrap=False).to_xml())
+# print(json2xml.Json2xml(data, item_wrap=False,attr_type=False).to_xml())
 tree="""
 <all>
         <Root type="dict">
@@ -481,10 +481,9 @@ tree="""
                 </Risk>
         </Root>
 </all>"""
-import xml.etree.ElementTree as ET
+# import xml.etree.ElementTree as ET
 
-dict_={}
-for obj in ET.fromstring(tree).iter():
-    dict_[obj.tag] = obj.text
 
-print(dict_)
+from dicttoxml import dicttoxml
+xml = dicttoxml(quotation_payload,attr_type=False)
+print(xml)
