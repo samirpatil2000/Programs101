@@ -42,7 +42,7 @@ def findOccurence_2(arr:List[int])->List[int]:
         
     return arr
 arr=[2,2,3,3,3,1]
-# print(findOccurence(arr))
+print(findOccurence(arr))
 print(findOccurence_2(arr)
 )        
     

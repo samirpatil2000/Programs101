@@ -9,18 +9,22 @@ class Question1:
         n=len(arr)
         for i in range(n):
             arr[arr[i]%n]+=n
+            print(arr)
         for i in range(n):
+            # print(arr[i],arr[i]//n)
             arr[i]=arr[i]//n
-            if arr[i]!=0:
-                if arr[i]==1:
-                    print("Element "+str(i)+" appears once.")
-                elif arr[i]==2:
-                    print("Element "+str(i)+" appears twice.")
-                elif arr[i]==3:
-                    print("Element "+str(i)+" appears thrice.")
-                else:
-                    print("Element "+str(i)+" appears "+str(arr[i])+" times.")
-                    
+            
+            # if arr[i]!=0:
+            #     if arr[i]==1:
+            #         print("Element "+str(i)+" appears once.")
+            #     elif arr[i]==2:
+            #         print("Element "+str(i)+" appears twice.")
+            #     elif arr[i]==3:
+            #         print("Element "+str(i)+" appears thrice.")
+            #     else:
+            #         print("Element "+str(i)+" appears "+str(arr[i])+" times.")
+                 
+            print(arr)   
 class Question2:
     def maxSumNonCircularSubArr(self,arr:List[int])->int:
         n=len(arr)
@@ -53,7 +57,7 @@ class Question2:
 """
 
 Q1=Question1()
-arr=[2, 3, 3, 2, 1,0,0,0,0]
+arr=[2, 3, 3, 2, 1,0]
 Q1.findOccurence(arr)
 
 

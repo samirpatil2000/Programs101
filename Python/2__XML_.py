@@ -174,7 +174,27 @@ data="""
     </BeneficiaryDetails>
   </Risk>
 </Root>"""
-
+data="""<Root>
+    <Client>
+        <Status>Successful</Status>
+        <ClientId>40260338</ClientId>
+        <ErrorMessage></ErrorMessage>
+    </Client>
+    <Receipt>
+        <Status>Successful</Status>
+        <ReceiptNo>Z2122038</ReceiptNo>
+        <ErrorMessage></ErrorMessage>
+    </Receipt>
+    <Policy>
+        <Status>Successful</Status>
+        <PolicyNo>HTO-10-21-7249841-00-000</PolicyNo>
+        <Message>Policy Synced Successfully</Message>
+    </Policy>
+    <Application>
+        <WinNo>NR-00000000000101863</WinNo>
+        <ApplicationNo>G0006214</ApplicationNo>
+    </Application>
+</Root>"""
 quotation_payload={
    "Uid": "0447313",
    "VendorCode": "webagg",
@@ -306,7 +326,8 @@ quotation_payload={
       ]
    }
 }
-# data_dict = xmltodict.parse(data)
+data_dict = xmltodict.parse(data)
+print(json.dumps(data_dict))
 
 
 # data_dict={'Root': {'Uid': 251024242366, 'VendorCode': 'webagg', 'VendorUserId': 'IINSURE', 'WinNo': '', 'ApplicationNo': '', 'PolicyHeader': {'PolicyStartDate': '15/10/2021', 'PolicyEndDate': '14/10/2023', 'AgentCode': 60001464, 'BranchCode': 10, 'MajorClass': 'HTO', 'ContractType': 'HTO', 'METHOD': 'ENQ', 'PolicyIssueType': 'I', 'PolicyNo': '', 'ClientID': '', 'ReceiptNo': ''}, 'POS_MISP': {'Type': '', 'PanNo': ''}, 'Client': {'ClientType': '', 'CreationType': '', 'Salutation': '', 'FirstName': '', 'LastName': '', 'DOB': '', 'Gender': '', 'MaritalStatus': '', 'Occupation': '', 'PANNo': '', 'GSTIN': '', 'AadharNo': '', 'CKYCNo': '', 'EIANo': '', 'Address1': {'AddrLine1': '', 'AddrLine2': '', 'AddrLine3': '', 'Landmark': '', 'Pincode': 0, 'City': '', 'State': '', 'Country': '', 'AddressType': '', 'HomeTelNo': '', 'OfficeTelNo': '', 'FAXNO': '', 'MobileNo': '', 'EmailAddr': ''}, 'Address2': {'AddrLine1': '', 'AddrLine2': '', 'AddrLine3': '', 'Landmark': '', 'Pincode': 0, 'City': '', 'State': '', 'Country': '', 'AddressType': '', 'HomeTelNo': '', 'OfficeTelNo': '', 'FAXNO': '', 'MobileNo': '', 'EmailAddr': ''}, 'VIPFlag': '', 'VIPCategory': ''}, 'Receipt': {'UniqueTranKey': '', 'CheckType': '', 'BSBCode': '', 'TransactionDate': '', 'ReceiptType': 'IVR', 'Amount': '', 'TCSAmount': '', 'TranRefNo': '', 'TranRefNoDate': ''}, 'Risk': {'PolicyType': 'HTF', 'Duration': 1, 'Installments': 'FULL', 'PaymentType': 'IVR', 'IsFgEmployee': 'N', 'BranchReferenceID': '', 'FGBankBranchStaffID': '', 'BankStaffID': '', 'BankCustomerID': '', 'BancaChannel': '', 'PartnerRefNo': '', 'PayorID': '', 'PayerName': '', 'BeneficiaryDetails': {'Member': [{'MemberId': 1, 'InsuredName': '', 'InsuredDob': '10/10/2000', 'InsuredGender': 'M', 'InsuredOccpn': '', 'CoverType': 'VITAL', 'SumInsured': 500000, 'DeductibleDiscount': '', 'Relation': 'SELF', 'NomineeName': '', 'NomineeRelation': '', 'AnualIncome': '', 'Height': '', 'Weight': '', 'NomineeAge': '', 'AppointeeName': '', 'AptRelWithominee': '', 'MedicalLoading': 0, 'PreExstDisease': 'N', 'DiseaseMedicalHistoryList': {'DiseaseMedicalHistory': {'PreExistingDiseaseCode': '', 'MedicalHistoryDetail': ''}}}, {'MemberId': 2, 'InsuredName': '', 'InsuredDob': '06/06/1999', 'InsuredGender': 'F', 'InsuredOccpn': '', 'CoverType': 'VITAL', 'SumInsured': 500000, 'DeductibleDiscount': '', 'Relation': 'SPOU', 'NomineeName': '', 'NomineeRelation': '', 'AnualIncome': '', 'Height': '', 'Weight': '', 'NomineeAge': '', 'AppointeeName': '', 'AptRelWithominee': '', 'MedicalLoading': 0, 'PreExstDisease': 'N', 'DiseaseMedicalHistoryList': {'DiseaseMedicalHistory': {'PreExistingDiseaseCode': '', 'MedicalHistoryDetail': ''}}}]}}}}
