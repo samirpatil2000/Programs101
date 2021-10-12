@@ -29,9 +29,13 @@ def genarate_checksum(request_data:dict):
     print(text)
     encoded=text.encode()
     result = hashlib.sha256(encoded)
-    print(result)
     print(result.hexdigest())
     
+    text="AJ123456789|3|http://fglpg001.futuregenerali.in/ECOM_NL/WEBAPPLN/UI/Common/WebAggData.aspx |A321456987|1000|TestAgg|456|tester|tester|987654321|test@test.com|17/04/2018 11:16:14 AM |"
+    print(text)
+    encoded=text.encode()
+    result = hashlib.sha256(encoded)
+    print(result.hexdigest())
     
     
 genarate_checksum(request_data)      

@@ -1,10 +1,9 @@
-def howSum(arr,target,memo={}):
+def howSum(arr,target,memo):
     if target in memo:
         return memo[target]
     if target==0:
         return []
     if target<0: return None
-    print(target)
     for num in arr:
         x=howSum(arr,target-num,memo)
         if x != None:
@@ -14,5 +13,7 @@ def howSum(arr,target,memo={}):
     return None
 
 # target,arr=10,[5,2,3,7]
-target,arr=300,[3,1]
-print(howSum(arr,target))
+target,arr=300,[1,2,3,4,3]
+memo={}
+print(howSum(arr,target,memo))
+print(memo)

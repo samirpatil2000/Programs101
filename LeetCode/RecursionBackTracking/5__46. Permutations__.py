@@ -32,7 +32,7 @@ class Solution:
         
         return res
 sol=Solution()
-nums=[1,2]
+nums=[1,2,3,4]
 # nums=[1]
 print(sol.permute(nums))
-print(sol.anotherMethod(nums))
+# print(sol.anotherMethod(nums))
