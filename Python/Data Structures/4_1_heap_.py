@@ -32,7 +32,6 @@ def sol():
     while q:
         x=heapq.heappop(q)
         arr.append((x[0],x[1]))
-        # print(x)
         
     print(arr)
 sol()

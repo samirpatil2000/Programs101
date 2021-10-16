@@ -69,4 +69,8 @@ word = "ABCB"
 board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
 word = "SEE"
 # print(sol.exist(board,word))
-print(sol.exist_2(board,word))
+board,word=[["a","a"]],"aaa"
+
+
+board,word=[["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]],["oath","pea","eat","rain"]
+print(sol.exist_2(board,word[0]))

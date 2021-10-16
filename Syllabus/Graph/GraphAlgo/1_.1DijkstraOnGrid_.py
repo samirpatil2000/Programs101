@@ -1,28 +1,7 @@
 from typing import List
 import heapq
 class Solution:
-    
-# def explorNeighbours(self,mat,current_row,current_col):
-#     dr=[-1,+1,0,0]
-#     dc=[0,0,-1,+1]
-#     # list_=[]
-#     for i in range(4):
-#         rr=current_row+dr[i]
-#         cc=current_col+dc[i]
-        
-#         if rr<0 or cc<0:
-#             continue
-#         if rr>=len(mat) or cc>=len(mat[0]):
-#             continue
-#         if visited[rr][cc]:
-#             continue
-#         if mat[rr][cc]==1:
-#             continue
-    
-#         row_queue.append(rr)
-#         col_queue.append(cc) 
-        
-#         visited[rr][cc]=True
+
     def swimInWater(self, grid: List[List[int]]) -> int:
         dr=[-1,+1,0,0]
         dc=[0,0,-1,+1]
