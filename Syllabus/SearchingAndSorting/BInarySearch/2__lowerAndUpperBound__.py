@@ -10,6 +10,7 @@ class Solution:
             else:
                 high=mid
         if arr[low]>=ele:return low
+        
         if arr[high]>=ele:return high
         return -1
     

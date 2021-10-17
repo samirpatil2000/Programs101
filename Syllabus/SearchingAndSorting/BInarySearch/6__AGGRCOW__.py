@@ -3,17 +3,18 @@
 class Solution:
     
     
-    def isFeasible(self,arr,height,M):
-        sum_=0
+    def canPlaceCows(self,arr,minDist,cows):
+        last_cow=-1
         for i in range(len(arr)):
-            if height<=arr[i]:
-                sum_+=(arr[i]-height)
-        print(height,sum_)
-        if sum_>=M:
-            return True
-        return False
+            if last_cow==-1 or arr[i]-last_cow>=minDist:
+                last_cow=arr[i]
+                cows-=1
+            if cows==0:
+                return True
+        return cows==0
                 
-    def eko(self,arr,M):
+                
+    def eko(self,arr,cows):
         left=0
         right=max(arr)
         
@@ -24,18 +25,18 @@ class Solution:
         while right-left>1:
             mid=(left+right)//2
             
-            if self.isFeasible(arr,mid,M):
+            if self.canPlaceCows(arr,mid,cows):
                 result=mid
                 
                 left=mid
             else:
                 right=mid-1
-        if self.isFeasible(arr,right,M):
+        if self.canPlaceCows(arr,right,cows):
             return right
         
         return result,left
     
 
 sol=Solution()
-arr,M=[10,20,15,17],7
-print(sol.eko(arr,M))
+arr,cows=[1,2,4,8,9],3
+print(sol.eko(arr,cows))
