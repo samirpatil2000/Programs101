@@ -29,4 +29,5 @@ sol=Solution()
 n = 4
 paths = [[1,2],[2,3],[3,4],[4,1],[1,3],[2,4]]
 print(sol.gardenNoAdj(n,paths))
-                            
+
+print(2//3,2/3)

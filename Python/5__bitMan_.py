@@ -8,3 +8,6 @@ class Solution:
 sol=Solution()
 print(sol.intToBinary(2))
 print(sol.binaryToInt("10"))
+
+
+print(round(3.22233,3))
