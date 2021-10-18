@@ -36,14 +36,16 @@ def inOrder(root):
 def inOrderIterative(root):
     st=[]
     curr=root
+    result=[]
     while(len(st)>0 or curr):
         if(curr):
             st.append(curr)
             curr=curr.right
         else:
             curr=st.pop()
-            print(curr.data,end=" ")
+            result.append(curr.data)
             curr=curr.left
+    return result[::-1]
     
         
             
@@ -80,5 +82,5 @@ display(root)
 
 inOrder(root)
 print()
-inOrderIterative(root)
+print(inOrderIterative(root))
 print()
