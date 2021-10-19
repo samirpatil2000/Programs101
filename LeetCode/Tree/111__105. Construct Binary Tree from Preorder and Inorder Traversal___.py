@@ -54,7 +54,7 @@ class Solution:
         return dfs(0,len(inorder)-1)
         
 sol=Solution()
-data= [6,2,8,0,4,7,9,'*','*',3,5]
+data= [6,2,8,0,4,7,9,'*','*',3,5]            
 
 # root=sol.deserialiazition(data)
 

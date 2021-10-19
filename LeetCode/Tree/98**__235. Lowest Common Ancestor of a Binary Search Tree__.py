@@ -48,11 +48,11 @@ class Solution:
                 
         return root
     
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'int', q: 'int') -> 'TreeNode':
         if not root:return
-        if root.val>p.val and root.val>q.val:
+        if root.val>p and root.val>q:
             return self.lowestCommonAncestor(root.left,p,q)
-        if root.val<p.val and root.val<q.val:
+        if root.val<p and root.val<q:
             return self.lowestCommonAncestor(root.right,p,q)
         return root
         
@@ -63,8 +63,8 @@ class Solution:
     
 sol=Solution()
 data= [6,2,8,0,4,7,9,'*','*',3,5]
-p = 2
+p = 7
 q = 8
 root=sol.de(data=data)
 sol.inOrder(root)
-# print(sol.lowestCommonAncestor(root,p,q))
+print(sol.lowestCommonAncestor(root,p,q).val)

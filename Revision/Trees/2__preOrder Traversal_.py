@@ -28,4 +28,4 @@ print(bt.PreOrderTraversal(root))
 sol=Solution()
 print(sol.preOrderIterative(root))
 
-"L - root - R"
+"root - L - R"
