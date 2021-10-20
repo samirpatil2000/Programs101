@@ -53,7 +53,7 @@ class Graph():
             if x!=y:
                 result.append(con)
                 self.union(con[0],con[1],parent,rank)
-                
+        print(parent,rank)      
         return result
             
         
