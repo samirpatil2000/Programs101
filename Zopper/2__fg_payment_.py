@@ -1,22 +1,24 @@
+
+
+import hashlib
+
+
 request_data={
-    'TransactionID':"AB123456",
+    'TransactionID':"b96c6d6f34defdb2deb008b2ad1a5cda",
     'PaymentOption':"1",
     'ResponseURL':"http://abclife.com/PayRes/ResponseHandler.aspx",
-    'ProposalNumber':"A0123464",
-    'PremiumAmount':"3000",
-    'UserIdentifier':"",
-    'UserId':"Sharma1234",
-    'FirstName':"Rajesh",
-    'LastName':"Sharma",
-    'Mobile':"9809801234",
-    'Email':"test@gmail.com",
-    'Vendor':"",
-    'CheckSum':"ba22169f08849e9b39871d8df64241cd60e6c27108e44322ebc1fc07f84c4819"
+    'ProposalNumber':"b96c6d6f34defdb2deb008b2ad1a5cda",
+    'PremiumAmount':"9730614299",
+    'UserIdentifier':"NA",
+    'UserId':"NA",
+    'FirstName':"Samir",
+    'LastName':"Patil",
+    'Mobile':"9730614299",
+    'Email':"samirspatil742099@gmail.com",
 }
 
-
 def genarate_checksum(request_data:dict):
-    import hashlib
+    
     values="TransactionID|PaymentOption|ResponseURL|ProposalNumber|PremiumAmount|UserIdentifier|UserId|FirstName|LastName|Mobile|Email"
     values=values.split("|")
     # values=set(values)
@@ -31,7 +33,7 @@ def genarate_checksum(request_data:dict):
     result = hashlib.sha256(encoded)
     print(result.hexdigest())
     
-    text="AJ123456789|3|http://fglpg001.futuregenerali.in/ECOM_NL/WEBAPPLN/UI/Common/WebAggData.aspx |A321456987|1000|TestAgg|456|tester|tester|987654321|test@test.com|17/04/2018 11:16:14 AM |"
+    text="AJ123456789|3|http://fglpg001.futuregenerali.in/ECOM_NL/WEBAPPLN/UI/Common/WebAggData.aspx|A321456987|1000|TestAgg|456|tester|tester|987654321|test@test.com|17/04/2018 11:16:14 AM |"
     print(text)
     encoded=text.encode()
     result = hashlib.sha256(encoded)
@@ -39,3 +41,19 @@ def genarate_checksum(request_data:dict):
     
     
 genarate_checksum(request_data)      
+
+def checksum(data):
+    final_string = "{}|{}|{}|{}|{}|{}|{}|{}|{}|{}|{}".format(
+            data.get('TransactionID'), data.get('PaymentOption'),
+            data.get('ResponseURL'),
+            data.get('ProposalNumber'), data.get('PremiumAmount'),
+            data.get('UserIdentifier'),
+            data.get('UserId'), data.get('FirstName'),
+            data.get('LastName'), data.get('Mobile'),
+            data.get('Email')
+        )
+    signature = hashlib.sha256(final_string.encode())
+    checksum_ = signature.hexdigest()
+    return checksum_
+
+print(checksum(request_data))
