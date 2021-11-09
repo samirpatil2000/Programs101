@@ -12,5 +12,18 @@ class Solution:
         return dfs(1,n)
     
 sol=Solution()
-n=19
+n=5
 print(sol.numTrees(n))
+
+
+
+
+def numTree(left:int,right:int):
+    if left>=right:
+        return 1
+    result=0
+    for i in range(left,right+1):
+        result+=(numTree(left,i-1)*numTree(i+1,right))
+    return result
+
+print(numTree(1,5))
