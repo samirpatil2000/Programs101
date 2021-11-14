@@ -18,3 +18,5 @@ sol=Solution()
 mat=[[1,2,3],[1,5,1],[3,1,1]]
 mat=[[1,5],[2,3],[4,2]]
 print(sol.maxPoints(mat[:1]))
+
+
