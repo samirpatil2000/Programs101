@@ -1,0 +1,1 @@
+psycopg2 pyparsing pydot pyasn1 pyasn1-modules python-ldap pyserial pyusb qrcode reportlab cached-property defusedxml attrs requests-toolbelt appdirs isodate zeep python-stdnum vobject Werkzeug XlsxWriter xlwt xlrd jmespath botocore s3transfer boto3
