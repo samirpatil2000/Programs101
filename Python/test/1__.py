@@ -1,11 +1,16 @@
-class Sample:
-    num2=10
+def funt(n):
+    try:
+        if n==2:
+            return "Ok"
+    except Exception as e:
+        return str(e)
     
-s1=Sample()
-s1.num1=15
+
+print(funt("sa"))
 
 
-s2=Sample()
-s2.num1=22
-print(s2.num1)
-print(s1.num1,s1.num2)
+{
+    'status':200,
+    'message':'success'
+    'data'
+}

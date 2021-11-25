@@ -12,6 +12,7 @@ class Union_(object):
         parent_b=self.findParent(b)
         if parent_a!=parent_b:
             self.parent[parent_a]=parent_b
+        
     def printParent(self):
         print(self.parent)
         
