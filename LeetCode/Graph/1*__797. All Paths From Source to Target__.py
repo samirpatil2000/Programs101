@@ -1,17 +1,19 @@
 class Solution:
     def allPathsSourceTarget(self, graph):
-        compo_list=[]
-
-        def dfs(src,list_):
-            if len(graph[src])==0:
-                compo_list.append(list_)
-                return                
-            for i in graph[src]:
-                dfs(i,list_+[i])
+        k
         
-        dfs(0,[0]) 
-        return compo_list
     
+        def dfsBottomUp(src=0):    
+            if src == len(graph) - 1: 
+                return [[len(graph) - 1]]
+            # return [([src] + path) for i in graph[src] for path in dfsBottomUp(i)]
+            result=[]
+            for e in graph[src]:
+                for path in dfsBottomUp(e):
+                    result.append([src]+path)
+            return result
+        
+        return compo_list,dfsBottomUp()
     
 graph = [[1,2],[3],[3],[]]
 sol=Solution()
