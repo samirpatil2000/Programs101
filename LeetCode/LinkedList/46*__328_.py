@@ -78,21 +78,41 @@ def oddEvenList(head):
         count+=1
     return head
     
+def oddEvenList2(head: newNode) -> newNode:
+    if(head==None or head.next==None or head.next.next==None):
+        return head
+    oddIt=head
+    evenIt=head.next
+    
+    
+    evenHead=evenIt
+    while oddIt.next and evenIt.next:
+        
+        oddNext=evenIt.next
+        oddIt.next=oddNext
+        oddIt=oddIt.next
+        
+        if oddIt:
+            evenIt.next=oddIt.next
+            evenIt=evenIt.next
+    oddIt.next=evenHead
+    return head
+
     
 
 
 
 
-# head=[1,2,3,4,5] #[1,3,5,2,4]
+head=[1,2,3,4,5] #[1,3,5,2,4]
 
 linkedListA=LinkedList()
-head = [2,1,3,5,6,4,7] #[2,3,6,7,1,5,4]
+# head = [2,1,3,5,6,4,7] #[2,3,6,7,1,5,4]
 linkedListA.head=newNode(head[0])
 for i in head[1:]:
     linkedListA.addNodeToLinkedList(i)
 linkedListA.printLinkedList()
 
-x=oddEvenList(linkedListA.head)
+x=oddEvenList2(linkedListA.head)
 printLinkedList(x)
 
 # print(lastNode(linkedListA.head).val)
