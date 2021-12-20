@@ -12,7 +12,9 @@ class Employee:
         Employee.num_of_count+=1
         
     def fullName(self):
-        return "full name is {}".format(self.name)
+        info={}
+        info["x"]="full name is {}".format(self.name)
+        return info
     
     def raise_amt(self):
         self.amt*=self.raise_amt_value
@@ -25,7 +27,9 @@ class Developer(Employee):
     def __init__(self, name,prog_lang) -> None:
         super().__init__(name,amt=None)
         self.prog_lang=prog_lang
-
+    
+    def fullName(self):
+        return super().fullName()
 
 class Manager(Employee):
     
@@ -88,3 +92,5 @@ class A(Employee):
 
 obj=A("Samir",23,request="Hello")
 print(obj.name,obj.amt,obj.re)
+
+print(0 or 1)
