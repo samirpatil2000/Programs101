@@ -35,3 +35,11 @@ def sol():
         
     print(arr)
 sol()
+
+
+points = [[3,3],[5,-1],[-2,4]]
+k = 2
+
+print(heapq.nsmallest(k,points,key=lambda x: x[0]*x[0]+x[1]*x[1]))
+
+print(heapq.nlargest(k,points,key=lambda x: x[0]*x[0]+x[1]*x[1]))

@@ -28,6 +28,10 @@ class Solution:
         return self.result
     
     
+    
+    
+    
+    
 sol=Solution()
 numCourses = 2
 prerequisites = [[0,1],[1,0]]
