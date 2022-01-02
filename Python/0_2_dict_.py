@@ -1,6 +1,7 @@
 
 
 import collections
+from collections import OrderedDict
 
 
 class Dictionary():
@@ -136,3 +137,19 @@ sol=Dictionary()
             
 
 sol.addToDict()
+
+
+x={}
+x["sam"]=34
+x["di"]=35
+print(str(x))
+# print(x)
+# for i in x.values():
+#     print(i)
+    
+# print(x["di"])
+
+y=OrderedDict()
+
+            
+            
