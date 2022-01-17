@@ -43,3 +43,4 @@ print(x)
 
 
 
+print("3".isnumeric())

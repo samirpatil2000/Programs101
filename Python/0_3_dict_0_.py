@@ -36,8 +36,27 @@ quote_payload_self={
     },
 }
 
-x=quote_payload_self['payload']['members']
-x.append({'sam':23})
-print(x)
-print(quote_payload_self['payload']['members'])
+# x=quote_payload_self['payload']['members']
+# x.append({'sam':23})
+# print(x)
+# print(quote_payload_self['payload']['members'])
 
+from collections import Counter
+
+
+s = "aaaabbcc"
+print(Counter(s))
+pattern = "abba"
+s = "dog cat cat dog"
+
+
+t = s.split()
+s = pattern
+print(t)
+# print(,)
+print(s)
+for i in map(s.find, s):
+    print(i)
+
+for j in map(t.index,t):
+    print(j)
