@@ -1,0 +1,5 @@
+If you try to access a website like
+“https://mycurrentlocation.net” through chrome,
+it would ask you to allow location access.
+The command ” — use-fake-ui-for-media-stream” will
+grant all permission for location, microphone,etc. automatically.

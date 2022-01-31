@@ -44,3 +44,5 @@ print(x)
 
 
 print("3".isnumeric())
+
+print(ord("a"),ord("A"),ord("z"),ord("Z"))
