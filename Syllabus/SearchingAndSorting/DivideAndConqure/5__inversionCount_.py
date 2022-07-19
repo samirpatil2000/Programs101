@@ -43,5 +43,6 @@ sol=Solution()
 arr=[3, 1, 2]
 arr=[1, 20, 6, 4, 5]
 arr=[5,3,1,4,2]
+arr=[2 ,4, 1, 3, 5]
 print(sol.mergeSort(arr,0,len(arr)-1))
 print(arr)
