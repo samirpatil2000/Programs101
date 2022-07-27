@@ -20,7 +20,7 @@ class Solution:
     
     def findLongestConseqSubseq_UsingHash(self, arr):
         max_ = 1
-        set_ = set(arr)
+        set_ = dict()
         count_ = 1
         for i in range(len(arr)):
             if arr[i] - 1  in set_ or arr[i] + 1  in set_:
