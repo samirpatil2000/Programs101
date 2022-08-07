@@ -7,10 +7,10 @@ def knapsack(values,weights,n,target):
             val=values[row-1]
             dp[row][col]=dp[row-1][col]
             if(col>=val):
-                dp[row][col]=max(dp[row-1][col],weights[row-1]+dp[row-1][col-val])
+                dp[row][col]=max(dp[row-1][col], weights[row-1]+dp[row-1][col-val])
                     
     
-    print(dp[-1][-1])
+    print(dp[-1][-1], max(max(dp)))
     
     
     
@@ -48,9 +48,12 @@ class Solution():
         
 arr=[2,5,1,3,4]
 wt=[15,14,10,45,30]   
-    
-knapsack(arr,wt,len(arr),7)
+W = 7
+wt = [1, 2, 3]
+arr = [4, 5, 1]
+W = 4
+knapsack(arr,wt,len(arr),W)
 sol=Solution()
-print(sol.knapsack(arr,wt,7))
-print(sol.withMemo(arr,wt,7,0,arr[0]))
+# print(sol.knapsack(arr, wt, W))
+# print(sol.withMemo(arr,wt,7,0,arr[0]))
     

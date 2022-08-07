@@ -4,8 +4,8 @@ def coinChangePermutation(coins,target):
     
     for i in range(1,len(dp)):
         for j in range(len(coins)):
-            if (coins[j]<=i):
-                dp[i]+=dp[i-coins[j]]
+            if (coins[j] <= i):
+                dp[i] += dp[i-coins[j]]
                 
     
     print(dp)
@@ -28,9 +28,10 @@ class Solution():
 count_=[0]
     
 target,arr=10,[2,3,5,6]  
-target,arr=7,[5,2,3]
+target,arr=7, [5,2,3]
+target,arr=4, [1, 2, 3]
 coinChangePermutation(arr,target)
-
+Solution().coinChangeMemo(arr, target_sum=target)
 
 
         

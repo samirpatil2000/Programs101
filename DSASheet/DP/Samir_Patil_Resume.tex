@@ -1,0 +1,242 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Samir Patil} \\ \vspace{1pt}
+    \small 973.061.4299 $|$ \href{samirspatil742099@gmail.com}{\underline{samirspatil742099@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/samir-patil-40830218b/}{\underline{linkedin.com/in/samir-patil-40830218b/}} $|$
+    \href{https://github.com/samirpatil2000}{\underline{github.com/samirpatil2000}} $|$
+    \href{https://leetcode.com/samirpatil2000}{\underline{leetcode.com/samirpatil2000}} $|$
+    \href{https://leetcode.com/samirpatil2000}{\underline{hackerrank.com/samirpatil2000}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {MUMBAI UNIVERSITY}{Aug. 2019 -- July 2023}
+      {B.E in Electronics and telecommunication}{Cum. GPA: 8.9/10}
+    \resumeSubheading
+      {HSC,Maharashtra}{Passed: April, 2018}
+      {Science PCM}{Agg. Percentage: \textbf{80.81}}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Semaai}{Nov. 2021 -- Present}
+      {Software Engineering Intern}{Remote}
+      \resumeItemListStart
+        \resumeItem{Worked the APIs for a chat support system in odoo for communication btw buyers and sellers}
+        \resumeItem{Reverse Engineered the Odoo's existing module for chat and modified(Inherited) it according to requirement  }
+        \resumeItem{Contributing and taking part in software and architectural development activities}
+        \resumeItem{Resolved several production issues/bugs, understood different pipelines}
+        \resumeItem{Developed new authentication flow with OTP feature and JWT token in odoo}
+        \resumeItem{Currently implementing middleware in odoo for authentication and API arch revamp}
+        \resumeItem{Giving assistance and support to programming team members as required. Working in an Agile (Scrum) env}
+        % \resumeItem{Optimized product search API}
+        \resumeItem{Developing well-designed, efficient, and testable code with backward compatibility}
+        \resumeItem{\textbf{Tech Exposure}: Python, Odoo, Rest API, Clean Code, OOPS, HLD, LLD, Designing, Debugging,}
+      \resumeItemListEnd
+      
+  
+    % \resumeSubheading
+    %   {Edue}{Feb. 2022 -- July 2022}
+    %   {Software Engineer}{Part-Time}
+    %   \resumeItemListStart
+    %     \resumeItem{Designing, building, and maintaining python Django based web applications }
+    %     \resumeItem{Developing well-designed, efficient, and testable code Working in an Agile (Scrum) env}
+    %     \resumeItem{\textbf{Tech Exposure}: Python, Django, Rest API, Clean Code, OOPS, AWS, EC2}
+    %   \resumeItemListEnd
+
+    
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {Zopper}{June 2021 -- Oct. 2021}
+      {Tech Intern}{Noida, India}
+      \resumeItemListStart
+        \resumeItem{Integrated and Exposed Rest API's used by 40000+ insurance distributors}
+        \resumeItem{Integrated Quotation,Proposal and Payment API'S of multiple insurer}
+        \resumeItem{\textbf{Tech Exposure}: Python, Django, Mysql, Docker, git, restAPI.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Just Get It}{Dec 2021 -- Feb. 2021}
+      {Backend Developer Intern}{Noida, India}
+      \resumeItemListStart
+        \resumeItem{Developed an online Renting Platform (web app) for 5k+ existing customers.}
+        \resumeItem{The app implements dynamic price calculation and allows users to store multiple products for flexible durations.}
+        \resumeItem{\textbf{Tech Exposure}: Python, Django, PostgreSQL database.}
+   
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{EASYBT} { | }\href{https://github.com/EasyBinaryTree/EasyBT} {\underline{Python Library for binary trees }} $|$ 
+          \emph{Python, Data Structure and Algorithm }}{Sept. 2019 -- Mar. 2021}
+          \resumeItemListStart
+            \resumeItem{Serialization, Deserialization, in, pre, postorder traversal,level order
+traversal, diameter, height}
+            \resumeItem{Insertion, deletion, search operations in  single line of code}
+            \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{VLIBRABRY}
+          { | } \href{https://github.com/samirpatil2000/VITLibrary}{\underline{Portal For Books And Study Notes}} {} $|$ \emph{Python, Django, Bootstrap}}{Sept. 2019 -- Mar. 2021}
+          \resumeItemListStart
+            \resumeItem{Implemented CRUD, advanced search, and filters for books and notes and also implemented three types of hierarchical user to check the book}
+            \resumeItem{{Security}: spamming, brute-forcing, and also from vertical and horizontal privileged escalation}
+             \resumeItemListEnd
+    \resumeSubHeadingListEnd 
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python (Django, Odoo, Data structure and algorithm ),  HTML/CSS, DBMS (PostgreSQL, MySQL, ORM), Debugging, AWS(EC2, S3)} \\
+    \textbf{Tools}{: VSCode, Miro, ClickUp, PyCharm, Postman,  Burb-Suite, FilmoraGo, Security (XXS, SQLInjection, Horizontal and Vertical privileged escalation ), VSC (Git, Github, Gitlab )} \\
+   }}
+ \end{itemize}
+ 
+ %-----------ACHIEVEMENTS -----------
+\section{ACHIEVEMENTS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{: Solve more than 400 problems on leetcode } \\
+     \textbf{: 3* leetcode } \\
+     \textbf{: 5* HackerRank } \\
+   }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
