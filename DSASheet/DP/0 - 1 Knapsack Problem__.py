@@ -34,24 +34,24 @@ print(sol.knapSack(W, wts, vals, len(wts)))
 
 
 
-# n = 3
+n = 3
 
-# x = [[0] * n] * n
-# y = [[0] * n for _ in range(n)]
+x = [[0] * n] * n
+y = [[0] * n for _ in range(n)]
 
 # print(x, type(x))
 # print(y, type(y))
 # print(x == y) 
 
 
-# for row in range(n):
-#     for col in range(n):
-#         if row == 0 or col == 0:
-#             x[row][col] = -1
-#             y[row][col] = -1
+for row in range(n):
+    for col in range(n):
+        if row == 0 or col == 0:
+            x[row][col] = -1
+            y[row][col] = -1
 
-# print(x, type(x))
-# print(y, type(y))
-# print(x == y)
+print(x, type(x))
+print(y, type(y))
+print(x == y)
 
 
