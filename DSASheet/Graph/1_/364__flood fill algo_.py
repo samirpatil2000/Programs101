@@ -16,7 +16,7 @@ mat=[[1, 1, 0, 0],
  [2, 2, 0, 1], 
  [2, 2, 0, 0], 
  [0, 0, 1, 1]]
-def exploarNeighbours(mat,sr,sc,visited,newcolor,oldColour):
+def exploarNeighbours(mat,sr,sc,visited, newcolor, oldColour):
     dr=[-1,+1,0,0]
     dc=[0,0,-1,+1]
     

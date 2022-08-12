@@ -40,10 +40,10 @@ def dfs(mat,src_row,src_col,visited,path):
 def explorNeighboursBFS(mat,current_row,current_col,visited,row_queue,col_queue):
     dr=[-1,+1,0,0]
     dc=[0,0,-1,+1]
-    # list_=[]
+    dir_ = [[-1, 0, "U"], [1, 0, "D"], [0, -1, "L"], [0, 1, "R"]]
     for i in range(4):
-        rr=current_row+dr[i]
-        cc=current_col+dc[i]
+        rr=current_row + dr[i]
+        cc=current_col + dc[i]
         
         if rr<0 or cc<0:
             continue
@@ -77,7 +77,7 @@ def bfs(mat,src_row,src_col,visited):
             
 visited=[[False for _ in range(len(mat[0]))] for _ in range(len(mat))]
 dfs(mat,0,0,visited,"00-")
-visited=[[False for _ in range(len(mat[0]))] for _ in range(len(mat))]
-bfs(mat,0,0,visited)
+# visited=[[False for _ in range(len(mat[0]))] for _ in range(len(mat))]
+# bfs(mat,0,0,visited)
     
     
