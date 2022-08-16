@@ -23,7 +23,6 @@ def inputFun():
         graph[u].append(v)
         graph[v].append(u)
 
-›
 
 class Solution:
     def totalTime(self,graph:collections.defaultdict(List),N:int,C:int,T:int):

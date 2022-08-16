@@ -18,8 +18,8 @@ class Solution:
             image[temp[0]][temp[1]] = color
             dir = [[1, 0], [-1, 0], [0, 1], [0, -1]]
             for i in range(4):
-                nr = sr + dir[i][0]
-                nc = sc + dir[i][1]
+                nr = temp[0] + dir[i][0]
+                nc = temp[1] + dir[i][1]
                 if nr < 0 or nc < 0:
                     continue
                 elif nr >= len(image) or nc >= len(image[0]):
@@ -27,8 +27,6 @@ class Solution:
                 elif image[nr][nc] == color or image[nr][nc] != init_color:
                     continue
                 queue.append([nr, nc, image[nr][nc]])
-                print(queue, sr, sc)
-            
         return image
                      
                 
