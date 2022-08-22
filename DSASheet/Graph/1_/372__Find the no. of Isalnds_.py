@@ -10,7 +10,7 @@ def exploreNeighbours(mat,row,col,visited):
             continue
         if visited[rr][cc]==True or mat[rr][cc]==0:
             continue
-        get_island(mat,rr,cc,visited)
+        get_island(mat, rr, cc, visited)
     
         
     
@@ -21,7 +21,7 @@ def get_island(mat,row,col,visited):
     exploreNeighbours(mat,row,col,visited)
     
     
-mat=[[0,1,1,1,0,0,0],[0,0,1,1,0,1,0]]
+# mat=[[0,1,1,1,0,0,0],[0,0,1,1,0,1,0]]
 
 
 def count_island(mat):
@@ -34,7 +34,9 @@ def count_island(mat):
                 count+=1
     return count
 
+n, m = map(int, input().strip().split())
+grid = []
+for i in range(n):
+    grid.append(list(map(int, input().strip().split())))
 
-print(count_island(mat))
-        
-    
+print(count_island(grid))
