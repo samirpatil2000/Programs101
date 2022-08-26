@@ -27,3 +27,10 @@ print(sorted(points, key=sort_func, reverse=True))
 
 # print(sorted(points,key= lambda x:(x[0],x[1])))   #   [[1, 1], [2, 0], [2, 2], [2, 4], [3, 3], [4, 2], [6, 0]]
 # print("What output \\n do \'you\' expect?")
+
+points = [ {0:1, 1:1}, {0:2, 1:2}, {0:2, 1:0}, {0:2, 1:4}, {0:3, 1:3}, {0:4, 1:2}, {0:6, 1:0}]
+
+def sort_func(list_):
+    return list_[0], list_[1]
+
+print(sorted(points,key=sort_func)) 
