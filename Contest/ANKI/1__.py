@@ -13,35 +13,35 @@
 # # # print(remove_string())
 
 
-# # import collections
-# # class Solution:
-# #     def dfs(self, mat, src_row, src_col, ones):
-# #         mat[src_row][src_col] = -1
-# #         dr = [+1, 0, -1, 0]
-# #         dc = [ 0, -1, 0, +1]
-# #         for i in range(4):
-# #             row, col = src_row + dr[i], src_col + dc[i]
-# #             if row < 0 or col < 0:
-# #                 continue
-# #             if row >= len(mat) or col >= len(mat[0]):
-# #                 continue
-# #             if mat[row][col] == -1 or mat[row][col] == 0:
-# #                 continue
-# #             ones[0] += 1
-# #             self.dfs(mat, row, col, ones)
+import collections
+class Solution:
+    def dfs(self, mat, src_row, src_col, ones=[]):
+        mat[src_row][src_col] = -1
+        dr = [+1, 0, -1, 0]
+        dc = [ 0, -1, 0, +1]
+        for i in range(4):
+            row, col = src_row + dr[i], src_col + dc[i]
+            if row < 0 or col < 0:
+                continue
+            if row >= len(mat) or col >= len(mat[0]):
+                continue
+            if mat[row][col] == -1 or mat[row][col] == 0:
+                continue
+            ones[0] += 1
+            self.dfs(mat, row, col, ones)
             
-# #     def numIslands(self, grid):
-# #         ans = 0
-# #         turn = 0
-# #         for row in range(len(grid)):
-# #             for col in range(len(grid[0])):
-# #                 if grid[row][col] == -1 or grid[row][col] == 0:
-# #                     continue
-# #                 ones = [0]
-# #                 self.dfs(grid, row, col, ones)
-# #                 if turn != 0 or turn & 1 == 1: 
-# #                     ans +=  ones[0]
-# #         return ans
+    def numIslands(self, grid):
+        ans = 0
+        turn = 0
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
+                if grid[row][col] == -1 or grid[row][col] == 0:
+                    continue
+                ones = [0]
+                self.dfs(grid, row, col, ones)
+                # if turn != 0 or turn & 1 == 1: 
+                #     ans +=  ones[0]
+        return ans
     
 # # sol = Solution()
 # # n, m = map(int, input().strip().split())
@@ -191,6 +191,36 @@ class Solution:
 # print(Solution().find(1, 5000))
 
 # print(Solution().result(["A", "B", "C", "D"]))
-arr = [True, True, False, False]
-print(sorted(arr, key=lambda x: -x))
+# arr = [True, True, False, False]
+# print(sorted(arr, key=lambda x: -x))
+
+def fun(productIDs):
+    vowels = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"}
+    result = 0
+    for id in productIDs:
+        if id not in vowels:
+            result += 1
+    return result
         
+        
+def primeFactors(n):
+     
+    result = 0
+    while n % 2 == 0:
+        if not result:
+            result += 2
+        n = n // 2
+         
+    for i in range(3, int(math.sqrt(n))+1, 2):
+         
+        while n % i == 0:
+            result += i
+            print(i)
+            n = n // i
+            
+    if n > 2:
+        result += n
+        print(n)
+    return int(result) 
+
+print(primeFactors(120))

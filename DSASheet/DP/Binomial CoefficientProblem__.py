@@ -12,7 +12,8 @@ class Solution:
                 dp[j] = (dp[j] + dp[j - 1]) % mod
         return int(dp[-1])
     
-n, r =778, 116
+n, r = 778, 116
+n, r = 7, 0
 print(Solution().nCr(n, r))
                 
                 

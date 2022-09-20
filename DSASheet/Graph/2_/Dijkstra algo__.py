@@ -18,7 +18,6 @@ class Solution:
     
     def dijkstra(self, V, graph, src):
         #code here
-        result = []
         queue = [[0, src]]
         heapq.heapify(queue)
         distances = {vertex: float("infinity") for vertex in range(V)}
@@ -32,6 +31,23 @@ class Solution:
                     distances[edge] = current_distance + distance
                     heapq.heappush(queue, [distances[edge], edge])         
         return distances.values()
+    
+
+
+graph = [
+            [[3, 9], [5, 4]], # 0
+            [[4, 4]],         # 1
+            [[5, 10]],        # 2
+            [[0, 9]],         # 3
+            [[1, 4], [5, 3]], # 4
+            [[0, 4], [2, 10], [4, 3]] # 5
+        ]
+src = 1
+V = 6 
+print(Solution().dijkstra(V, graph, src))
+
+
+
     
 example_graph = {
     'U': {'V': 2, 'W': 5, 'X': 1},
@@ -85,3 +101,99 @@ print(sol.dijkstra(V, graph, src))
 #     u,v=[int(i) for i in n.split(' ')]
 #     graph[u].append(v)
 #     graph[v].append(u)
+
+
+def boggleBoard(board, words):
+    # Write your code here.
+    visited = [[0] * len(board[0]) for i in range(len(board))]
+    matchedWord = set()
+    for i in range(len(board)):
+        for j in range(len(board[0])):
+            for word in words:
+                if word not in matchedWord:
+                    isWordMatched = identifyDirectionToMove(board, word, i, j, 0, visited)
+                    print(word, isWordMatched)
+                    if isWordMatched:
+                        matchedWord.add(word)
+    return matchedWord
+
+def identifyDirectionToMove(board, word, i, j, index, visited):
+    # print(word, i, j, index, visited)
+    if index == len(word):
+        return True
+    
+    if board[i][j] != word[index]:
+        return False
+
+    if board[i][j] == word[index] and index == len(word) -1:
+        return True
+        
+    moveRow = [1, 1, 1, 0,-1, -1, -1, 0]
+    moveCol = [1, 0, -1, -1, -1, 0, 1, 1]
+    visited[i][j] = 1
+    isMatched = False
+    
+    for k in range(8):
+        if not (len(board) > i + moveRow[k] >= 0):
+            continue
+        if not (len(board[0]) > j + moveCol[k] >= 0):
+            continue
+
+        if not visited[i + moveRow[k]][j + moveCol[k]]:
+            isWordMatched = identifyDirectionToMove(board, word, i + moveRow[k], j + moveCol[k], index + 1, visited)
+            if isWordMatched:
+                isMatched = isWordMatched 
+                break
+    visited[i][j] = False
+    return isMatched
+
+
+
+def identify_direction_to_move(board, word, i, j, index, visited):
+    # print(word, i, j, index, visited)
+    if index == len(word):
+        return True
+    
+    if board[i][j] != word[index]:
+        return False
+
+    if board[i][j] == word[index] and index == len(word) -1:
+        return True
+        
+    moveRow = [1, 1, 1, 0, -1, -1, -1, 0]
+    moveCol = [1, 0, -1, -1, -1, 0, 1, 1]
+    visited[i][j] = 1
+    
+    for k in range(8):
+        if not (len(board) > i + moveRow[k] >= 0):
+            continue
+        if not (len(board[0]) > j + moveCol[k] >= 0):
+            continue
+        new_row = i + moveRow[k]
+        new_col = j + moveCol[k]
+        
+        if not visited[new_row][new_col]:
+            is_word_matched = identify_direction_to_move(board, word, new_row, new_col, index + 1, visited)
+            if is_word_matched:
+                return True
+    visited[i][j] = False
+    return False
+
+
+
+input = {
+  "board":[
+  ["t", "h", "i", "s", "i", "s", "a"],
+  ["s", "i", "m", "p", "l", "e", "x"],
+  ["b", "x", "x", "x", "x", "e", "b"],
+  ["x", "o", "g", "g", "l", "x", "o"],
+  ["x", "x", "x", "D", "T", "r", "a"],
+  ["R", "E", "P", "E", "A", "d", "x"],
+  ["x", "x", "x", "x", "x", "x", "x"],
+  ["N", "O", "T", "R", "E", "-", "P"],
+  ["x", "x", "D", "E", "T", "A", "E"]
+],
+  "words": ["this", "is", "not", "RExAxA", "a", "simple", "boggle", "board", "test", "REPEATED", "NOTRE-PEATED"]
+}
+
+print(boggleBoard(**input))
