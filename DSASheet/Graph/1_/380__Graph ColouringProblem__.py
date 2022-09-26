@@ -11,17 +11,17 @@ class Solution:
                 break
         colour_to_vertices[src]=i
         return i
-    def colourGraph(self,n,edges:List[List[int]]):
+    def colourGraph(self, n, edges:List[List[int]]):
         graph={}
         for i in range(n+1):
-            graph[i]=[]
+            graph[i] = []
         for u,v in edges:
             graph[u].append(v)
             graph[v].append(u)
         colour_to_vertices=[-1]*len(graph)
-        max_=0
+        max_ = 0
         for src in range(len(graph)):
-            max_=max(max_,self.applyColour(src,graph,colour_to_vertices))
+            max_ = max(max_, self.applyColour(src, graph, colour_to_vertices))
         return max_+1,colour_to_vertices
     
     

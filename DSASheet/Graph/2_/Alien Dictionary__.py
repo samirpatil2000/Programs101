@@ -4,6 +4,7 @@ class Solution:
     result = []
     
     def create_graph(self, words, K):
+        graph = collections.defaultdict
         graph = {chr(i + 97) : [] for i in range(K)}
         for i in range(len(words) - 1):
             j = 0
