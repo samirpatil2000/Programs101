@@ -46,3 +46,33 @@ print(x)
 print("3".isnumeric())
 
 print(ord("a"),ord("A"),ord("z"),ord("Z"))
+
+x = "Sam SAMIR "
+print(len(x))
+x = x.strip()
+print(x, len(x))
+x = x.split()
+print(x)
+
+
+class ProductService:
+    def build_search_query(self, search_query: str, **kwargs):
+        or_operator_count = 0
+        product_ids = []
+        search_queries = []
+        for query in search_query.split(" "):
+            or_operator_count += 1
+            search_queries += [('name', 'ilike', query)]
+            product_ids += self.get_product_ids(query, **kwargs)
+        if or_operator_count:
+            or_operator_count -= 1
+        return product_ids, search_queries, or_operator_count
+
+    def get_domain(self, search_query, **kwargs):
+        domain = []
+        product_ids, search_queries, or_operator_count = self.build_search_query(search_query, **kwargs)
+        if product_ids:
+            or_operator_count += 1
+            domain += [('id', 'in', product_ids)]
+        domain += search_queries
+        return ['|'] * or_operator_count + domain

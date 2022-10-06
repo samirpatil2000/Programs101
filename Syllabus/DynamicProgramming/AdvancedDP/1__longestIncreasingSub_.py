@@ -32,20 +32,20 @@ class Solution:
             
     
     def longestIncresingSubSequence_NlogN(self,arr):
-        dp=[2**32]*(len(arr)+1)
-        dp[0]=-2**32
+        dp = [2**32]*(len(arr)+1)
+        dp[0] = -2**32
         
         # print(dp)
         # print(bisect.bisect(dp,10))
         
         
         for ele in arr:
-            indx=bisect.bisect(dp,ele)
-            if dp[indx-1]!=ele:
-                dp[indx]=ele
+            indx = bisect.bisect(dp, ele)
+            if dp[indx-1] !=  ele:
+                dp[indx] = ele
             
-        for i in range(len(dp)-1,-1,-1):
-            if dp[i]!=2**32:
+        for i in range(len(dp) - 1,-1,-1):
+            if dp[i] != 2**32:
                 return i
         return 0
             

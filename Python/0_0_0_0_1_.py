@@ -24,3 +24,6 @@ x = comb_info['has_discounted_price'] and comb_info['list_price'] or comb_info['
 {'product_id': 1274, 'product_template_id': 1282, 'display_name': '[INSK028C02] Abacel 18 EC - 500 ml', 'display_image': False, 'price': 98000.0, 'list_price': 80000.0, 'price_extra': 0.0, 'has_discounted_price': False}
 print(x)
 {'product_id': 1277, 'product_template_id': 1285, 'display_name': '[INSK028C03] Abacel 18 EC - 500 ml', 'display_image': False, 'price': 95000.0, 'list_price': 110000.0, 'price_extra': 0.0, 'has_discounted_price': True}
+
+lisr_ = ["SA", "SEW", "SA"]
+print(set(lisr_))

@@ -33,4 +33,6 @@ points = [ {0:1, 1:1}, {0:2, 1:2}, {0:2, 1:0}, {0:2, 1:4}, {0:3, 1:3}, {0:4, 1:2
 def sort_func(list_):
     return list_[0], list_[1]
 
-print(sorted(points,key=sort_func)) 
+# print(sorted(points,key=sort_func)) 
+product = [[True, 20], [False, 20]]
+print(sorted(product, key=lambda p : (-p[0], p[1])))
