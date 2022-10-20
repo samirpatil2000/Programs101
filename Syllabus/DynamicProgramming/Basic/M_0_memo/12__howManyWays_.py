@@ -1,4 +1,4 @@
-kdef canConstruct(target_string,wordBank,memo={}):
+def canConstruct(target_string,wordBank,memo={}):
     if target_string=="":
         return 1
     if target_string in memo:return memo[target_string]

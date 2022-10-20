@@ -37,15 +37,15 @@ def inOrderIterative(root):
     st=[]
     curr=root
     result=[]
-    while(len(st)>0 or curr):
+    while(len(st) > 0 or curr):
         if(curr):
             st.append(curr)
-            curr=curr.right
+            curr=curr.left
         else:
             curr=st.pop()
             result.append(curr.data)
-            curr=curr.left
-    return result[::-1]
+            curr=curr.right
+    return result
     
         
             
@@ -78,7 +78,7 @@ root.left.left=newNode(12)
 # root.right = newNode(6)
 # root.left.left = newNode(2)
 # root.left.right = newNode(4)
-display(root)
+# display(root)
 
 inOrder(root)
 print()

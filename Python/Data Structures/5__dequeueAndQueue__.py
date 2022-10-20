@@ -8,3 +8,4 @@ list_=deque(list_)
 a=deque(a)
 
 print(list_.popleft())
+

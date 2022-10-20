@@ -55,8 +55,8 @@ def reverseList(head):
     return head
 
 def reverseLL__II(head:newNode):
-    dummy=None
-    ptr=head.next
+    dummy = None
+    ptr = head.next
     while ptr:
         head.next=dummy
         dummy=head

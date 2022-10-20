@@ -47,7 +47,7 @@ print(heapq.nlargest(k,points,key=lambda x: x[0]*x[0]+x[1]*x[1]))
 
 
 
-arr = [3, 45,65,67,34,92,37]
+arr = [3, 45, 65, 67, 34, 92, 37]
 print(arr)
 heapq.heapify(arr)
 x = heapq.heappop(arr)
