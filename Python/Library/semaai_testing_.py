@@ -1,6 +1,6 @@
 import requests
 
-url = "http://localhost:8080/v1/products?search=Round&global_products=True&offset=2&limit=10"
+url = "http://localhost:8080/v1/products?search=FMC&global_products=True&offset=0&limit=4"
 payload = ""
 headers = {
   'Content-Type': 'text/plain; charset=UTF-8',
@@ -33,3 +33,16 @@ print(len(json.loads(response.text)["data"]["products"]))
 # Time:  9.212578791 Round Up Accurate results 
 
 # Time:  8.999908621 Round
+
+
+# (FMC):- limit 10
+# Time:  14.873841224000001 New -  
+# Time:  15.753511932999999
+
+# FMC :- limit 25
+# Time:  37.180232477000004 New - 
+# Time:  45.628087611
+start = timeit.default_timer()
+stop = timeit.default_timer()
+
+print('Time: ', stop - start)

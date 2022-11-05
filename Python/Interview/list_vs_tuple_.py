@@ -1,4 +1,4 @@
-a=[i for i in range(10**6)]
+a=[i for i in range(10**3)]
 b=tuple(a)
 c=len(a)
 

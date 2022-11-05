@@ -10,5 +10,5 @@ from sys import getsizeof
 
 print(getsizeof(a),getsizeof(b),getsizeof(a)-getsizeof(b))
 
-print(a)
-print(b)
+# print(a)
+# print(b)

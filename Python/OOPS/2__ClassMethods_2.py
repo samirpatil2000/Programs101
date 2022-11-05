@@ -8,6 +8,7 @@ class Employee:
         
     @classmethod
     def fromString(cls,str_:str):
+        print(cls.num_of_count, "SAM")
         name,amt=str_.split("-")
         return cls(name.title(),amt)
     
