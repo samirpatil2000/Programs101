@@ -5,3 +5,5 @@ def bitMask(n):
     return
 
 bitMask(76)
+
+print(1 << 1)
