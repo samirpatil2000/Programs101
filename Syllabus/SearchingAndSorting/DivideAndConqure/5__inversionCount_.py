@@ -29,12 +29,12 @@ class Solution:
 
         
     def mergeSort(self,arr:List[int],left:int,right:int):
-        if left<right:
-            mid=(left+right)//2
-            inv_count=0
-            inv_count+=self.mergeSort(arr,left,mid)
-            inv_count+=self.mergeSort(arr,mid+1,right)
-            inv_count+=self.merge(arr,left,mid,right)
+        if left < right:
+            mid = (left+right)//2
+            inv_count = 0
+            inv_count += self.mergeSort(arr,left,mid)
+            inv_count += self.mergeSort(arr,mid+1,right)
+            inv_count += self.merge(arr,left,mid,right)
             return inv_count
         return 0
             
