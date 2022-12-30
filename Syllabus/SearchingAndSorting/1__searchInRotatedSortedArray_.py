@@ -21,4 +21,6 @@ def findTarget(arr,target):
 
 nums = [3,1]
 target = 1
+# nums = [4,5,6,7,0,1,2]
+# target = 0
 print(findTarget(nums,target))
