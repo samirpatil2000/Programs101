@@ -31,3 +31,4 @@ nums = [-2,1,-3,4,-1,2,1,-5,4]
 # nums = [-2,1]
 left, right = 0, len(nums) - 1
 print(sol.max_subarray_sum(nums, left, right))
+print(1 + (0 == 0))
