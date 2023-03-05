@@ -27,3 +27,4 @@ print(x)
 
 lisr_ = ["SA", "SEW", "SA"]
 print(set(lisr_))
+print(8.55 * 100)

@@ -6,7 +6,8 @@ class Employee:
         self.name=name
         self.amt=amt
         Employee.num_of_count+=1
-        
+    
+    print("Hello X")
     def no(self):
         self.s=0
         return self.s
@@ -16,22 +17,22 @@ class Employee:
         cls.raise_amt=amt
         
         
-e1=Employee("Samir",34)
-e2=Employee("Sam",35)
+# e1=Employee("Samir",34)
+# e2=Employee("Sam",35)
 
-print(Employee.raise_amt)
-print(e1.raise_amt)
-print(e2.raise_amt)
+# print(Employee.raise_amt)
+# print(e1.raise_amt)
+# print(e2.raise_amt)
 
 
-""" Class Method """
-Employee.set_amt(1.05)
-"""   OR  """
+# """ Class Method """
+# Employee.set_amt(1.05)
+# """   OR  """
 
-# e1.set_amt(1.05)
+# # e1.set_amt(1.05)
         
-print(Employee.raise_amt)
-print(e1.raise_amt)
-print(e2.raise_amt)
+# print(Employee.raise_amt)
+# print(e1.raise_amt)
+# print(e2.raise_amt)
 
-print(e1.no())
+# print(e1.no())

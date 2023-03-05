@@ -36,3 +36,10 @@
 # file.write(str(l))
 # print (l)
 # file.close()
+
+from typing import List
+
+
+def sam(s: List[str]) :
+
+    return
