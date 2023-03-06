@@ -32,6 +32,24 @@ class Solution:
                     heapq.heappush(queue, [distances[edge], edge])         
         return distances.values()
     
+    
+    
+    def dijkstra_(self, V, graph, src):
+        import heapq
+        queue = [[src, 0]]
+        heapq.heapify(queue)
+        distances = {vertex: float("infinity") for vertex in range(V)}
+        while queue:
+            current_distance, current_vertex = heapq.heappop(queue)
+            if current_distance > distance[current_vertex]:
+                continue
+            for edge, distance in graph[current_vertex]:
+                if distances[edge] > distance + current_distance:
+                    
+        
+    
+    
+    
 
 
 graph = [
