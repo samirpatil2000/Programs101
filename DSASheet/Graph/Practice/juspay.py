@@ -1,6 +1,7 @@
-from collections import defaultdict
+from collections import defaultdict, deque
 class Solution:
     largest_cycle_length = 0
+    max_cycle_len_sum = 0
     def create_graph(self, edges):
         graph = defaultdict(list)
         for i in range(len(edges)):
@@ -23,24 +24,60 @@ class Solution:
                 max_node = i
         return max_node
 
-    def dfs(self, graph, node, start_node, cycle_length, visited):
+    def dfs(self, graph, node, start_node, cycle_length, cycle_sum, visited):
         visited[node] = True
-        for neighbor in graph[node]:
-            if neighbor == start_node:
-                self.largest_cycle_length = max(self.largest_cycle_length, cycle_length + 1)
-            elif not visited[neighbor]:
-                self.dfs(graph, neighbor, start_node, cycle_length + 1, visited)
+        for edge in graph[node]:
+            if edge == start_node:
+                if self.largest_cycle_length < cycle_length + 1:
+                    self.largest_cycle_length = cycle_length + 1
+                    self.max_cycle_len_sum = cycle_sum
+            elif not visited[edge]:
+                self.dfs(graph, edge, start_node, cycle_length + 1, cycle_sum + edge, visited)
 
-        visited[node] = False  # backtrack
+        visited[node] = False
     
     def find_largest_cycle_length(self, edges):
         graph = self.create_graph(edges)
         visited = [False] * len(edges)
 
         for i in range(len(edges)):
-            self.dfs(graph, i, i, 0, visited)
+            self.dfs(graph, i, i, 0, i, visited)
 
-        return self.largest_cycle_length
+        if self.largest_cycle_length == 0:
+            return -1
+        return self.max_cycle_len_sum
+    
+    
+    def nearest_meeting_cell(self, x1, x2, edges):
+        visited1 = set()    
+        visited2 = set()
+        queue1 = deque([x1])    
+        queue2 = deque([x2])    
+        steps1, steps2 = 0, 0
+        graph = self.create_graph(edges)
+        while queue1 or queue2:
+            for _ in range(len(queue1)):
+                node = queue1.popleft()
+                if node in visited2:
+                    return node    # found nearest meeting cell
+                visited1.add(node)
+                for edge in graph[node]:
+                    if edge not in visited1:
+                        queue1.append(edge)
+            steps1 += 1
+            
+            for _ in range(len(queue2)):
+                node = queue2.popleft()
+                if node in visited1:
+                    return node  
+                visited2.add(node)
+                for edge in graph[node]:
+                    if edge not in visited2:
+                        queue2.append(edge)
+                        
+            steps2 += 1
+            
+        return -1    # no meeting cell found
     
 
 # t = int(input())
@@ -52,7 +89,9 @@ class Solution:
 edges = [1, 2, 3, 4, 0]
 edges = [1, 2, -1, 4, 5, -1, -1]
 edges =  [1, 2, 3, -1, 5, 6, 0, 7, 8]
+# edges = [1, 0, 3, -1, 5, 4]
 print(Solution().find_largest_cycle_length(edges))
+print(Solution().find_max_weight_node(edges))
             
     
     
