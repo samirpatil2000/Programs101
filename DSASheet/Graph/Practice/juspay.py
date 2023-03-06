@@ -93,5 +93,7 @@ edges =  [1, 2, 3, -1, 5, 6, 0, 7, 8]
 print(Solution().find_largest_cycle_length(edges))
 print(Solution().find_max_weight_node(edges))
             
-    
+edges = [2, 2, 5, 4, 8, 3, 2, 6, 6]
+x1, x2 = 0,8
+print(Solution().nearest_meeting_cell(x1, x2, edges))
     
