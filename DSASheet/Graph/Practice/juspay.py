@@ -95,5 +95,33 @@ print(Solution().find_max_weight_node(edges))
             
 edges = [2, 2, 5, 4, 8, 3, 2, 6, 6]
 x1, x2 = 0,8
-print(Solution().nearest_meeting_cell(x1, x2, edges))
+# print(Solution().nearest_meeting_cell(x1, x2, edges))
+
+url = "https://www.google.com/search"
+url = "https://www.google.com:455/search.html/to/path"
+# url = "http://localhost:9043"
     
+def get_port(hostname):
+    if len(hostname.split(":")) > 1:
+        return hostname.split(":")[-1]
+    return "443"
+
+def is_secure(s):
+    if "https:" == s:
+        return "Y"
+    return "N"
+    
+def parseUrl(url: str):
+    parsed_url = url.split("/")
+    print(parsed_url)
+    file = ""
+    if len(parsed_url) > 3:
+        if len(parsed_url) > 3:
+            file = "/".join(parsed_url[3:])
+    print("GET /" + file + " HTTP/2")
+    
+    print("Host: " + parsed_url[2].split(":")[0])
+    print("X-Port: " + get_port(parsed_url[2]))
+    print("X-Secure-Protocol: " + is_secure(parsed_url[0]))
+    
+parseUrl(url)

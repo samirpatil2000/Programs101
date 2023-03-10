@@ -53,13 +53,16 @@ public class Second{
         return result.substring(0, result.length() - 2);
     }
     public static void main(String[] args) {
-        System.out.println("Second");
-        Person p1 = new Person("Samir Patil", 22);
-        System.out.println(p1.name + " Person One");
+        // System.out.println("Second");
+        // Person p1 = new Person("Samir Patil", 22);
+        // System.out.println(p1.name + " Person One");
         
-        String[] programmingLanguages = new String[]{"Python", "Java", "JavaScript"};
-        Developer d1 = new Developer("Samir Patil", 22, programmingLanguages);
-        System.out.println(d1.name + " Developer One");
-        d1.developerDetails();
+        // String[] programmingLanguages = new String[]{"Python", "Java", "JavaScript"};
+        // Developer d1 = new Developer("Samir Patil", 22, programmingLanguages);
+        // System.out.println(d1.name + " Developer One");
+        // d1.developerDetails();
+        String s = "817191119";
+        s = s.replace(" ", "");
+        System.out.println(s.length());
     }
 }
