@@ -15,17 +15,6 @@ class Tree:
         if node in self.tree:
             return self.tree[node].is_locked
         return False
-    
-    def lock(self, node):
-        # before that check wether locking is possible or not
-        if node not in self.tree:
-            return False
-        if self.tree[node].is_locked:
-            return False
-        if self._is_descendants_are_locked(node) or self._is_ancestors_are_locked(node):
-            return False
-        self.tree[node].is_locked = True
-        return True
         
     def _is_ancestors_are_locked(self, node):
         ancestor = self.tree[node].parent
