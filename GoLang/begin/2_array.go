@@ -6,14 +6,15 @@ import (
 )
 
 
-func mapCreation(){
+func mapCreation() map[string]string {
 	dictionary := make(map[string]string)
 	dictionary["name"] = "Samir"
 	dictionary["age"] = "22"
 	dictionary["gender"] = "male"
 
-	fmt.Println("Dictionary => ", dictionary)
-	fmt.Println("Name => ", dictionary["name"])
+	// fmt.Println("Dictionary => ", dictionary)
+	// fmt.Println("Name => ", dictionary["name"])
+	return dictionary
 }
 
 
@@ -23,5 +24,5 @@ func main()  {
 	fmt.Println("Array => ", a, arr)
 	newArr := append(arr, 5)
 	fmt.Println("New Array => ", newArr)
-	mapCreation()
+	fmt.Println("Map", mapCreation())
 }
