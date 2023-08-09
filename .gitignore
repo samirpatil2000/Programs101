@@ -3,3 +3,6 @@
 *.class
 tempCodeRunnerFile.*
 shakespeare_plays
+.env
+env
+node_modules
