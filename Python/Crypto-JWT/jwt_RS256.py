@@ -31,13 +31,18 @@ def decode_jwt(token, public_key):
     return decoded_payload
 
 private_key, public_key = generate_key_pair()
-print("Private Key: ", private_key)
-print("\nPublic Key:\n", public_key)
+print({"Private Key": private_key})
+print({"Public Key": public_key})
 
-payload = {"userId": "123", "phoneNumber": "9730614299"}
+payloads = [
+    {"phoneNumber": "9730614299", "userId": "9b696951-8f95-49d2-aeae-8d588edbb6a9"},
+    {"phoneNumber": "9730614299", "userId": "caa5d569-0aa8-4857-9b96-c50fafc46df1"},
+    {"phoneNumber": "9730614299", "userId": "d8b4cd01-ce98-4970-b159-b397060062a4"},
+]
 
-encoded_jwt = encode_jwt(payload, private_key)
-print("\nEncoded JWT:\n", encoded_jwt)
+for payload in payloads:
+    encoded_jwt = encode_jwt(payload, private_key)
+    print("\nEncoded JWT:\n", encoded_jwt)
 
-decoded_payload = decode_jwt(encoded_jwt, public_key)
-print("\nDecoded Payload:\n", decoded_payload)
+# decoded_payload = decode_jwt(encoded_jwt, public_key)
+# print("\nDecoded Payload:\n", decoded_payload)
